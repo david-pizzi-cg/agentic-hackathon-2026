@@ -488,10 +488,7 @@ tr:nth-child(even) { background: #f9fafb; }
 
 <div class="content">
 
-  <div class="grid-2" style="align-items:start;">
-
-    <!-- ==================== LEFT: WHY ==================== -->
-    <div>
+    <!-- ==================== ROW 1: WHY ==================== -->
       <div class="section">
         <h2>WHY</h2>
 
@@ -544,94 +541,89 @@ tr:nth-child(even) { background: #f9fafb; }
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ==================== RIGHT: BUSINESS CASE ==================== -->
-    <div>
+    <!-- ==================== ROW 2: BUSINESS CASE ==================== -->
       <div class="section">
         <h2>BUSINESS CASE</h2>
 
-        <!-- Current Costs -->
-        <div class="cost-section" style="margin-bottom:12px;">
-          <div class="cost-header current">Current Costs</div>
-          <div class="cost-body">
-            <div class="cost-row">
-              <span class="label">Running (R1): Clinician admin time</span>
-              <span class="value">~&pound;228k/yr</span>
+        <!-- Row 1: Current Costs | Current Income -->
+        <div class="grid-2" style="gap:16px; margin-bottom:16px;">
+          <div class="cost-section">
+            <div class="cost-header current">Current Costs</div>
+            <div class="cost-body">
+              <div class="cost-row">
+                <span class="label">Running (R1): Clinician admin time</span>
+                <span class="value">~&pound;228k/yr</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Running (R1): Admin staff (phones, referrals)</span>
+                <span class="value">~&pound;75k/yr</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Maintenance (M1): Error correction, rework</span>
+                <span class="value">~&pound;15k/yr</span>
+              </div>
+              <div class="cost-total">
+                <span>TOTAL CURRENT COST (TCC) = R1 + M1</span>
+                <span>~&pound;318k/yr</span>
+              </div>
             </div>
-            <div class="cost-row">
-              <span class="label">Running (R1): Admin staff (phones, referrals)</span>
-              <span class="value">~&pound;75k/yr</span>
-            </div>
-            <div class="cost-row">
-              <span class="label">Maintenance (M1): Error correction, rework</span>
-              <span class="value">~&pound;15k/yr</span>
-            </div>
-            <div class="cost-total">
-              <span>TOTAL CURRENT COST (TCC) = R1 + M1</span>
-              <span>~&pound;318k/yr</span>
+          </div>
+          <div class="cost-section">
+            <div class="cost-header" style="background:#6c757d; color:white;">Current Income</div>
+            <div class="cost-body">
+              <div class="cost-row">
+                <span class="label">Revenue (Rv1): Patient throughput</span>
+                <span class="value">Constrained by admin burden</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Current Income -->
-        <div class="cost-section" style="margin-bottom:12px;">
-          <div class="cost-header" style="background:#6c757d; color:white;">Current Income</div>
-          <div class="cost-body">
-            <div class="cost-row">
-              <span class="label">Revenue (Rv1): Patient throughput</span>
-              <span class="value">Constrained by admin burden</span>
+        <!-- Row 2: New Costs | New Income -->
+        <div class="grid-2" style="gap:16px; margin-bottom:16px;">
+          <div class="cost-section">
+            <div class="cost-header new">New Costs (With AgentCare)</div>
+            <div class="cost-body">
+              <div class="cost-row">
+                <span class="label">Implementation (I): Design, config, testing</span>
+                <span class="value">~&pound;40k</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Running (R2): M365 Copilot + Copilot Studio</span>
+                <span class="value">~&pound;14k/yr</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Maintenance (M2): Agent tuning, updates</span>
+                <span class="value">~&pound;10k/yr</span>
+              </div>
+              <div class="cost-total">
+                <span>TOTAL NEW COST (TNC) = I + R2 + M2</span>
+                <span>&pound;40k + &pound;24k/yr</span>
+              </div>
+            </div>
+          </div>
+          <div class="cost-section">
+            <div class="cost-header" style="background:var(--cap-green); color:white;">New Income</div>
+            <div class="cost-body">
+              <div class="cost-row">
+                <span class="label">Revenue (Rv2): Extra appointments</span>
+                <span class="value">~&pound;100-150k/yr</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Savings: Reduced admin time (50%)</span>
+                <span class="value">~&pound;114k/yr</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Savings: Reduced locum &amp; risk costs</span>
+                <span class="value">~&pound;30-50k/yr</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- New Costs -->
-        <div class="cost-section" style="margin-bottom:12px;">
-          <div class="cost-header new">New Costs (With AgentCare)</div>
-          <div class="cost-body">
-            <div class="cost-row">
-              <span class="label">Implementation (I): Design, config, testing</span>
-              <span class="value">~&pound;40k</span>
-            </div>
-            <div class="cost-row">
-              <span class="label">Running (R2): M365 Copilot + Copilot Studio</span>
-              <span class="value">~&pound;14k/yr</span>
-            </div>
-            <div class="cost-row">
-              <span class="label">Maintenance (M2): Agent tuning, updates</span>
-              <span class="value">~&pound;10k/yr</span>
-            </div>
-            <div class="cost-total">
-              <span>TOTAL NEW COST (TNC) = I + R2 + M2</span>
-              <span>&pound;40k + &pound;24k/yr</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- New Income -->
-        <div class="cost-section" style="margin-bottom:12px;">
-          <div class="cost-header" style="background:var(--cap-green); color:white;">New Income</div>
-          <div class="cost-body">
-            <div class="cost-row">
-              <span class="label">Revenue (Rv2): Extra appointments</span>
-              <span class="value">~&pound;100-150k/yr</span>
-            </div>
-            <div class="cost-row">
-              <span class="label">Savings: Reduced admin time (50%)</span>
-              <span class="value">~&pound;114k/yr</span>
-            </div>
-            <div class="cost-row">
-              <span class="label">Savings: Reduced locum &amp; risk costs</span>
-              <span class="value">~&pound;30-50k/yr</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Break Even -->
-      <div class="section">
-        <h2>BREAK EVEN</h2>
-        <div class="grid-2">
+        <!-- Row 3: Break Even -->
+        <div class="grid-2" style="gap:16px; margin-bottom:12px;">
           <div class="breakeven-box">
             <span class="be-label">Via Implementation Savings</span>
             <span class="be-value">3-5 months</span>
@@ -643,12 +635,10 @@ tr:nth-child(even) { background: #f9fafb; }
             <span class="be-label">&pound;40k implementation / ~&pound;100-150k additional throughput revenue</span>
           </div>
         </div>
-        <p style="margin-top:12px; font-size:0.85rem; color:#555; background:#f9fafb; padding:12px 16px; border-radius:6px;">
+        <p style="font-size:0.85rem; color:#555; background:#f9fafb; padding:12px 16px; border-radius:6px;">
           <strong>BREAK EVEN:</strong> Payback is driven primarily by clinician time recovery. At a 5-GP practice, annual savings (~&pound;114k) plus extra revenue (~&pound;125k) far exceed ongoing costs (~&pound;24k/yr). Implementation cost (&pound;40k) is recovered within 3-5 months. At multi-practice scale, implementation cost is amortised further and ROI accelerates.
         </p>
       </div>
-    </div>
-  </div>
 
   <p style="margin-top:8px; margin-bottom:24px; font-size:0.85rem; color:#555; text-align:center; font-style:italic;">
     Figures are illustrative for a typical 5-GP UK primary care practice. Actual costs vary by region, practice size, and licensing agreements.
