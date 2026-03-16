@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Business Case Proposal</title>
+  <style>
+/* AgentCare Submission â€” Shared Styles */
+:root {
+  --cap-blue: #0070AD;
+  --cap-dark: #003A5D;
+  --cap-light: #E8F4FA;
+  --cap-accent: #00B0F0;
+  --cap-green: #2E8B57;
+  --cap-red: #D9534F;
+  --cap-orange: #F0AD4E;
+  --cap-gray: #6C757D;
+  --cap-bg: #FAFBFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cap-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header bar */
+.header {
+  background: linear-gradient(135deg, var(--cap-dark), var(--cap-blue));
+  color: white;
+  padding: 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+}
+.header .industry {
+  display: inline-block;
+  background: var(--cap-accent);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Section containers */
+.content { padding: 32px 48px; }
+
+.section {
+  margin-bottom: 32px;
+}
+.section h2 {
+  color: var(--cap-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--cap-accent);
+}
+.section h3 {
+  color: var(--cap-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--cap-blue);
+}
+.card.accent { border-left-color: var(--cap-accent); }
+.card.green { border-left-color: var(--cap-green); }
+.card.orange { border-left-color: var(--cap-orange); }
+.card.red { border-left-color: var(--cap-red); }
+
+.card h3 {
+  color: var(--cap-dark);
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+.card p, .card li {
+  font-size: 0.9rem;
+  color: #444;
+}
+.card ul { padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+
+/* KPI boxes */
+.kpi-box {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-accent);
+}
+.kpi-box .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cap-blue);
+  display: block;
+}
+.kpi-box .label {
+  font-size: 0.85rem;
+  color: var(--cap-gray);
+  display: block;
+  margin-top: 4px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+th {
+  background: var(--cap-dark);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: #f9fafb; }
+
+/* Tags / badges */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.high { background: #fde8e8; color: var(--cap-red); }
+.badge.medium { background: #fef3cd; color: #856404; }
+.badge.low { background: #d4edda; color: #155724; }
+.badge.agentic { background: #e8f4fa; color: var(--cap-blue); }
+.badge.genai { background: #f0e6ff; color: #6f42c1; }
+.badge.auto { background: #e2e8f0; color: #475569; }
+
+/* Flow diagram (CSS-based) */
+.flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.flow-step {
+  background: var(--cap-light);
+  border: 2px solid var(--cap-blue);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cap-dark);
+  text-align: center;
+  min-width: 120px;
+}
+.flow-step.highlight {
+  background: var(--cap-blue);
+  color: white;
+}
+.flow-arrow {
+  color: var(--cap-blue);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Agent cards */
+.agent-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-blue);
+  position: relative;
+}
+.agent-card.core { border-top-color: var(--cap-accent); }
+.agent-card h4 {
+  color: var(--cap-dark);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.agent-card p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Navigation bar */
+.nav {
+  background: white;
+  border-bottom: 2px solid var(--cap-light);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav a {
+  color: var(--cap-gray);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav a:hover {
+  color: var(--cap-blue);
+  border-bottom-color: var(--cap-accent);
+}
+.nav a.active {
+  color: var(--cap-dark);
+  font-weight: 700;
+  border-bottom-color: var(--cap-blue);
+}
+.nav .nav-home {
+  font-weight: 700;
+  color: var(--cap-dark);
+  margin-right: 4px;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.nav .nav-spacer { flex: 1; }
+.nav .nav-md {
+  color: var(--cap-gray);
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+.nav .nav-md:hover {
+  background: var(--cap-light);
+  border-color: var(--cap-blue);
+  color: var(--cap-blue);
+}
+
+/* Footer */
+.footer {
+  background: var(--cap-dark);
+  color: white;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Diagram boxes (for architecture) */
+.arch-layer {
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.arch-layer .layer-header {
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.arch-layer .layer-content {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.arch-layer.ui .layer-header { background: #0070AD; color: white; }
+.arch-layer.ui .layer-content { background: #e8f4fa; }
+.arch-layer.orchestration .layer-header { background: #003A5D; color: white; }
+.arch-layer.orchestration .layer-content { background: #dce8f0; }
+.arch-layer.automation .layer-header { background: #2E8B57; color: white; }
+.arch-layer.automation .layer-content { background: #e8f5e9; }
+.arch-layer.data .layer-header { background: #6C757D; color: white; }
+.arch-layer.data .layer-content { background: #f0f0f0; }
+
+.arch-box {
+  background: white;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Stakeholder list */
+.stakeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.stakeholder .icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.stakeholder .icon.clinician { background: #e8f4fa; }
+.stakeholder .icon.patient { background: #e8f5e9; }
+.stakeholder .icon.admin { background: #fef3cd; }
+.stakeholder .icon.lead { background: #f0e6ff; }
+
+/* Workflow diagram steps */
+.workflow {
+  position: relative;
+  padding: 16px 0;
+}
+.workflow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.workflow-step .step-num {
+  width: 32px; height: 32px;
+  background: var(--cap-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.workflow-step .step-num.human {
+  background: var(--cap-accent);
+}
+.workflow-step .step-content {
+  flex: 1;
+}
+.workflow-step .step-content .agent {
+  font-size: 0.75rem;
+  color: var(--cap-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Print styles */
+@media print {
+  body { max-width: 100%; }
+  .header { break-after: avoid; }
+  .section { break-inside: avoid; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  table { box-shadow: none; border: 1px solid #ddd; }
+}
+
+/* Page-specific styles */
+
+    .cost-section {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .cost-header {
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .cost-header.current { background: var(--cap-dark); color: white; }
+    .cost-header.new { background: var(--cap-blue); color: white; }
+    .cost-body { padding: 20px; }
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+    .cost-row:last-child { border-bottom: none; }
+    .cost-row .label { color: #555; }
+    .cost-row .value { font-weight: 600; color: var(--cap-dark); }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      font-weight: 700;
+      border-top: 2px solid var(--cap-dark);
+      margin-top: 8px;
+    }
+    .breakeven-box {
+      background: linear-gradient(135deg, var(--cap-blue), var(--cap-dark));
+      color: white;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .breakeven-box .be-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      display: block;
+      margin: 8px 0;
+    }
+    .breakeven-box .be-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .risk-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 16px;
+      margin-bottom: 12px;
+      align-items: start;
+    }
+    .risk-name {
+      font-weight: 600;
+      color: var(--cap-dark);
+      font-size: 0.9rem;
+    }
+    .risk-mitigation {
+      font-size: 0.85rem;
+      color: #555;
+    }
+  
+</style>
+  
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-home" href="../index.html" title="Home">&#x2302;</a>
+  <a href="01-case-overview.html">01 - Case Overview</a>
+  <a href="02-business-process.html">02 - Business Process</a>
+  <a href="03-functional-solution.html">03 - Functional Solution</a>
+  <a href="04-technical-solution.html">04 - Technical Solution</a>
+  <a class="active" href="05-business-case.html">05 - Business Case</a>
+  <span class="nav-spacer"></span>
+  <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+</div>
+
+<div class="header">
+  <span class="industry">Healthcare</span>
+  <h1>Business Case Proposal</h1>
+  <div class="subtitle">AgentCare — Return on investment through clinician capacity recovery and clinical quality</div>
+</div>
+
+<div class="content">
+
+  <div class="grid-2" style="align-items:start;">
+
+    <!-- ==================== LEFT: WHY ==================== -->
+    <div>
+      <div class="section">
+        <h2>WHY</h2>
+
+        <h3>KPIs Impacted</h3>
+        <ul style="font-size:0.9rem; color:#444; padding-left:20px; margin-bottom:16px;">
+          <li><strong>-50%</strong> Clinician admin time per consultation</li>
+          <li><strong>-95%</strong> Documentation turnaround (minutes &rarr; seconds)</li>
+          <li><strong>-80%</strong> Triage to appointment time (hours &rarr; minutes)</li>
+          <li><strong>+20-30%</strong> Guideline adherence (from ~70% to &gt;90%)</li>
+          <li><strong>&gt;85%</strong> Missed referral catch rate (new capability)</li>
+          <li><strong>-40%</strong> Phone call volume reduction</li>
+          <li><strong>&gt;95%</strong> Drug interaction detection rate</li>
+          <li><strong>-70%</strong> Patient referral query calls</li>
+        </ul>
+
+        <h3>Business Impact</h3>
+        <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
+          Today&#x2019;s clinical workflows are fragmented &#x2014; clinicians, admin, and patients all compensate for disconnected systems. This creates information bottlenecks, constant micro-delays, and a failure to surface early warning signals. AgentCare recovers <strong>20+ minutes per hour</strong> of clinician time, enabling 2-3 extra patient appointments per clinician per day.
+        </p>
+        <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
+          The clinical safety net (drug interactions, guideline gaps, missed referrals) makes <strong>evidence-based practice the default</strong>. Self-service triage replaces the phone bottleneck &#x2014; the #1 source of patient frustration in primary care.
+        </p>
+
+        <div style="background:var(--cap-light); border-radius:8px; padding:16px; margin-top:12px; font-size:0.85rem;">
+          <strong style="color:var(--cap-dark);">Illustrative scenario — 5-GP practice:</strong>
+          <ul style="padding-left:16px; margin-top:8px; color:#444;">
+            <li>GP admin time saved: ~&pound;114k/year (50% of &pound;228k admin cost)</li>
+            <li>Extra revenue: ~&pound;100-150k/year (2-3 extra appointments/GP/day)</li>
+            <li>Reduced locum dependency, fewer adverse events, better patient satisfaction</li>
+          </ul>
+        </div>
+
+        <h3>What AgentCare Delivers</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
+          <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #00B0F0;">
+            <strong style="color:#003A5D; font-size:0.88rem;">Reducing cognitive load</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Not just workload &#x2014; synthesis, summarisation, and context-bridging across fragmented systems</p>
+          </div>
+          <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #0070AD;">
+            <strong style="color:#003A5D; font-size:0.88rem;">Creating workflow certainty</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Status visibility, predictable next steps, no more chasing across channels</p>
+          </div>
+          <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #2E8B57;">
+            <strong style="color:#003A5D; font-size:0.88rem;">Replacing ambiguity with clarity</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Structured triage data, complete referrals, consistent patient communication</p>
+          </div>
+          <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #F0AD4E;">
+            <strong style="color:#003A5D; font-size:0.88rem;">Removing fragmentation</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Single orchestration layer across email, Teams, EMR, templates, and patient interactions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== RIGHT: BUSINESS CASE ==================== -->
+    <div>
+      <div class="section">
+        <h2>BUSINESS CASE</h2>
+
+        <!-- Current Costs -->
+        <div class="cost-section" style="margin-bottom:12px;">
+          <div class="cost-header current">Current Costs</div>
+          <div class="cost-body">
+            <div class="cost-row">
+              <span class="label">Running (R1): Clinician admin time</span>
+              <span class="value">~&pound;228k/yr</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Running (R1): Admin staff (phones, referrals)</span>
+              <span class="value">~&pound;75k/yr</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Maintenance (M1): Error correction, rework</span>
+              <span class="value">~&pound;15k/yr</span>
+            </div>
+            <div class="cost-total">
+              <span>TOTAL CURRENT COST (TCC) = R1 + M1</span>
+              <span>~&pound;318k/yr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Income -->
+        <div class="cost-section" style="margin-bottom:12px;">
+          <div class="cost-header" style="background:#6c757d; color:white;">Current Income</div>
+          <div class="cost-body">
+            <div class="cost-row">
+              <span class="label">Revenue (Rv1): Patient throughput</span>
+              <span class="value">Constrained by admin burden</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Costs -->
+        <div class="cost-section" style="margin-bottom:12px;">
+          <div class="cost-header new">New Costs (With AgentCare)</div>
+          <div class="cost-body">
+            <div class="cost-row">
+              <span class="label">Implementation (I): Design, config, testing</span>
+              <span class="value">~&pound;40k</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Running (R2): M365 Copilot + Copilot Studio</span>
+              <span class="value">~&pound;14k/yr</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Maintenance (M2): Agent tuning, updates</span>
+              <span class="value">~&pound;10k/yr</span>
+            </div>
+            <div class="cost-total">
+              <span>TOTAL NEW COST (TNC) = I + R2 + M2</span>
+              <span>&pound;40k + &pound;24k/yr</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Income -->
+        <div class="cost-section" style="margin-bottom:12px;">
+          <div class="cost-header" style="background:var(--cap-green); color:white;">New Income</div>
+          <div class="cost-body">
+            <div class="cost-row">
+              <span class="label">Revenue (Rv2): Extra appointments</span>
+              <span class="value">~&pound;100-150k/yr</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Savings: Reduced admin time (50%)</span>
+              <span class="value">~&pound;114k/yr</span>
+            </div>
+            <div class="cost-row">
+              <span class="label">Savings: Reduced locum &amp; risk costs</span>
+              <span class="value">~&pound;30-50k/yr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Break Even -->
+      <div class="section">
+        <h2>BREAK EVEN</h2>
+        <div class="grid-2">
+          <div class="breakeven-box">
+            <span class="be-label">Via Implementation Savings</span>
+            <span class="be-value">3-5 months</span>
+            <span class="be-label">&pound;40k implementation / ~&pound;114k annual savings = payback in under 5 months</span>
+          </div>
+          <div class="breakeven-box" style="background:linear-gradient(135deg, var(--cap-green), #1a6b3c);">
+            <span class="be-label">Via Extra Revenue</span>
+            <span class="be-value">4-8 months</span>
+            <span class="be-label">&pound;40k implementation / ~&pound;100-150k additional throughput revenue</span>
+          </div>
+        </div>
+        <p style="margin-top:12px; font-size:0.85rem; color:#555; background:#f9fafb; padding:12px 16px; border-radius:6px;">
+          <strong>BREAK EVEN:</strong> Payback is driven primarily by clinician time recovery. At a 5-GP practice, annual savings (~&pound;114k) plus extra revenue (~&pound;125k) far exceed ongoing costs (~&pound;24k/yr). Implementation cost (&pound;40k) is recovered within 3-5 months. At multi-practice scale, implementation cost is amortised further and ROI accelerates.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:8px; margin-bottom:24px; font-size:0.85rem; color:#555; text-align:center; font-style:italic;">
+    Figures are illustrative for a typical 5-GP UK primary care practice. Actual costs vary by region, practice size, and licensing agreements.
+  </p>
+
+  <!-- Risks -->
+  <div class="section">
+    <h2>Risk Factors &amp; Mitigation</h2>
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Clinician adoption resistance</td><td>Embedded in existing M365 tools; advisory only, never blocking consultations</td></tr>
+        <tr><td>AI accuracy concerns</td><td>Confidence indicators, source citations, mandatory human approval; no autonomous decisions</td></tr>
+        <tr><td>Data privacy</td><td>Synthetic data for hackathon; production design assumes NHS/HIPAA-level controls</td></tr>
+        <tr><td>Platform limitations</td><td>SaaS-first approach; escalation path to Foundry/Agent Service if needed</td></tr>
+        <tr><td>Guideline currency</td><td>Automated ingestion pipeline; version tracking in knowledge base</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026</span>
+  <span>Company Confidential &copy; Capgemini 2026</span>
+</div>
+
+</body>
+</html>

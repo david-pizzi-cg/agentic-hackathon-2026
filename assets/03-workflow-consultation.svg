@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" font-family="'Segoe UI', -apple-system, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <filter id="shadowSm" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowR" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0070AD"/>
+    </marker>
+    <marker id="arrowD" viewBox="0 0 7 10" refX="3.5" refY="10" markerWidth="7" markerHeight="10" orient="auto">
+      <polygon points="0 0, 3.5 10, 7 0" fill="#0070AD"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003A5D"/>
+      <stop offset="60%" stop-color="#0070AD"/>
+      <stop offset="100%" stop-color="#0070AD"/>
+    </linearGradient>
+    <linearGradient id="footerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0070AD"/>
+      <stop offset="100%" stop-color="#003A5D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="680" rx="12" fill="#F7F9FB"/>
+
+  <!-- ===== HEADER BAR ===== -->
+  <rect width="1100" height="52" rx="12" fill="url(#headerGrad)"/>
+  <rect y="40" width="1100" height="12" fill="url(#headerGrad)"/>
+  <text x="20" y="33" fill="white" font-size="11" font-weight="600" letter-spacing="1.5" opacity="0.85">CASE OVERVIEW | Healthcare</text>
+  <text x="1080" y="33" text-anchor="end" fill="white" font-size="16" font-weight="700">Consultation with Real-Time Decision Support</text>
+
+  <!-- ===== LEGEND BAR ===== -->
+  <rect x="16" y="62" width="1068" height="32" rx="6" fill="white" filter="url(#shadowSm)"/>
+  <!-- Trigger -->
+  <rect x="28" y="69" width="14" height="14" rx="3" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5"/>
+  <text x="48" y="81" font-size="9.5" fill="#555">Trigger</text>
+  <!-- Doc Agent -->
+  <circle cx="112" cy="76" r="7" fill="#0070AD"/>
+  <circle cx="112" cy="74" r="2.2" fill="white"/>
+  <path d="M108.5,80 Q112,77.5 115.5,80" fill="none" stroke="white" stroke-width="1"/>
+  <text x="124" y="81" font-size="9.5" fill="#555">Documentation Agent</text>
+  <!-- CDS Agent -->
+  <circle cx="248" cy="76" r="7" fill="#00B0F0"/>
+  <circle cx="248" cy="74" r="2.2" fill="white"/>
+  <path d="M244.5,80 Q248,77.5 251.5,80" fill="none" stroke="white" stroke-width="1"/>
+  <text x="260" y="81" font-size="9.5" fill="#555">CDS Agent (core)</text>
+  <!-- Human -->
+  <circle cx="370" cy="76" r="7" fill="none" stroke="#2E8B57" stroke-width="1.8"/>
+  <circle cx="370" cy="74" r="2.2" fill="#2E8B57"/>
+  <path d="M366.5,80 Q370,77.5 373.5,80" fill="none" stroke="#2E8B57" stroke-width="1"/>
+  <text x="382" y="81" font-size="9.5" fill="#555">Human Decision</text>
+  <!-- Decision -->
+  <polygon points="485,69 493,76 485,83 477,76" fill="none" stroke="#E8912D" stroke-width="1.5"/>
+  <text x="500" y="81" font-size="9.5" fill="#555">Decision</text>
+  <!-- Output -->
+  <rect x="558" y="69" width="14" height="14" rx="3" fill="#e8e8e8" stroke="#999" stroke-width="1.5"/>
+  <text x="578" y="81" font-size="9.5" fill="#555">Output / Store</text>
+  <!-- Communication -->
+  <line x1="658" y1="76" x2="688" y2="76" stroke="#0070AD" stroke-width="2"/>
+  <text x="696" y="81" font-size="9.5" fill="#555">Process flow</text>
+  <!-- Audit -->
+  <rect x="780" y="69" width="14" height="14" rx="3" fill="#f0e6ff" stroke="#7B68EE" stroke-width="1.5"/>
+  <text x="800" y="81" font-size="9.5" fill="#555">Audit / Compliance</text>
+
+  <!-- ================================================================ -->
+  <!-- PHASE 1: DURING CONSULTATION                                      -->
+  <!-- ================================================================ -->
+  <text x="20" y="116" font-size="11" fill="#6C757D" font-weight="700" letter-spacing="1.5">PHASE 1: DURING CONSULTATION</text>
+  <line x1="240" y1="112" x2="1084" y2="112" stroke="#ddd" stroke-width="1"/>
+
+  <!-- ROW 1: Trigger + Doc Agent steps -->
+
+  <!-- 1. Trigger -->
+  <rect x="20" y="130" width="120" height="56" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="2" filter="url(#shadow)"/>
+  <text x="80" y="153" text-anchor="middle" font-size="11" font-weight="700" fill="#664d03">TRIGGER</text>
+  <text x="80" y="168" text-anchor="middle" font-size="9.5" fill="#664d03">Consultation starts</text>
+  <text x="80" y="179" text-anchor="middle" font-size="8.5" fill="#997a00">(via Teams)</text>
+
+  <!-- Arrow 1&#x2192;2a -->
+  <line x1="144" y1="158" x2="170" y2="158" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 2a. Doc Agent: Transcription -->
+  <rect x="180" y="130" width="145" height="56" rx="8" fill="#E8F4FA" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="198" cy="148" r="9" fill="#0070AD"/>
+  <circle cx="198" cy="146" r="2.8" fill="white"/>
+  <path d="M194,152.5 Q198,149.5 202,152.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="252" y="150" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">Begin real-time</text>
+  <text x="252" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">transcription</text>
+  <text x="252" y="178" text-anchor="middle" font-size="8.5" fill="#555">Documentation Agent</text>
+
+  <!-- Arrow 2a&#x2192;2b -->
+  <line x1="329" y1="158" x2="355" y2="158" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 2b. Doc Agent: Structure Notes -->
+  <rect x="365" y="130" width="145" height="56" rx="8" fill="#E8F4FA" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="383" cy="148" r="9" fill="#0070AD"/>
+  <circle cx="383" cy="146" r="2.8" fill="white"/>
+  <path d="M379,152.5 Q383,149.5 387,152.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="437" y="150" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">Structure notes</text>
+  <text x="437" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">(SOAP format)</text>
+  <text x="437" y="178" text-anchor="middle" font-size="8.5" fill="#555">Documentation Agent</text>
+
+  <!-- Arrow 2b&#x2192;2c -->
+  <line x1="514" y1="158" x2="540" y2="158" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 2c. Doc Agent: Extract Entities -->
+  <rect x="550" y="130" width="155" height="56" rx="8" fill="#E8F4FA" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="568" cy="148" r="9" fill="#0070AD"/>
+  <circle cx="568" cy="146" r="2.8" fill="white"/>
+  <path d="M564,152.5 Q568,149.5 572,152.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="627" y="150" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">Extract clinical</text>
+  <text x="627" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">entities</text>
+  <text x="627" y="178" text-anchor="middle" font-size="8.5" fill="#555">Symptoms, meds, Dx</text>
+
+  <!-- ROW 2: CDS Agent steps (offset down) -->
+
+  <!-- Vertical connector from row 1 down to row 2 -->
+  <line x1="627" y1="190" x2="627" y2="210" stroke="#0070AD" stroke-width="2"/>
+  <line x1="627" y1="210" x2="92" y2="210" stroke="#0070AD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="92" y1="210" x2="92" y2="220" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 3a. CDS: Retrieve history -->
+  <rect x="20" y="220" width="145" height="56" rx="8" fill="#e0f7ff" stroke="#00B0F0" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="38" cy="238" r="9" fill="#00B0F0"/>
+  <circle cx="38" cy="236" r="2.8" fill="white"/>
+  <path d="M34,242.5 Q38,239.5 42,242.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="92" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Retrieve patient</text>
+  <text x="92" y="254" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">history</text>
+  <text x="92" y="269" text-anchor="middle" font-size="8.5" fill="#555">from Dataverse</text>
+
+  <!-- Arrow -->
+  <line x1="169" y1="248" x2="195" y2="248" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 3b. CDS: Surface past encounters -->
+  <rect x="205" y="220" width="145" height="56" rx="8" fill="#e0f7ff" stroke="#00B0F0" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="223" cy="238" r="9" fill="#00B0F0"/>
+  <circle cx="223" cy="236" r="2.8" fill="white"/>
+  <path d="M219,242.5 Q223,239.5 227,242.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="277" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Surface relevant</text>
+  <text x="277" y="254" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">past encounters</text>
+  <text x="277" y="269" text-anchor="middle" font-size="8.5" fill="#555">CDS Agent</text>
+
+  <!-- Arrow -->
+  <line x1="354" y1="248" x2="380" y2="248" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 3c. CDS: Check medications -->
+  <rect x="390" y="220" width="145" height="56" rx="8" fill="#e0f7ff" stroke="#00B0F0" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="408" cy="238" r="9" fill="#00B0F0"/>
+  <circle cx="408" cy="236" r="2.8" fill="white"/>
+  <path d="M404,242.5 Q408,239.5 412,242.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="462" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Check medication</text>
+  <text x="462" y="254" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">interactions</text>
+  <text x="462" y="269" text-anchor="middle" font-size="8.5" fill="#555">CDS Agent</text>
+
+  <!-- Arrow -->
+  <line x1="539" y1="248" x2="565" y2="248" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 3d. CDS: Match guidelines -->
+  <rect x="575" y="220" width="150" height="56" rx="8" fill="#e0f7ff" stroke="#00B0F0" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="593" cy="238" r="9" fill="#00B0F0"/>
+  <circle cx="593" cy="236" r="2.8" fill="white"/>
+  <path d="M589,242.5 Q593,239.5 597,242.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="650" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Match symptoms</text>
+  <text x="650" y="254" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">vs NICE guidelines</text>
+  <text x="650" y="269" text-anchor="middle" font-size="8.5" fill="#555">CDS Agent</text>
+
+  <!-- Arrow -->
+  <line x1="729" y1="248" x2="755" y2="248" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 3e. Decision diamond: Drug interactions? -->
+  <polygon points="810,220 845,248 810,276 775,248" fill="#fff8e6" stroke="#E8912D" stroke-width="2" filter="url(#shadow)"/>
+  <text x="810" y="245" text-anchor="middle" font-size="9" font-weight="600" fill="#8B5E00">Drug</text>
+  <text x="810" y="256" text-anchor="middle" font-size="9" font-weight="600" fill="#8B5E00">interact?</text>
+
+  <!-- Arrow from diamond right &#x2192; Flag -->
+  <line x1="849" y1="248" x2="875" y2="248" stroke="#E8912D" stroke-width="2"/>
+  <text x="862" y="241" text-anchor="middle" font-size="8" fill="#E8912D" font-weight="600">Yes</text>
+
+  <!-- 3f. Flag interaction alert -->
+  <rect x="885" y="225" width="110" height="46" rx="8" fill="#ffe6e6" stroke="#cc3333" stroke-width="2" filter="url(#shadow)"/>
+  <text x="940" y="245" text-anchor="middle" font-size="10" font-weight="700" fill="#cc3333">&#x26A0; Flag drug</text>
+  <text x="940" y="258" text-anchor="middle" font-size="10" font-weight="700" fill="#cc3333">interaction</text>
+
+  <!-- Arrow from diamond down to No path label -->
+  <line x1="810" y1="276" x2="810" y2="295" stroke="#0070AD" stroke-width="2"/>
+  <text x="824" y="290" font-size="8" fill="#0070AD" font-weight="600">No</text>
+
+  <!-- ROW 3: Human review -->
+
+  <!-- 4. Human: Clinician reviews -->
+  <rect x="730" y="302" width="260" height="56" rx="8" fill="#d4edda" stroke="#2E8B57" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="752" cy="322" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <circle cx="752" cy="319" r="3" fill="#2E8B57"/>
+  <path d="M747,327 Q752,323 757,327" fill="none" stroke="#2E8B57" stroke-width="1.3"/>
+  <text x="860" y="320" text-anchor="middle" font-size="11" font-weight="700" fill="#155724">Clinician reviews AI suggestions</text>
+  <text x="860" y="335" text-anchor="middle" font-size="9.5" fill="#155724">Accept / Edit / Dismiss each recommendation</text>
+  <text x="860" y="348" text-anchor="middle" font-size="8.5" fill="#2E8B57">Decision logged with reason</text>
+
+  <!-- Arrow from flag down to human -->
+  <line x1="940" y1="275" x2="940" y2="298" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- ================================================================ -->
+  <!-- PHASE 2: POST-CONSULTATION                                        -->
+  <!-- ================================================================ -->
+  <text x="20" y="388" font-size="11" fill="#6C757D" font-weight="700" letter-spacing="1.5">PHASE 2: POST-CONSULTATION</text>
+  <line x1="260" y1="384" x2="1084" y2="384" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Vertical connector from Phase 1 to Phase 2 -->
+  <line x1="860" y1="362" x2="860" y2="398" stroke="#0070AD" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="860" y1="398" x2="80" y2="398" stroke="#0070AD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="80" y1="398" x2="80" y2="400" stroke="#0070AD" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 5. Doc Agent: Generate structured notes -->
+  <rect x="20" y="400" width="155" height="52" rx="8" fill="#E8F4FA" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="38" cy="418" r="9" fill="#0070AD"/>
+  <circle cx="38" cy="416" r="2.8" fill="white"/>
+  <path d="M34,422.5 Q38,419.5 42,422.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="97" y="421" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">Generate structured</text>
+  <text x="97" y="434" text-anchor="middle" font-size="10" font-weight="600" fill="#003A5D">clinical notes</text>
+  <text x="97" y="447" text-anchor="middle" font-size="8.5" fill="#555">Documentation Agent</text>
+
+  <!-- Arrow -->
+  <line x1="179" y1="426" x2="210" y2="426" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 6. Human: Review &amp; approve notes -->
+  <rect x="220" y="400" width="160" height="52" rx="8" fill="#d4edda" stroke="#2E8B57" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="240" cy="418" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <circle cx="240" cy="415" r="3" fill="#2E8B57"/>
+  <path d="M235,423 Q240,419 245,423" fill="none" stroke="#2E8B57" stroke-width="1.3"/>
+  <text x="310" y="421" text-anchor="middle" font-size="10" font-weight="700" fill="#155724">Clinician reviews</text>
+  <text x="310" y="434" text-anchor="middle" font-size="10" font-weight="700" fill="#155724">&amp; approves notes</text>
+  <text x="310" y="447" text-anchor="middle" font-size="8.5" fill="#2E8B57">Sign-off required</text>
+
+  <!-- Arrow -->
+  <line x1="384" y1="426" x2="415" y2="426" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 7. Save to Dataverse -->
+  <rect x="425" y="400" width="150" height="52" rx="8" fill="#e8e8e8" stroke="#999" stroke-width="2" filter="url(#shadow)"/>
+  <text x="500" y="421" text-anchor="middle" font-size="10" font-weight="600" fill="#333">Save to Dataverse</text>
+  <text x="500" y="434" text-anchor="middle" font-size="10" fill="#555">Encounter record</text>
+  <text x="500" y="447" text-anchor="middle" font-size="8.5" fill="#777">Structured data store</text>
+
+  <!-- Arrow -->
+  <line x1="579" y1="426" x2="610" y2="426" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 8. CDS: Async guideline compliance -->
+  <rect x="620" y="400" width="170" height="52" rx="8" fill="#e0f7ff" stroke="#00B0F0" stroke-width="2.5" filter="url(#shadow)"/>
+  <circle cx="638" cy="418" r="9" fill="#00B0F0"/>
+  <circle cx="638" cy="416" r="2.8" fill="white"/>
+  <path d="M634,422.5 Q638,419.5 642,422.5" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="705" y="421" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Async guideline</text>
+  <text x="705" y="434" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">compliance check</text>
+  <text x="705" y="447" text-anchor="middle" font-size="8.5" fill="#555">CDS Agent</text>
+
+  <!-- Arrow -->
+  <line x1="794" y1="426" x2="825" y2="426" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- 9. Audit trail updated -->
+  <rect x="835" y="400" width="155" height="52" rx="8" fill="#f0e6ff" stroke="#7B68EE" stroke-width="2" filter="url(#shadow)"/>
+  <text x="912" y="421" text-anchor="middle" font-size="10" font-weight="700" fill="#5B3DBD">Audit trail</text>
+  <text x="912" y="434" text-anchor="middle" font-size="10" font-weight="700" fill="#5B3DBD">updated</text>
+  <text x="912" y="447" text-anchor="middle" font-size="8.5" fill="#7B68EE">Communication logged</text>
+
+  <!-- ================================================================ -->
+  <!-- HUMAN INTERACTION POINTS                                          -->
+  <!-- ================================================================ -->
+  <rect x="16" y="472" width="1068" height="140" rx="8" fill="white" stroke="#2E8B57" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="16" y="472" width="1068" height="28" rx="8" fill="#2E8B57"/>
+  <rect x="16" y="488" width="1068" height="12" fill="#2E8B57"/>
+  <text x="36" y="492" font-size="12" font-weight="700" fill="white" letter-spacing="0.5">HUMAN INTERACTION POINTS</text>
+
+  <!-- Row 1 -->
+  <text x="36" y="524" font-size="13" fill="#2E8B57">&#x2705;</text>
+  <text x="56" y="524" font-size="10.5" fill="#333" font-weight="600">Real-time review:</text>
+  <text x="156" y="524" font-size="10.5" fill="#444">Clinician reviews all surfaced information (patient history, drug alerts, NICE guidelines) during consultation</text>
+
+  <!-- Row 2 -->
+  <text x="36" y="546" font-size="13" fill="#2E8B57">&#x2705;</text>
+  <text x="56" y="546" font-size="10.5" fill="#333" font-weight="600">Decision authority:</text>
+  <text x="164" y="546" font-size="10.5" fill="#444">Clinician decides to accept, modify, or dismiss each AI recommendation &#x2014; decision logged with reason</text>
+
+  <!-- Row 3 -->
+  <text x="36" y="568" font-size="13" fill="#2E8B57">&#x2705;</text>
+  <text x="56" y="568" font-size="10.5" fill="#333" font-weight="600">Notes approval:</text>
+  <text x="148" y="568" font-size="10.5" fill="#444">Clinician reviews and signs off on structured clinical notes before they are saved to Dataverse</text>
+
+  <!-- Row 4 -->
+  <text x="36" y="590" font-size="13" fill="#2E8B57">&#x2705;</text>
+  <text x="56" y="590" font-size="10.5" fill="#333" font-weight="600">Drug interaction alerts:</text>
+  <text x="188" y="590" font-size="10.5" fill="#444">Flagged interactions require clinician acknowledgement before proceeding &#x2014; no autonomous clinical action</text>
+
+  <!-- ===== FOOTER BAR ===== -->
+  <rect x="0" y="626" width="1100" height="54" rx="0" fill="url(#footerGrad)"/>
+  <rect x="0" y="626" width="1100" height="12" rx="0" fill="url(#footerGrad)"/>
+  <rect x="0" y="668" width="1100" height="12" rx="12" fill="url(#footerGrad)"/>
+  <text x="20" y="656" fill="white" font-size="10" opacity="0.85" font-weight="600">AgentCare &#x2014; Workflow 2: Consultation with Real-Time Decision Support</text>
+  <text x="1080" y="656" text-anchor="end" fill="white" font-size="9.5" opacity="0.7">Agents assist, clinicians decide. All actions audited.</text>
+
+</svg>

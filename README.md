@@ -4,7 +4,12 @@ Agentic healthcare workflow orchestrator for the Capgemini | Microsoft Agentic I
 
 ## Problem
 
-Overburdened medical staff and heavy paperwork lead to slower patient service and clinician burnout. Routine tasks like documentation, triage, appointment scheduling, and referral management consume time that should be spent on direct patient care.
+Four systemic issues erode clinical workflow performance:
+
+1. **Fragmentation of workflow** — Clinicians, admin, and patients all compensate for disconnected systems, leading to rework, errors, and burnout
+2. **Information bottlenecks** — Critical information locked inside emails, documents, phone calls, and EMR notes — not structured, visible, or sharable
+3. **Constant micro-delays** — Waiting for replies, checking portals, re-typing data, correcting errors. Individually tiny, together catastrophic
+4. **Failure to surface early warnings** — No proactive highlighting of urgent triage cues, inconsistent documentation, missing referral fields, or duplicated appointments
 
 ## Solution
 
@@ -32,45 +37,44 @@ The system never makes clinical decisions — it presents evidence and the clini
 This repo is the **design and documentation home** for AgentCare. The actual implementation lives in the Power Platform / Copilot Studio environment.
 
 ```
-docs/
-  architecture/       Solution design, platform alignment, resilience, design principles
-  requirements/       Personas, interaction model, data requirements
-  submission/         Hackathon idea and project submission materials
-  decisions/          Lightweight ADRs for key design choices
-assets/               Diagrams, screenshots, demo recordings
-data/                 Synthetic/mock data definitions and sample datasets
+index.html                              Landing page — start here
+html/
+  01-case-overview.html                 Pain points, challenges, KPIs, stakeholders
+  02-business-process.html              Process scope, agent mapping, outcomes
+  03-functional-solution.html           Workflows (triage → consultation → referral), fallbacks
+  04-technical-solution.html            Architecture, platform stack, security
+  05-business-case.html                 KPIs, costs, break-even, risks
+  consolidated-requirements.html        Personas, user stories, scenarios, data model, NFRs
+assets/                                 SVG diagrams (workflows, architecture, pain points)
+context/                                Hackathon template slides and guidance materials
 ```
 
 ## Documentation
 
-- [Solution Overview](docs/architecture/solution-overview.md) — Agents, orchestration flow, guardrails
-- [Platform and Framework Alignment](docs/architecture/platform.md) — Microsoft CAF and AI Decision Framework
-- [Resilience](docs/architecture/resilience.md) — Criticality classification, fallback modes
-- [Design Principles](docs/architecture/design-principles.md) — Core architectural principles
-- [Personas and Interaction Model](docs/requirements/personas.md) — Who uses the system and how
-- [Data Requirements](docs/requirements/data-requirements.md) — Dataverse entities and synthetic data
+### Submission Pages (open `index.html` in a browser)
+
+1. [Case Overview](html/01-case-overview.html) — Process, challenges, use case, KPIs, stakeholders
+2. [Business Process Scope](html/02-business-process.html) — Process hierarchy, agent mapping, outcomes
+3. [Functional Solution](html/03-functional-solution.html) — Workflows, AI-human chemistry, fallbacks
+4. [Technical Solution](html/04-technical-solution.html) — Architecture, platform, security, framework alignment
+5. [Business Case](html/05-business-case.html) — KPIs, cost analysis, break-even, risks
+
+### Reference
+
+- [Consolidated Requirements](html/consolidated-requirements.html) — Personas, user stories, scenarios, data model, NFRs, success metrics
 
 ## Current Phase
 
-Architecture and business requirements — not yet selecting technical implementation. Focus on:
-1. Defining clear user stories and acceptance criteria
-2. Mapping agent responsibilities and interaction patterns
-3. Designing data flows with privacy constraints
-4. Preparing hackathon idea submission
+Idea submission preparation — deadline 30 March 2026. Focus on:
+1. Finalising submission materials (5 slides mapped to template)
+2. Refining business case with quantified KPIs
+3. Validating architecture against judging criteria
+4. Preparing for half-finals presentation
 
 ## TODO
 
-- [ ] Dedicated Responsible AI section
-- [ ] Define success metrics
 - [ ] Define hackathon demo scope vs production vision
-- [ ] Accessibility considerations
-- [ ] Evaluate Dataverse Git integration for Power Platform ALM
-- [ ] Write user stories and acceptance criteria for each agent
-- [ ] Create agent interaction diagrams and data flow architecture
-- [ ] Design Dataverse entity model for mock data
 - [ ] Source or generate synthetic patient data (e.g. Synthea)
 - [ ] Design clinical test scenarios for each agent
-- [ ] Create Copilot Studio Agent Evaluation test sets
-- [ ] Define test personas
-- [ ] Prepare hackathon idea submission materials
 - [ ] Recruit remaining team members (team size 2-5)
+- [ ] Begin Copilot Studio agent implementation post-submission

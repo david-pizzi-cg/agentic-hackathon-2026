@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" font-family="'Segoe UI', -apple-system, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003A5D"/>
+      <stop offset="50%" stop-color="#0070AD"/>
+      <stop offset="100%" stop-color="#0070AD"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="680" rx="12" fill="#FAFBFC"/>
+
+  <!-- Header -->
+  <rect width="1100" height="56" rx="12" fill="url(#headerGrad)"/>
+  <rect y="44" width="1100" height="12" fill="url(#headerGrad)"/>
+  <text x="24" y="28" fill="white" font-size="11" font-weight="600" letter-spacing="0.5">CASE OVERVIEW</text>
+  <text x="150" y="28" fill="white" font-size="11" opacity="0.8" font-style="italic">Healthcare</text>
+  <text x="1076" y="42" text-anchor="end" fill="white" font-size="20" font-weight="700">Technical Solution</text>
+  <text x="24" y="46" fill="white" font-size="13" font-weight="400">Clinical Workflow Orchestration</text>
+
+  <!-- Technologies sidebar -->
+  <rect x="920" y="68" width="168" height="600" rx="8" fill="white" filter="url(#shadow)"/>
+  <rect x="920" y="68" width="168" height="32" rx="8" fill="#003A5D"/>
+  <rect x="920" y="88" width="168" height="12" fill="#003A5D"/>
+  <text x="1004" y="89" text-anchor="middle" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">TECHNOLOGIES</text>
+
+  <text x="936" y="122" font-size="10" font-weight="600" fill="#003A5D">UI Layer</text>
+  <rect x="936" y="128" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
+  <text x="1006" y="142" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">M365 Copilot</text>
+  <rect x="936" y="152" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
+  <text x="1006" y="166" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">Copilot Studio Bot</text>
+
+  <text x="936" y="194" font-size="10" font-weight="600" fill="#003A5D">Orchestration</text>
+  <rect x="936" y="200" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
+  <text x="1006" y="214" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">Copilot Studio</text>
+
+  <text x="936" y="248" font-size="10" font-weight="600" fill="#003A5D">Automation</text>
+  <rect x="936" y="254" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+  <text x="1006" y="268" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">Power Automate</text>
+  <rect x="936" y="278" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+  <text x="1006" y="292" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">AI Builder</text>
+  <rect x="936" y="302" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+  <text x="1006" y="316" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">Power Apps</text>
+
+  <text x="936" y="348" font-size="10" font-weight="600" fill="#003A5D">Data &amp; Analytics</text>
+  <rect x="936" y="354" width="140" height="20" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
+  <text x="1006" y="368" text-anchor="middle" font-size="9" font-weight="500" fill="#333">Dataverse</text>
+  <rect x="936" y="378" width="140" height="20" rx="4" fill="#fef3cd" stroke="#ffc107" stroke-width="1"/>
+  <text x="1006" y="392" text-anchor="middle" font-size="9" font-weight="500" fill="#664d03">Power BI</text>
+  <rect x="936" y="402" width="140" height="20" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
+  <text x="1006" y="416" text-anchor="middle" font-size="9" font-weight="500" fill="#333">Microsoft Fabric</text>
+
+  <text x="936" y="450" font-size="10" font-weight="600" fill="#003A5D">Security</text>
+  <rect x="936" y="456" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
+  <text x="1006" y="470" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Entra ID (RBAC)</text>
+  <rect x="936" y="480" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
+  <text x="1006" y="494" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Encryption at rest/transit</text>
+  <rect x="936" y="504" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
+  <text x="1006" y="518" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Immutable Audit Log</text>
+
+  <!-- ===== LAYER 1: USER INTERFACES ===== -->
+  <rect x="12" y="68" width="896" height="100" rx="8" fill="#e8f4fa" filter="url(#shadow)"/>
+  <rect x="12" y="68" width="896" height="28" rx="8" fill="#0070AD"/>
+  <rect x="12" y="84" width="896" height="12" fill="#0070AD"/>
+  <text x="24" y="88" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">USER INTERFACES</text>
+
+  <!-- UI boxes -->
+  <rect x="24" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="124" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Microsoft Teams / Outlook</text>
+  <text x="124" y="140" text-anchor="middle" font-size="9" fill="#555">Clinician workflows (M365 Copilot)</text>
+
+  <rect x="236" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="336" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Copilot Studio Chatbot</text>
+  <text x="336" y="140" text-anchor="middle" font-size="9" fill="#555">Patient self-service (web/mobile)</text>
+
+  <rect x="448" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="548" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power BI Dashboards</text>
+  <text x="548" y="140" text-anchor="middle" font-size="9" fill="#555">Clinical Lead oversight</text>
+
+  <rect x="660" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="760" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power Apps Portal</text>
+  <text x="760" y="140" text-anchor="middle" font-size="9" fill="#555">Admin operations</text>
+
+  <!-- Vertical connectors -->
+  <line x1="124" y1="168" x2="124" y2="188" stroke="#0070AD" stroke-width="2"/>
+  <line x1="336" y1="168" x2="336" y2="188" stroke="#0070AD" stroke-width="2"/>
+  <line x1="548" y1="168" x2="548" y2="188" stroke="#0070AD" stroke-width="2"/>
+  <line x1="760" y1="168" x2="760" y2="188" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- ===== LAYER 2: ORCHESTRATION ===== -->
+  <rect x="12" y="188" width="896" height="120" rx="8" fill="#dce8f0" filter="url(#shadow)"/>
+  <rect x="12" y="188" width="896" height="28" rx="8" fill="#003A5D"/>
+  <rect x="12" y="204" width="896" height="12" fill="#003A5D"/>
+  <text x="24" y="208" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">COPILOT STUDIO — ORCHESTRATION LAYER</text>
+
+  <!-- Agent boxes -->
+  <rect x="24" y="222" width="164" height="74" rx="6" fill="white" filter="url(#shadow)" stroke="#00B0F0" stroke-width="2"/>
+  <text x="106" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Clinical Decision</text>
+  <text x="106" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Support Agent</text>
+  <rect x="60" y="270" width="44" height="16" rx="4" fill="#00B0F0"/>
+  <text x="82" y="282" text-anchor="middle" font-size="8" font-weight="700" fill="white">CORE</text>
+  <rect x="108" y="270" width="68" height="16" rx="4" fill="#e8f4fa"/>
+  <text x="142" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC + RAG</text>
+
+  <rect x="200" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="274" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Documentation</text>
+  <text x="274" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
+  <rect x="238" y="270" width="72" height="16" rx="4" fill="#f0e6ff"/>
+  <text x="274" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#6f42c1">GEN AI</text>
+
+  <rect x="360" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="434" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Triage</text>
+  <text x="434" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
+  <rect x="398" y="270" width="72" height="16" rx="4" fill="#e8f4fa"/>
+  <text x="434" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC</text>
+
+  <rect x="520" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="594" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Referral</text>
+  <text x="594" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
+  <rect x="558" y="270" width="72" height="16" rx="4" fill="#e8f4fa"/>
+  <text x="594" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC</text>
+
+  <rect x="680" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="754" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Scheduling</text>
+  <text x="754" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
+  <rect x="718" y="270" width="72" height="16" rx="4" fill="#e2e8f0"/>
+  <text x="754" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#475569">AUTOMATION</text>
+
+  <!-- Vertical connectors -->
+  <line x1="200" y1="308" x2="200" y2="328" stroke="#0070AD" stroke-width="2"/>
+  <line x1="400" y1="308" x2="400" y2="328" stroke="#0070AD" stroke-width="2"/>
+  <line x1="600" y1="308" x2="600" y2="328" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- ===== LAYER 3: AUTOMATION ===== -->
+  <rect x="12" y="328" width="896" height="100" rx="8" fill="#e8f5e9" filter="url(#shadow)"/>
+  <rect x="12" y="328" width="896" height="28" rx="8" fill="#2E8B57"/>
+  <rect x="12" y="344" width="896" height="12" fill="#2E8B57"/>
+  <text x="24" y="348" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">POWER PLATFORM — AUTOMATION &amp; INTEGRATION</text>
+
+  <rect x="24" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="159" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power Automate</text>
+  <text x="159" y="400" text-anchor="middle" font-size="9" fill="#555">Event triggers, notifications, status updates</text>
+
+  <rect x="306" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="441" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">AI Builder</text>
+  <text x="441" y="400" text-anchor="middle" font-size="9" fill="#555">Document processing, entity extraction</text>
+
+  <rect x="588" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
+  <text x="723" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Custom Connectors</text>
+  <text x="723" y="400" text-anchor="middle" font-size="9" fill="#555">Clinical guidelines (NICE, BNF)</text>
+
+  <!-- Vertical connectors -->
+  <line x1="200" y1="428" x2="200" y2="448" stroke="#6C757D" stroke-width="2"/>
+  <line x1="460" y1="428" x2="460" y2="448" stroke="#6C757D" stroke-width="2"/>
+  <line x1="720" y1="428" x2="720" y2="448" stroke="#6C757D" stroke-width="2"/>
+
+  <!-- ===== LAYER 4: DATA ===== -->
+  <rect x="12" y="448" width="896" height="100" rx="8" fill="#f0f0f0" filter="url(#shadow)"/>
+  <rect x="12" y="448" width="896" height="28" rx="8" fill="#6C757D"/>
+  <rect x="12" y="464" width="896" height="12" fill="#6C757D"/>
+  <text x="24" y="468" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">DATAVERSE — DATA BACKBONE</text>
+
+  <!-- Data entity boxes -->
+  <rect x="24" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="74" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Patients</text>
+
+  <rect x="132" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="182" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Encounters</text>
+
+  <rect x="240" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="290" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Guidelines</text>
+
+  <rect x="348" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="398" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Medications</text>
+
+  <rect x="456" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="506" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Referrals</text>
+
+  <rect x="564" y="484" width="110" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="619" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Appointments</text>
+
+  <rect x="682" y="484" width="110" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="737" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Triage Records</text>
+
+  <rect x="800" y="484" width="96" height="48" rx="5" fill="white" filter="url(#shadow)"/>
+  <text x="848" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Audit Logs</text>
+
+  <!-- ===== SECURITY BAR ===== -->
+  <rect x="12" y="564" width="896" height="40" rx="6" fill="#d4edda" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="460" y="589" text-anchor="middle" font-size="10" fill="#155724">
+    <tspan font-weight="700">Security &amp; Governance: </tspan>
+    <tspan>Entra ID (RBAC)</tspan>
+    <tspan dx="12">|</tspan>
+    <tspan dx="12">Encryption at rest &amp; transit</tspan>
+    <tspan dx="12">|</tspan>
+    <tspan dx="12">Synthetic data only</tspan>
+    <tspan dx="12">|</tspan>
+    <tspan dx="12">Immutable audit trail</tspan>
+    <tspan dx="12">|</tspan>
+    <tspan dx="12">NHS/HIPAA-ready design</tspan>
+  </text>
+
+  <!-- ===== FRAMEWORK ALIGNMENT ===== -->
+  <rect x="12" y="618" width="440" height="48" rx="6" fill="white" stroke="#0070AD" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="24" y="639" font-size="10" font-weight="700" fill="#003A5D">Microsoft CAF for AI Agents</text>
+  <text x="24" y="655" font-size="9" fill="#555">Plan &#x2192; Govern &#x2192; Build &#x2192; Manage lifecycle</text>
+
+  <rect x="464" y="618" width="444" height="48" rx="6" fill="white" stroke="#00B0F0" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="476" y="639" font-size="10" font-weight="700" fill="#003A5D">Microsoft AI Decision Framework (BXT)</text>
+  <text x="476" y="655" font-size="9" fill="#555">Business (KPIs) + Experience (Teams/chatbot) + Technology (SaaS-first)</text>
+
+</svg>

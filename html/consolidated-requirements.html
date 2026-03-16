@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Consolidated Requirements</title>
+  <style>
+:root {
+  --cap-blue: #0070AD;
+  --cap-dark: #003A5D;
+  --cap-light: #E8F4FA;
+  --cap-accent: #00B0F0;
+  --cap-green: #2E8B57;
+  --cap-red: #D9534F;
+  --cap-orange: #F0AD4E;
+  --cap-gray: #6C757D;
+  --cap-bg: #FAFBFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cap-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Navigation bar */
+.nav {
+  background: white;
+  border-bottom: 2px solid var(--cap-light);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav a {
+  color: var(--cap-gray);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav a:hover {
+  color: var(--cap-blue);
+  border-bottom-color: var(--cap-accent);
+}
+.nav a.active {
+  color: var(--cap-dark);
+  font-weight: 700;
+  border-bottom-color: var(--cap-blue);
+}
+.nav .nav-home {
+  font-weight: 700;
+  color: var(--cap-dark);
+  margin-right: 4px;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.nav .nav-spacer { flex: 1; }
+
+/* Header bar */
+.header {
+  background: linear-gradient(135deg, var(--cap-dark), var(--cap-blue));
+  color: white;
+  padding: 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+}
+.header .industry {
+  display: inline-block;
+  background: var(--cap-accent);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Section containers */
+.content { padding: 32px 48px; }
+
+.section {
+  margin-bottom: 32px;
+}
+.section h2 {
+  color: var(--cap-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--cap-accent);
+}
+.section h3 {
+  color: var(--cap-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--cap-blue);
+}
+.card.accent { border-left-color: var(--cap-accent); }
+.card.green { border-left-color: var(--cap-green); }
+.card.orange { border-left-color: var(--cap-orange); }
+.card.red { border-left-color: var(--cap-red); }
+.card.purple { border-left-color: #6f42c1; }
+
+.card h3 {
+  color: var(--cap-dark);
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+.card h4 {
+  color: var(--cap-blue);
+  margin: 0 0 4px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.card p, .card li {
+  font-size: 0.9rem;
+  color: #444;
+}
+.card ul { padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.85rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+th {
+  background: var(--cap-dark);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 8px 14px;
+  border-bottom: 1px solid #eee;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: #f9fafb; }
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.high { background: #fde8e8; color: var(--cap-red); }
+.badge.medium { background: #fef3cd; color: #856404; }
+.badge.low { background: #d4edda; color: #155724; }
+
+/* Scenario boxes */
+.scenario {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  border-top: 4px solid var(--cap-blue);
+}
+.scenario h4 {
+  color: var(--cap-dark);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.scenario .trigger {
+  background: var(--cap-light);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.scenario ol {
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: #444;
+}
+.scenario ol li { margin-bottom: 6px; }
+.scenario .scenario-meta {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--cap-gray);
+  display: flex;
+  gap: 24px;
+}
+
+/* Flow diagram */
+.flow-code {
+  background: #f0f2f5;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  overflow-x: auto;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  background: var(--cap-dark);
+  color: white;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Persona cards */
+.persona-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.persona-quote {
+  padding: 16px 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.persona-body { padding: 20px; }
+.persona-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cap-dark);
+  margin-bottom: 2px;
+}
+.persona-role {
+  font-size: 0.9rem;
+  color: var(--cap-gray);
+  margin-bottom: 16px;
+}
+.persona-section {
+  margin-bottom: 14px;
+}
+.persona-section h5 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cap-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.persona-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.persona-tag {
+  background: #f0f2f5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  color: #444;
+  line-height: 1.4;
+}
+.persona-tag.fear {
+  background: #fde8e8;
+  color: #721c24;
+}
+.persona-channels {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+/* Print styles */
+@media print {
+  body { max-width: 100%; }
+  .header { break-after: avoid; }
+  .section { break-inside: avoid; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  table { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-home" href="../index.html" title="Home">&#x2302;</a>
+  <a href="01-case-overview.html">01 - Case Overview</a>
+  <a href="02-business-process.html">02 - Business Process</a>
+  <a href="03-functional-solution.html">03 - Functional Solution</a>
+  <a href="04-technical-solution.html">04 - Technical Solution</a>
+  <a href="05-business-case.html">05 - Business Case</a>
+  <span class="nav-spacer"></span>
+  <a class="active" href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+</div>
+
+<div class="header">
+  <span class="industry">Reference</span>
+  <h1>Consolidated Requirements</h1>
+  <div class="subtitle">AgentCare — Personas, user stories, scenarios, data model, and acceptance criteria</div>
+</div>
+
+<div class="content">
+
+  <!-- ==================== 1. PERSONAS ==================== -->
+  <div class="section">
+    <h2>1. Personas</h2>
+    <div class="grid-3">
+
+      <!-- Dr Feelgood — Clinician -->
+      <div class="persona-card">
+        <div class="persona-quote" style="background:#0070AD;">"My day is spent treating patients, but I feel buried under everything that isn't medicine."</div>
+        <div class="persona-body">
+          <div class="persona-name">Dr Feelgood</div>
+          <div class="persona-role">Clinician (Specialist)</div>
+
+          <div class="persona-section">
+            <h5>Situation &amp; Context</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Works in a high-pressure clinical environment with constant time constraints</span>
+              <span class="persona-tag">Alternates between back-to-back consultations and heavy administrative work</span>
+              <span class="persona-tag">Uses multiple disconnected systems (EMR, email, guidelines, referral portals)</span>
+              <span class="persona-tag">Often completes documentation outside working hours to maintain clinical accuracy</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Goals &amp; Motivations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Deliver safe, high-quality, timely care</span>
+              <span class="persona-tag">Spend more time in meaningful patient interaction</span>
+              <span class="persona-tag">Maintain complete, compliant documentation</span>
+              <span class="persona-tag">Keep an up-to-date clinical view of each patient</span>
+              <span class="persona-tag">Reduce mental load across busy clinic days</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Fears &amp; Frustrations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag fear">Falling behind on clinical notes</span>
+              <span class="persona-tag fear">Risk of missing key information due to system overload</span>
+              <span class="persona-tag fear">Referral rejections because information was incomplete</span>
+              <span class="persona-tag fear">Administrative overload leading to burnout</span>
+              <span class="persona-tag fear">Feeling unsupported by outdated workflows</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Tasks &amp; Tactics</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Manually write or dictate consultation notes post-appointment</span>
+              <span class="persona-tag">Search patient history across multiple systems</span>
+              <span class="persona-tag">Manually copy/paste information into referral templates</span>
+              <span class="persona-tag">Track referrals by checking different inboxes or portals</span>
+              <span class="persona-tag">Respond to patient queries sent via email or reception</span>
+              <span class="persona-tag">Manually review clinical guidelines when needed</span>
+              <span class="persona-tag">Fit documentation into gaps between appointments or after hours</span>
+            </div>
+          </div>
+
+          <div class="persona-channels">
+            <strong>Channels:</strong> Microsoft Teams, Outlook (M365 Copilot)<br>
+            <strong>Agents:</strong> Documentation, Clinical Decision Support, Referral, Scheduling
+          </div>
+        </div>
+      </div>
+
+      <!-- Andy — Medical Administrator -->
+      <div class="persona-card">
+        <div class="persona-quote" style="background:#2E8B57;">"Most of my day is firefighting — juggling calls, forms, and chasing information."</div>
+        <div class="persona-body">
+          <div class="persona-name">Andy</div>
+          <div class="persona-role">Medical Administrator</div>
+
+          <div class="persona-section">
+            <h5>Situation &amp; Context</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Acts as the first line of contact for patient queries</span>
+              <span class="persona-tag">Handles phones, inboxes, appointment diaries, and paper records simultaneously</span>
+              <span class="persona-tag">Works within rigid, manual processes for referrals and scheduling</span>
+              <span class="persona-tag">Supports multiple clinicians across clinics</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Goals &amp; Motivations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Keep the practice running smoothly</span>
+              <span class="persona-tag">Reduce bottlenecks in patient communication</span>
+              <span class="persona-tag">Ensure referrals and forms are accurate</span>
+              <span class="persona-tag">Provide patients with timely updates and clarity</span>
+              <span class="persona-tag">Improve accuracy and consistency across admin tasks</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Fears &amp; Frustrations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag fear">Being overwhelmed by high call volume</span>
+              <span class="persona-tag fear">Dealing with incomplete referral information</span>
+              <span class="persona-tag fear">Searching across multiple systems for updates</span>
+              <span class="persona-tag fear">Managing double-bookings and last-minute cancellations</span>
+              <span class="persona-tag fear">Making errors due to time pressure</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Tasks &amp; Tactics</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Answer phones and respond manually to common questions</span>
+              <span class="persona-tag">Manually triage emails and decide urgency</span>
+              <span class="persona-tag">Book appointments by cross-checking multiple calendars</span>
+              <span class="persona-tag">Chase missing information for referrals</span>
+              <span class="persona-tag">Update referral trackers in spreadsheets or shared folders</span>
+              <span class="persona-tag">Call patients to confirm or change appointment times</span>
+              <span class="persona-tag">Maintain manual lists for urgent or at-risk patients</span>
+            </div>
+          </div>
+
+          <div class="persona-channels">
+            <strong>Channels:</strong> Power Apps portal, Teams<br>
+            <strong>Agents:</strong> Scheduling, Referral
+          </div>
+        </div>
+      </div>
+
+      <!-- Paloma — Patient -->
+      <div class="persona-card">
+        <div class="persona-quote" style="background:#7B68EE;">"I just want clear answers and to feel like the system isn't working against me."</div>
+        <div class="persona-body">
+          <div class="persona-name">Paloma</div>
+          <div class="persona-role">Patient</div>
+
+          <div class="persona-section">
+            <h5>Situation &amp; Context</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Experiences uncertainty, symptoms, or anxiety about their health</span>
+              <span class="persona-tag">Seeks timely information about appointments and referrals</span>
+              <span class="persona-tag">Often doesn't understand clinical processes or terminology</span>
+              <span class="persona-tag">May rely on multiple communication modes (phone, email, portal)</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Goals &amp; Motivations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Receive fast, accessible information</span>
+              <span class="persona-tag">Avoid repeating details multiple times</span>
+              <span class="persona-tag">Get clear next steps without chasing</span>
+              <span class="persona-tag">Trust that their care is coordinated and safe</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Fears &amp; Frustrations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag fear">Long wait times for responses</span>
+              <span class="persona-tag fear">Not knowing referral or test progress</span>
+              <span class="persona-tag fear">Confusion about who to contact</span>
+              <span class="persona-tag fear">Feeling lost or overlooked in the system</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Tasks &amp; Tactics</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Phone the clinic repeatedly when worried or unsure</span>
+              <span class="persona-tag">Email symptoms or queries and wait for responses</span>
+              <span class="persona-tag">Attend appointments with limited pre-consultation preparation</span>
+              <span class="persona-tag">Rely on printed letters for referral updates</span>
+              <span class="persona-tag">Chase results or progress manually when not informed</span>
+            </div>
+          </div>
+
+          <div class="persona-channels">
+            <strong>Channels:</strong> Copilot Studio chatbot (web/mobile), proactive notifications (email/SMS)<br>
+            <strong>Agents:</strong> Triage, Scheduling, Referral (status queries)
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clinical Lead — full-width card below -->
+    <div style="margin-top:24px;">
+      <div class="persona-card">
+        <div class="persona-quote" style="background:#6f42c1;">"I need to know that quality standards are being met and that nothing is falling through the cracks."</div>
+        <div class="persona-body">
+          <div class="persona-name">Clinical Lead / Practice Manager</div>
+          <div class="persona-role">Oversight &amp; Governance</div>
+
+          <div class="persona-section">
+            <h5>Situation &amp; Context</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Lack of visibility into workflow bottlenecks</span>
+              <span class="persona-tag">Audit compliance burden</span>
+              <span class="persona-tag">Difficulty measuring clinical quality</span>
+            </div>
+          </div>
+
+          <div class="persona-section">
+            <h5>Goals &amp; Motivations</h5>
+            <div class="persona-tags">
+              <span class="persona-tag">Oversight dashboards showing agent activity, clinician override rates, compliance gaps</span>
+              <span class="persona-tag">Audit trail for governance</span>
+            </div>
+          </div>
+
+          <div class="persona-channels">
+            <strong>Channels:</strong> Power BI dashboards, Teams<br>
+            <strong>Agents:</strong> All agents (via reporting/audit), CDS (quality metrics)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. USER STORIES ==================== -->
+  <div class="section">
+    <h2>2. User Stories</h2>
+
+    <h3>Clinical Decision Support Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CDS-01</td><td>As a clinician, I want relevant patient history surfaced during a consultation so I can make informed decisions</td><td>Allergies, medications, recent encounters displayed within 5s; data from Dataverse</td></tr>
+        <tr><td>CDS-02</td><td>As a clinician, I want drug interaction alerts when discussing new prescriptions</td><td>Interactions flagged in real-time; severity rated; source cited</td></tr>
+        <tr><td>CDS-03</td><td>As a clinician, I want NICE guidelines highlighted based on presenting symptoms</td><td>Guidelines matched to symptoms; displayed as suggestions; dismissible with one click</td></tr>
+        <tr><td>CDS-04</td><td>As a clinician, I want post-consultation review of my notes against guidelines</td><td>Async review triggered after consultation; gaps sent via Outlook with references</td></tr>
+        <tr><td>CDS-05</td><td>As a clinical lead, I want to see override rates and guideline adherence trends</td><td>Dashboard showing acceptance/dismissal rates per clinician, per category</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Documentation Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DOC-01</td><td>As a clinician, I want my consultation auto-summarised into structured clinical notes</td><td>Summary within 60s; structured as complaint, history, examination, plan</td></tr>
+        <tr><td>DOC-02</td><td>As a clinician, I want to review and edit auto-generated notes before finalising</td><td>Draft presented for review; edit, approve, or regenerate; nothing saved without approval</td></tr>
+        <tr><td>DOC-03</td><td>As a clinician, I want structured data extracted from notes for downstream agents</td><td>Diagnosis codes, medications, follow-up actions extracted and passed to orchestration</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Triage Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TRI-01</td><td>As a patient, I want to describe my symptoms and get an urgency assessment</td><td>Urgency categorised (emergency/urgent/routine); emergency directed to 999/A&amp;E</td></tr>
+        <tr><td>TRI-02</td><td>As a patient, I want to be routed to the right service after triage</td><td>Outcome triggers: book appointment, direct to A&amp;E, or self-care advice</td></tr>
+        <tr><td>TRI-03</td><td>As an admin, I want triage results logged for demand planning</td><td>Interactions stored with timestamps, urgency, outcome; accessible via dashboard</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Referral Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>REF-01</td><td>As a clinician, I want referral letters auto-drafted from consultation notes</td><td>Draft from structured notes + patient record; includes history, diagnosis, reason</td></tr>
+        <tr><td>REF-02</td><td>As a clinician, I want to be alerted if a referral was potentially missed</td><td>Post-consultation check flags conditions where referral is recommended per guidelines</td></tr>
+        <tr><td>REF-03</td><td>As a patient, I want to check the status of my referral</td><td>Query chatbot for status; proactive notifications on changes</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Scheduling Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SCH-01</td><td>As a patient, I want to book/reschedule/cancel appointments via chatbot</td><td>Self-service booking; real-time availability; confirmation sent</td></tr>
+        <tr><td>SCH-02</td><td>As an admin, I want urgent triage cases auto-prioritised in the schedule</td><td>Urgent outcomes trigger priority slot allocation; admin notified</td></tr>
+        <tr><td>SCH-03</td><td>As an admin, I want cancelled slots offered to waiting patients</td><td>Cancelled slot notifies next patient; auto-rebooks if confirmed in time window</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 3. KEY SCENARIOS ==================== -->
+  <div class="section">
+    <h2>3. Key Scenarios (End-to-End Workflows)</h2>
+
+    <div class="scenario" style="border-top-color: var(--cap-accent);">
+      <h4>Scenario 1: Consultation with Real-Time Decision Support</h4>
+      <div class="trigger">Trigger: Clinician starts a Teams consultation with a patient</div>
+      <ol>
+        <li><strong>Documentation Agent</strong> joins the call, begins transcribing</li>
+        <li><strong>CDS Agent</strong> retrieves patient record from Dataverse &mdash; surfaces allergies, current medications, recent encounters in the Teams side panel</li>
+        <li>Clinician discusses symptoms; CDS Agent matches symptoms to NICE guidelines, displays relevant pathways</li>
+        <li>Clinician considers prescribing; CDS Agent flags a potential interaction with existing medication (severity: high, source: BNF)</li>
+        <li>Clinician adjusts prescription based on alert</li>
+        <li>Consultation ends; <strong>Documentation Agent</strong> generates structured summary</li>
+        <li>Clinician reviews, edits, and approves notes</li>
+        <li>CDS Agent runs post-consultation review &mdash; no gaps found</li>
+        <li>Approved notes trigger <strong>Referral Agent</strong> to draft a referral letter</li>
+        <li>Clinician reviews and sends referral; patient notified via chatbot</li>
+      </ol>
+      <div class="scenario-meta">
+        <span><strong>Personas:</strong> Clinician, Patient</span>
+        <span><strong>Agents:</strong> Documentation, CDS, Referral</span>
+        <span><strong>KPIs:</strong> Time saved, drug alerts, guideline adherence</span>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <h4>Scenario 2: Patient Self-Service Triage and Booking</h4>
+      <div class="trigger">Trigger: Patient accesses the practice chatbot feeling unwell</div>
+      <ol>
+        <li><strong>Triage Agent</strong> greets patient, asks structured symptom questions (empathetic, plain language)</li>
+        <li>Patient describes chest pain and shortness of breath</li>
+        <li>Triage Agent classifies as <strong style="color:var(--cap-red);">emergency</strong> &mdash; advises calling 999, provides clear instructions</li>
+        <li><em>(Alternative: non-urgent)</em> Triage Agent classifies as routine &mdash; asks about preferences</li>
+        <li><strong>Scheduling Agent</strong> shows available GP slots; patient selects and confirms</li>
+        <li>Confirmation sent; encounter pre-populated with triage summary for the clinician</li>
+        <li>Triage data logged for demand planning</li>
+      </ol>
+      <div class="scenario-meta">
+        <span><strong>Personas:</strong> Patient, Admin</span>
+        <span><strong>Agents:</strong> Triage, Scheduling</span>
+        <span><strong>KPIs:</strong> Triage accuracy, time to appointment, phone reduction</span>
+      </div>
+    </div>
+
+    <div class="scenario" style="border-top-color: var(--cap-orange);">
+      <h4>Scenario 3: Missed Referral Catch</h4>
+      <div class="trigger">Trigger: Post-consultation async review</div>
+      <ol>
+        <li><strong>Documentation Agent</strong> has finalised consultation notes</li>
+        <li><strong>CDS Agent</strong> reviews notes against NICE guidelines</li>
+        <li>CDS Agent identifies symptoms + diagnosis match a referral pathway (e.g. suspected cancer two-week-wait) but no referral was initiated</li>
+        <li>Alert sent to clinician via Outlook: <em>"Based on [guideline], a referral to [specialty] may be indicated. Review recommended."</em></li>
+        <li>Clinician reviews, agrees, initiates referral</li>
+        <li><strong>Referral Agent</strong> drafts letter; clinician approves; patient notified</li>
+        <li>Event logged in audit trail</li>
+      </ol>
+      <div class="scenario-meta">
+        <span><strong>Personas:</strong> Clinician, Patient, Clinical Lead</span>
+        <span><strong>Agents:</strong> Documentation, CDS, Referral</span>
+        <span><strong>KPIs:</strong> Missed referrals caught, time to referral, compliance</span>
+      </div>
+    </div>
+
+    <div class="scenario" style="border-top-color: var(--cap-green);">
+      <h4>Scenario 4: Referral Status Check (Patient-Initiated)</h4>
+      <div class="trigger">Trigger: Patient messages the chatbot asking about their referral</div>
+      <ol>
+        <li>Patient asks: "What's happening with my referral?"</li>
+        <li><strong>Referral Agent</strong> queries Dataverse for referral status</li>
+        <li>Responds in plain language: <em>"Your referral to cardiology was sent on 10 March. The hospital has acknowledged it and you should receive an appointment letter within 2 weeks."</em></li>
+        <li>Patient asks follow-up; agent answers or escalates to admin if outside scope</li>
+        <li>Interaction logged</li>
+      </ol>
+      <div class="scenario-meta">
+        <span><strong>Personas:</strong> Patient</span>
+        <span><strong>Agents:</strong> Referral (via Triage chatbot)</span>
+        <span><strong>KPIs:</strong> Queries resolved without phone call, satisfaction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4. AGENT INTERACTION MODEL ==================== -->
+  <div class="section">
+    <h2>4. Agent Interaction Model</h2>
+
+    <h3>Channels</h3>
+    <table>
+      <thead>
+        <tr><th>Channel</th><th>Mechanism</th><th>Primary Agents</th><th>Personas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Clinician-driven</td><td>Teams / Outlook via M365 Copilot</td><td>Documentation, CDS, Referral</td><td>Clinician</td></tr>
+        <tr><td>Patient-facing</td><td>Copilot Studio chatbot (web/mobile)</td><td>Triage, Scheduling, Referral (status)</td><td>Patient</td></tr>
+        <tr><td>Event-driven</td><td>Power Automate triggers</td><td>CDS (post-consult), Referral (status), Scheduling (slots)</td><td>Automated</td></tr>
+        <tr><td>Oversight</td><td>Power BI dashboards</td><td>All agents (reporting)</td><td>Clinical Lead, Admin</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Agent Communication</h3>
+    <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">Agents communicate through a <strong>central orchestration layer</strong> (Copilot Studio), not point-to-point:</p>
+    <div class="flow-code">
+      Documentation Agent &rarr; [structured notes] &rarr; Orchestrator &rarr; Clinical Decision Support Agent<br>
+      CDS Agent &rarr; [recommendations] &rarr; Orchestrator &rarr; Clinician (Teams)<br>
+      CDS Agent &rarr; [referral recommendation] &rarr; Orchestrator &rarr; Referral Agent<br>
+      Triage Agent &rarr; [urgency + routing] &rarr; Orchestrator &rarr; Scheduling Agent<br>
+      Scheduling Agent &rarr; [confirmation] &rarr; Orchestrator &rarr; Patient (chatbot)
+    </div>
+  </div>
+
+  <!-- ==================== 5. DATA REQUIREMENTS ==================== -->
+  <div class="section">
+    <h2>5. Data Requirements</h2>
+
+    <h3>Dataverse Entity Model</h3>
+    <p style="font-size:0.85rem; color:#555; margin-bottom:8px;">All agents operate against <strong>synthetic data</strong> in Dataverse. No real patient data at any stage.</p>
+    <table>
+      <thead>
+        <tr><th>Entity</th><th>Key Fields</th><th>Used By</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Patient</strong></td><td>ID, name, DOB, allergies, current medications, history summary</td><td>All agents</td></tr>
+        <tr><td><strong>Encounter</strong></td><td>ID, patient, date, clinician, complaint, diagnosis, plan, notes status</td><td>Documentation, CDS</td></tr>
+        <tr><td><strong>Clinical Guideline</strong></td><td>ID, condition, pathway, source (NICE ref), summary, actions</td><td>CDS</td></tr>
+        <tr><td><strong>Medication</strong></td><td>ID, name, class, interactions, contraindications</td><td>CDS</td></tr>
+        <tr><td><strong>Referral</strong></td><td>ID, patient, from clinician, to specialty, status, letter, dates</td><td>Referral</td></tr>
+        <tr><td><strong>Appointment</strong></td><td>ID, patient, clinician, datetime, type, status, triage ref</td><td>Scheduling</td></tr>
+        <tr><td><strong>Triage Record</strong></td><td>ID, patient, datetime, symptoms, urgency, outcome, routing</td><td>Triage</td></tr>
+        <tr><td><strong>Audit Log</strong></td><td>ID, agent, action, entity ref, clinician, timestamp, decision</td><td>All agents</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Synthetic Data Strategy</h3>
+    <ul style="font-size:0.9rem; color:#444; padding-left:20px;">
+      <li>Use <strong>Synthea</strong> or hand-crafted scenarios to generate realistic patient records</li>
+      <li>Minimum dataset: 20 patients with varied histories to demonstrate all scenarios</li>
+      <li>Must include cases that trigger: drug interactions, missed referrals, emergency triage, routine bookings</li>
+      <li>All data clearly marked as synthetic &mdash; no ambiguity</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 6. NON-FUNCTIONAL REQUIREMENTS ==================== -->
+  <div class="section">
+    <h2>6. Non-Functional Requirements</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Privacy &amp; Compliance</h3>
+        <ul>
+          <li>No real PII/PHI at any stage &mdash; synthetic data only (hackathon)</li>
+          <li>Design patterns assume NHS/HIPAA-level sensitivity</li>
+          <li>All data encrypted at rest (Dataverse) and in transit</li>
+          <li>Role-based access: clinicians see patient data; patients see only their own; admin sees operational data</li>
+        </ul>
+      </div>
+
+      <div class="card accent">
+        <h3>Responsible AI</h3>
+        <ul>
+          <li>Agents present evidence with cited sources &mdash; never state diagnoses</li>
+          <li>Confidence indicators on all suggestions (high/medium/low)</li>
+          <li>Clinician override always available and logged</li>
+          <li>No autonomous clinical decisions &mdash; every suggestion requires human approval</li>
+          <li>Bias monitoring: track recommendation patterns across demographics</li>
+        </ul>
+      </div>
+
+      <div class="card orange">
+        <h3>Resilience</h3>
+        <ul>
+          <li><span class="badge high">High</span> Triage, CDS &mdash; must have defined fallback to human</li>
+          <li><span class="badge medium">Medium</span> Documentation, Referral, Scheduling &mdash; manual fallback acceptable</li>
+          <li>Graceful degradation over hard failure</li>
+          <li>Patient-facing agents must clearly communicate when they cannot help</li>
+          <li>Clinician-facing agents must never block a consultation</li>
+        </ul>
+      </div>
+
+      <div class="card green">
+        <h3>Audit &amp; Governance</h3>
+        <ul>
+          <li>Every agent action logged: agent ID, action type, entity affected, clinician decision, timestamp</li>
+          <li>Audit trail persists independently of agent availability</li>
+          <li>Clinical Lead can review all agent activity via dashboard</li>
+          <li>Override rates and guideline adherence tracked for quality improvement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 7. SUCCESS METRICS ==================== -->
+  <div class="section">
+    <h2>7. Success Metrics (KPIs)</h2>
+    <table>
+      <thead>
+        <tr><th>KPI</th><th>Baseline (Manual)</th><th>Target (With AgentCare)</th><th>Measurement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Clinician admin time / consultation</td><td>~40% of appointment</td><td>&lt;20%</td><td>Time tracking in pilot</td></tr>
+        <tr><td>Drug interaction alerts caught</td><td>Variable (human memory)</td><td>&gt;95% detection rate</td><td>Alert log vs known interactions</td></tr>
+        <tr><td>Guideline adherence</td><td>~70% (estimated)</td><td>&gt;90%</td><td>CDS review pass rate</td></tr>
+        <tr><td>Missed referral detection</td><td>Unknown (uncaught)</td><td>&gt;85% catch rate</td><td>CDS flags vs expected referrals</td></tr>
+        <tr><td>Triage to appointment time</td><td>Hours&ndash;days (phone)</td><td>&lt;15 min (self-service)</td><td>Triage &rarr; booking timestamp</td></tr>
+        <tr><td>Phone call volume</td><td>100% (baseline)</td><td>-40% reduction</td><td>Call logs vs chatbot interactions</td></tr>
+        <tr><td>Patient satisfaction (referral)</td><td>Low (anecdotal)</td><td>&gt;80% positive</td><td>Post-interaction survey</td></tr>
+        <tr><td>Documentation turnaround</td><td>Minutes&ndash;hours (manual)</td><td>&lt;60 seconds</td><td>Generation timestamp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026</span>
+  <span>Company Confidential &copy; Capgemini 2026</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="'Segoe UI', -apple-system, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowSmall" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0070AD"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#D9534F"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#856404"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2E8B57"/>
+    </marker>
+    <marker id="arrowGrey" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003A5D"/>
+      <stop offset="60%" stop-color="#0070AD"/>
+      <stop offset="100%" stop-color="#0070AD"/>
+    </linearGradient>
+    <linearGradient id="footerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003A5D"/>
+      <stop offset="100%" stop-color="#003A5D"/>
+    </linearGradient>
+    <!-- Agent icon clip -->
+    <clipPath id="agentClip">
+      <circle cx="0" cy="0" r="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="720" rx="12" fill="#F5F7FA"/>
+
+  <!-- ==================== HEADER BAR ==================== -->
+  <rect width="1100" height="56" rx="12" fill="url(#headerGrad)"/>
+  <rect y="44" width="1100" height="12" fill="url(#headerGrad)"/>
+  <text x="24" y="24" fill="white" font-size="10" font-weight="400" letter-spacing="1.5" opacity="0.85">CASE OVERVIEW | Healthcare</text>
+  <text x="24" y="42" fill="white" font-size="17" font-weight="700">Workflow 1: Patient Triage &amp; Self-Service Booking</text>
+  <text x="1076" y="36" text-anchor="end" fill="white" font-size="11" opacity="0.7">Patient-facing &#x2014; Copilot Studio</text>
+
+  <!-- ==================== LEGEND ==================== -->
+  <rect x="680" y="66" width="400" height="38" rx="6" fill="white" stroke="#ddd" stroke-width="1" filter="url(#shadowSmall)"/>
+  <!-- Agent icon legend -->
+  <circle cx="700" cy="85" r="9" fill="#003A5D"/>
+  <circle cx="700" cy="82" r="3" fill="white"/>
+  <path d="M694,90 Q700,86 706,90" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="716" y="89" font-size="9.5" fill="#444">Agent interacting only with systems</text>
+  <!-- Human icon legend -->
+  <circle cx="880" cy="85" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <circle cx="880" cy="82" r="3" fill="#2E8B57"/>
+  <path d="M874,90 Q880,86 886,90" fill="none" stroke="#2E8B57" stroke-width="1.2"/>
+  <text x="896" y="89" font-size="9.5" fill="#444">Interaction (patient / staff)</text>
+
+  <!-- ==================== ROW 1: INBOUND CHANNELS ==================== -->
+  <text x="24" y="82" font-size="10" font-weight="600" fill="#003A5D" letter-spacing="0.8">INBOUND CHANNELS</text>
+
+  <!-- Web chatbot -->
+  <rect x="24" y="90" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="81" y="113" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">Web Chatbot</text>
+
+  <!-- Phone -->
+  <rect x="24" y="132" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="81" y="155" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">Phone / IVR</text>
+
+  <!-- NHS App -->
+  <rect x="24" y="174" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="81" y="197" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">NHS App</text>
+
+  <!-- Converge arrows to triage agent -->
+  <line x1="139" y1="108" x2="160" y2="108" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="160" y1="108" x2="160" y2="150" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="139" y1="150" x2="160" y2="150" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="139" y1="192" x2="160" y2="192" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="160" y1="150" x2="160" y2="192" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="160" y1="150" x2="185" y2="150" stroke="#0070AD" stroke-width="2"/>
+
+  <!-- ==================== TRIAGE AGENT COLUMN ==================== -->
+  <!-- Agent icon -->
+  <circle cx="214" cy="108" r="14" fill="#003A5D"/>
+  <circle cx="214" cy="104" r="4.5" fill="white"/>
+  <path d="M206,116 Q214,110 222,116" fill="none" stroke="white" stroke-width="1.5"/>
+
+  <text x="214" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Triage Agent</text>
+
+  <!-- Step 1: Greet & verify -->
+  <rect x="195" y="145" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="265" y="162" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Greet patient</text>
+  <text x="265" y="173" text-anchor="middle" font-size="8.5" fill="#555">Verify identity (NHS No.)</text>
+
+  <!-- Arrow down -->
+  <line x1="265" y1="179" x2="265" y2="195" stroke="#0070AD" stroke-width="1.5"/>
+
+  <!-- Step 2: Collect symptoms -->
+  <rect x="195" y="200" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="265" y="217" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Collect symptoms</text>
+  <text x="265" y="228" text-anchor="middle" font-size="8.5" fill="#555">Structured questions</text>
+
+  <!-- Arrow down -->
+  <line x1="265" y1="234" x2="265" y2="250" stroke="#0070AD" stroke-width="1.5"/>
+
+  <!-- Step 3: Assess urgency -->
+  <rect x="195" y="255" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="265" y="272" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Assess urgency</text>
+  <text x="265" y="283" text-anchor="middle" font-size="8.5" fill="#555">Rules + AI classification</text>
+
+  <!-- Arrow down to decision -->
+  <line x1="265" y1="289" x2="265" y2="310" stroke="#0070AD" stroke-width="1.5"/>
+
+  <!-- ==================== DECISION DIAMOND ==================== -->
+  <polygon points="265,315 320,345 265,375 210,345" fill="#f0f0f0" stroke="#888" stroke-width="2" filter="url(#shadow)"/>
+  <text x="265" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#444">Urgency</text>
+  <text x="265" y="354" text-anchor="middle" font-size="9" fill="#666">level?</text>
+
+  <!-- ==================== EMERGENCY BRANCH (TOP - RED) ==================== -->
+  <!-- Arrow right from diamond top-right -->
+  <line x1="320" y1="335" x2="370" y2="335" stroke="#D9534F" stroke-width="2"/>
+  <line x1="370" y1="335" x2="370" y2="280" stroke="#D9534F" stroke-width="1.5"/>
+  <line x1="370" y1="280" x2="400" y2="280" stroke="#D9534F" stroke-width="2"/>
+
+  <!-- Emergency lane -->
+  <rect x="395" y="255" width="680" height="55" rx="8" fill="#fde8e8" opacity="0.4"/>
+
+  <!-- Emergency label -->
+  <rect x="415" y="264" width="85" height="36" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
+  <text x="457" y="287" text-anchor="middle" font-size="10" font-weight="700" fill="white">EMERGENCY</text>
+
+  <line x1="505" y1="282" x2="535" y2="282" stroke="#D9534F" stroke-width="2"/>
+
+  <!-- Display Call 999 -->
+  <rect x="545" y="264" width="160" height="36" rx="6" fill="#fde8e8" stroke="#D9534F" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="625" y="280" text-anchor="middle" font-size="10" font-weight="700" fill="#721c24">Display "Call 999"</text>
+  <text x="625" y="292" text-anchor="middle" font-size="8.5" fill="#721c24">+ nearest A&amp;E info</text>
+
+  <line x1="710" y1="282" x2="740" y2="282" stroke="#D9534F" stroke-width="2"/>
+
+  <!-- Log & End -->
+  <rect x="750" y="264" width="100" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="800" y="280" text-anchor="middle" font-size="10" font-weight="600" fill="#333">Log event</text>
+  <text x="800" y="292" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; End</text>
+
+  <!-- Red label -->
+  <text x="380" y="272" font-size="8" font-weight="700" fill="#D9534F">RED</text>
+
+  <!-- ==================== URGENT BRANCH (MIDDLE - AMBER) ==================== -->
+  <line x1="320" y1="345" x2="370" y2="345" stroke="#856404" stroke-width="2"/>
+  <line x1="370" y1="345" x2="370" y2="370" stroke="#856404" stroke-width="1.5"/>
+  <line x1="370" y1="370" x2="400" y2="370" stroke="#856404" stroke-width="2"/>
+
+  <!-- Urgent lane -->
+  <rect x="395" y="325" width="680" height="100" rx="8" fill="#fef3cd" opacity="0.35"/>
+
+  <!-- Urgent label -->
+  <rect x="415" y="354" width="85" height="36" rx="6" fill="#F0AD4E" filter="url(#shadowSmall)"/>
+  <text x="457" y="377" text-anchor="middle" font-size="10" font-weight="700" fill="white">URGENT</text>
+
+  <line x1="505" y1="372" x2="535" y2="372" stroke="#856404" stroke-width="2"/>
+
+  <!-- Scheduling Agent - priority slot -->
+  <rect x="545" y="354" width="150" height="36" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <!-- Mini agent icon -->
+  <circle cx="565" cy="372" r="8" fill="#003A5D"/>
+  <circle cx="565" cy="369" r="2.5" fill="white"/>
+  <path d="M560,377 Q565,374 570,377" fill="none" stroke="white" stroke-width="1"/>
+  <text x="635" y="370" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Scheduling Agent</text>
+  <text x="635" y="382" text-anchor="middle" font-size="8.5" fill="#555">Book priority slot</text>
+
+  <line x1="700" y1="372" x2="730" y2="372" stroke="#856404" stroke-width="2"/>
+
+  <!-- Notify admin -->
+  <rect x="740" y="354" width="115" height="36" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="797" y="370" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Notify admin</text>
+  <text x="797" y="382" text-anchor="middle" font-size="8.5" fill="#555">team (Teams msg)</text>
+
+  <line x1="860" y1="372" x2="890" y2="372" stroke="#856404" stroke-width="2"/>
+
+  <!-- Confirm to patient -->
+  <rect x="900" y="354" width="135" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="967" y="370" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Confirmation</text>
+  <text x="967" y="382" text-anchor="middle" font-size="8.5" fill="#666">SMS + email</text>
+
+  <!-- Amber label -->
+  <text x="380" y="395" font-size="8" font-weight="700" fill="#856404">AMBER</text>
+
+  <!-- ==================== ROUTINE BRANCH (BOTTOM - GREEN) ==================== -->
+  <line x1="265" y1="375" x2="265" y2="465" stroke="#2E8B57" stroke-width="2"/>
+  <line x1="265" y1="465" x2="400" y2="465" stroke="#2E8B57" stroke-width="2"/>
+
+  <!-- Routine lane -->
+  <rect x="395" y="435" width="680" height="100" rx="8" fill="#d4edda" opacity="0.35"/>
+
+  <!-- Routine label -->
+  <rect x="415" y="448" width="85" height="36" rx="6" fill="#2E8B57" filter="url(#shadowSmall)"/>
+  <text x="457" y="471" text-anchor="middle" font-size="10" font-weight="700" fill="white">ROUTINE</text>
+
+  <line x1="505" y1="466" x2="535" y2="466" stroke="#2E8B57" stroke-width="2"/>
+
+  <!-- Present slots -->
+  <rect x="545" y="448" width="130" height="36" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <!-- Mini agent icon -->
+  <circle cx="563" cy="466" r="8" fill="#003A5D"/>
+  <circle cx="563" cy="463" r="2.5" fill="white"/>
+  <path d="M558,471 Q563,468 568,471" fill="none" stroke="white" stroke-width="1"/>
+  <text x="625" y="464" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Present slots</text>
+  <text x="625" y="476" text-anchor="middle" font-size="8.5" fill="#555">to patient</text>
+
+  <line x1="680" y1="466" x2="710" y2="466" stroke="#2E8B57" stroke-width="2"/>
+
+  <!-- HUMAN: Patient selects slot -->
+  <rect x="720" y="448" width="130" height="36" rx="6" fill="#d4edda" stroke="#2E8B57" stroke-width="2" filter="url(#shadowSmall)"/>
+  <!-- Human icon with ring -->
+  <circle cx="742" cy="466" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <circle cx="742" cy="462" r="3" fill="#2E8B57"/>
+  <path d="M736,471 Q742,467 748,471" fill="none" stroke="#2E8B57" stroke-width="1.2"/>
+  <text x="795" y="464" text-anchor="middle" font-size="9" font-weight="600" fill="#155724">Patient selects</text>
+  <text x="795" y="476" text-anchor="middle" font-size="8.5" fill="#155724">preferred slot</text>
+
+  <line x1="855" y1="466" x2="885" y2="466" stroke="#2E8B57" stroke-width="2"/>
+
+  <!-- Scheduling Agent confirms -->
+  <rect x="895" y="448" width="140" height="36" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="913" cy="466" r="8" fill="#003A5D"/>
+  <circle cx="913" cy="463" r="2.5" fill="white"/>
+  <path d="M908,471 Q913,468 918,471" fill="none" stroke="white" stroke-width="1"/>
+  <text x="960" y="464" text-anchor="middle" font-size="9" font-weight="600" fill="#003A5D">Confirm booking</text>
+  <text x="960" y="476" text-anchor="middle" font-size="8.5" fill="#555">+ pre-visit info</text>
+
+  <!-- Routine confirmation output below -->
+  <line x1="965" y1="484" x2="965" y2="505" stroke="#2E8B57" stroke-width="1.5"/>
+
+  <rect x="895" y="510" width="140" height="28" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="965" y="528" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">SMS + email sent</text>
+
+  <!-- Green label -->
+  <text x="275" y="460" font-size="8" font-weight="700" fill="#2E8B57">GREEN</text>
+
+  <!-- ==================== COMMUNICATION / LOGGING COLUMN ==================== -->
+  <!-- Vertical logging bar on far right -->
+  <rect x="1050" y="255" width="30" height="290" rx="4" fill="#E8F4FA" stroke="#0070AD" stroke-width="1" opacity="0.6"/>
+  <text x="1065" y="400" text-anchor="middle" font-size="8" fill="#003A5D" transform="rotate(-90, 1065, 400)" font-weight="600">DATAVERSE LOGGING</text>
+
+  <!-- Arrows from each lane to logging bar -->
+  <line x1="855" y1="282" x2="1045" y2="282" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1040" y1="372" x2="1045" y2="372" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1040" y1="524" x2="1045" y2="524" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+
+  <!-- ==================== HUMAN INTERACTION POINTS ==================== -->
+  <rect x="24" y="560" width="1052" height="108" rx="8" fill="white" stroke="#2E8B57" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="40" y="583" font-size="12" font-weight="700" fill="#003A5D">Human Interaction Points</text>
+
+  <text x="40" y="605" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="605" font-size="10.5" fill="#444">Emergency: patient directed to call 999 immediately &#x2014; agent does not handle clinical emergencies</text>
+
+  <text x="40" y="625" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="625" font-size="10.5" fill="#444">Routine: patient actively selects from available appointment slots (agent presents options, patient decides)</text>
+
+  <text x="40" y="645" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="645" font-size="10.5" fill="#444">Urgent: admin staff notified via Teams and have full visibility; can intervene or override at any point</text>
+
+  <text x="40" y="660" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="660" font-size="10.5" fill="#444">All branches: complete triage record created in Dataverse with timestamps, urgency classification, and outcome</text>
+
+  <!-- ==================== FOOTER BAR ==================== -->
+  <rect y="680" width="1100" height="40" fill="#003A5D"/>
+  <rect y="708" width="1100" height="12" rx="12" fill="#003A5D"/>
+  <text x="24" y="704" fill="white" font-size="9.5" opacity="0.7">AgentCare &#x2014; Capgemini | Microsoft Agentic Industry Hackathon 2026</text>
+  <text x="1076" y="704" text-anchor="end" fill="white" font-size="9.5" opacity="0.7">All interactions logged &#x2014; No autonomous clinical decisions</text>
+
+</svg>

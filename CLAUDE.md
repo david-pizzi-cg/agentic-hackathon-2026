@@ -12,26 +12,24 @@ When implementation begins, Power Platform solution objects can be synced to sou
 
 ## Project Structure
 
-- `docs/architecture/` — Solution design, agent interaction diagrams, data flow, platform alignment
-- `docs/requirements/` — Business requirements, personas, user journeys, data requirements
-- `docs/submission/` — Hackathon idea and project submission materials
-- `docs/decisions/` — Lightweight ADRs for key design choices
-- `assets/` — Diagrams, screenshots, demo recordings
-- `data/` — Synthetic/mock data definitions and sample datasets for Dataverse seeding
+- `index.html` — Landing page (start here)
+- `html/` — Submission-ready HTML pages (self-contained, one per template slide) + consolidated requirements
+- `assets/` — SVG diagrams (workflows, architecture, pain points, business process scope)
+- `context/` — Hackathon template slides and guidance materials
 
 ## Current Phase
 
-Architecture and business requirements — not yet selecting technical implementation. Focus on:
-1. Defining clear user stories and acceptance criteria
-2. Mapping agent responsibilities and interaction patterns
-3. Designing data flows with privacy constraints
-4. Preparing hackathon idea submission
+Idea submission preparation — deadline 30 March 2026. Focus on:
+1. Finalising submission materials (5 slides mapped to template)
+2. Refining business case with quantified KPIs
+3. Validating architecture against judging criteria
+4. Preparing for half-finals presentation
 
 ## Conventions
 
 - Commits: Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`)
 - Branches: `feature/<short-desc>`, `fix/<short-desc>`, `docs/<short-desc>`
-- Document decisions in `docs/decisions/` as lightweight ADRs
+- Document decisions as lightweight ADRs
 
 ## Don't
 

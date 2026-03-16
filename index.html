@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Hackathon Submission</title>
+  <style>
+/* AgentCare Submission â€” Shared Styles */
+:root {
+  --cap-blue: #0070AD;
+  --cap-dark: #003A5D;
+  --cap-light: #E8F4FA;
+  --cap-accent: #00B0F0;
+  --cap-green: #2E8B57;
+  --cap-red: #D9534F;
+  --cap-orange: #F0AD4E;
+  --cap-gray: #6C757D;
+  --cap-bg: #FAFBFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cap-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header bar */
+.header {
+  background: linear-gradient(135deg, var(--cap-dark), var(--cap-blue));
+  color: white;
+  padding: 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+}
+.header .industry {
+  display: inline-block;
+  background: var(--cap-accent);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Section containers */
+.content { padding: 32px 48px; }
+
+.section {
+  margin-bottom: 32px;
+}
+.section h2 {
+  color: var(--cap-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--cap-accent);
+}
+.section h3 {
+  color: var(--cap-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--cap-blue);
+}
+.card.accent { border-left-color: var(--cap-accent); }
+.card.green { border-left-color: var(--cap-green); }
+.card.orange { border-left-color: var(--cap-orange); }
+.card.red { border-left-color: var(--cap-red); }
+
+.card h3 {
+  color: var(--cap-dark);
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+.card p, .card li {
+  font-size: 0.9rem;
+  color: #444;
+}
+.card ul { padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+
+/* KPI boxes */
+.kpi-box {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-accent);
+}
+.kpi-box .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cap-blue);
+  display: block;
+}
+.kpi-box .label {
+  font-size: 0.85rem;
+  color: var(--cap-gray);
+  display: block;
+  margin-top: 4px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+th {
+  background: var(--cap-dark);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: #f9fafb; }
+
+/* Tags / badges */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.high { background: #fde8e8; color: var(--cap-red); }
+.badge.medium { background: #fef3cd; color: #856404; }
+.badge.low { background: #d4edda; color: #155724; }
+.badge.agentic { background: #e8f4fa; color: var(--cap-blue); }
+.badge.genai { background: #f0e6ff; color: #6f42c1; }
+.badge.auto { background: #e2e8f0; color: #475569; }
+
+/* Flow diagram (CSS-based) */
+.flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.flow-step {
+  background: var(--cap-light);
+  border: 2px solid var(--cap-blue);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cap-dark);
+  text-align: center;
+  min-width: 120px;
+}
+.flow-step.highlight {
+  background: var(--cap-blue);
+  color: white;
+}
+.flow-arrow {
+  color: var(--cap-blue);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Agent cards */
+.agent-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-blue);
+  position: relative;
+}
+.agent-card.core { border-top-color: var(--cap-accent); }
+.agent-card h4 {
+  color: var(--cap-dark);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.agent-card p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Navigation bar */
+.nav {
+  background: white;
+  border-bottom: 2px solid var(--cap-light);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav a {
+  color: var(--cap-gray);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav a:hover {
+  color: var(--cap-blue);
+  border-bottom-color: var(--cap-accent);
+}
+.nav a.active {
+  color: var(--cap-dark);
+  font-weight: 700;
+  border-bottom-color: var(--cap-blue);
+}
+.nav .nav-home {
+  font-weight: 700;
+  color: var(--cap-dark);
+  margin-right: 4px;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.nav .nav-spacer { flex: 1; }
+.nav .nav-md {
+  color: var(--cap-gray);
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+.nav .nav-md:hover {
+  background: var(--cap-light);
+  border-color: var(--cap-blue);
+  color: var(--cap-blue);
+}
+
+/* Footer */
+.footer {
+  background: var(--cap-dark);
+  color: white;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Diagram boxes (for architecture) */
+.arch-layer {
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.arch-layer .layer-header {
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.arch-layer .layer-content {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.arch-layer.ui .layer-header { background: #0070AD; color: white; }
+.arch-layer.ui .layer-content { background: #e8f4fa; }
+.arch-layer.orchestration .layer-header { background: #003A5D; color: white; }
+.arch-layer.orchestration .layer-content { background: #dce8f0; }
+.arch-layer.automation .layer-header { background: #2E8B57; color: white; }
+.arch-layer.automation .layer-content { background: #e8f5e9; }
+.arch-layer.data .layer-header { background: #6C757D; color: white; }
+.arch-layer.data .layer-content { background: #f0f0f0; }
+
+.arch-box {
+  background: white;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Stakeholder list */
+.stakeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.stakeholder .icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.stakeholder .icon.clinician { background: #e8f4fa; }
+.stakeholder .icon.patient { background: #e8f5e9; }
+.stakeholder .icon.admin { background: #fef3cd; }
+.stakeholder .icon.lead { background: #f0e6ff; }
+
+/* Workflow diagram steps */
+.workflow {
+  position: relative;
+  padding: 16px 0;
+}
+.workflow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.workflow-step .step-num {
+  width: 32px; height: 32px;
+  background: var(--cap-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.workflow-step .step-num.human {
+  background: var(--cap-accent);
+}
+.workflow-step .step-content {
+  flex: 1;
+}
+.workflow-step .step-content .agent {
+  font-size: 0.75rem;
+  color: var(--cap-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Print styles */
+@media print {
+  body { max-width: 100%; }
+  .header { break-after: avoid; }
+  .section { break-inside: avoid; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  table { box-shadow: none; border: 1px solid #ddd; }
+}
+
+/* Page-specific styles */
+
+    .hero {
+      background: linear-gradient(135deg, var(--cap-dark) 0%, var(--cap-blue) 60%, var(--cap-accent) 100%);
+      color: white;
+      padding: 64px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    }
+    .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 8px; position: relative; }
+    .hero .tagline { font-size: 1.2rem; opacity: 0.9; font-weight: 300; position: relative; }
+    .hero .meta { margin-top: 16px; font-size: 0.9rem; opacity: 0.7; position: relative; }
+
+    .slide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .slide-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .slide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .slide-card .slide-header {
+      padding: 20px 24px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .slide-card .slide-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      opacity: 0.3;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .slide-card .slide-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-left: auto;
+    }
+    .slide-card .slide-body {
+      padding: 20px 24px;
+    }
+    .slide-card .slide-body p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .slide-card .slide-body .slide-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .slide-card .slide-body .slide-tag {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: var(--cap-light);
+      color: var(--cap-blue);
+      font-weight: 500;
+    }
+    .slide-card .slide-footer {
+      padding: 12px 24px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .slide-card .slide-footer .view-html { color: var(--cap-blue); font-weight: 600; }
+
+    .slide-card:nth-child(1) .slide-header { background: linear-gradient(135deg, #003A5D, #0070AD); }
+    .slide-card:nth-child(2) .slide-header { background: linear-gradient(135deg, #0070AD, #00B0F0); }
+    .slide-card:nth-child(3) .slide-header { background: linear-gradient(135deg, #005a8c, #0070AD); }
+    .slide-card:nth-child(4) .slide-header { background: linear-gradient(135deg, #1a6b3c, #2E8B57); }
+    .slide-card:nth-child(5) .slide-header { background: linear-gradient(135deg, #003A5D, #005a8c); }
+
+    .ref-section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 32px 0;
+    }
+    .ref-section h3 { color: var(--cap-dark); margin-bottom: 12px; }
+    .ref-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--cap-dark);
+      font-size: 0.9rem;
+      margin: 4px 8px 4px 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .ref-link:hover { border-color: var(--cap-blue); background: var(--cap-light); }
+  
+</style>
+  
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-home active" href="index.html" title="Home">&#x2302;</a>
+  <a href="html/01-case-overview.html">01 - Case Overview</a>
+  <a href="html/02-business-process.html">02 - Business Process</a>
+  <a href="html/03-functional-solution.html">03 - Functional Solution</a>
+  <a href="html/04-technical-solution.html">04 - Technical Solution</a>
+  <a href="html/05-business-case.html">05 - Business Case</a>
+  <span class="nav-spacer"></span>
+  <a href="html/consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+</div>
+
+<div class="hero">
+  <h1>AgentCare</h1>
+  <div class="tagline">Agentic Healthcare Workflow Orchestrator</div>
+  <div class="meta">Capgemini | Microsoft Agentic Industry Hackathon 2026 &mdash; Idea Submission</div>
+</div>
+
+<div class="content">
+
+  <div class="section" style="text-align:center; max-width:700px; margin:0 auto 40px;">
+    <p style="font-size:1.05rem; color:#444; line-height:1.7;">
+      Five specialised AI agents orchestrated through Microsoft Copilot Studio to automate clinical administration and augment clinical decision-making &mdash; freeing clinicians from paperwork so they can focus on patients.
+    </p>
+  </div>
+
+  <!-- Consolidated Requirements -->
+  <a class="slide-card" style="display:block; margin-bottom:24px;" href="html/consolidated-requirements.html">
+    <div class="slide-header" style="background:linear-gradient(135deg, #0070AD, #00B0F0); display:flex; align-items:center; justify-content:space-between;">
+      <div class="slide-title" style="margin-left:0;">Consolidated Requirements</div>
+      <span style="font-size:0.85rem; opacity:0.9; font-weight:400;">Personas, user stories, scenarios, data model, NFRs, success metrics</span>
+    </div>
+  </a>
+
+  <!-- Slide Cards -->
+  <div class="slide-grid">
+
+    <a class="slide-card" href="html/01-case-overview.html">
+      <div class="slide-header">
+        <span class="slide-num">01</span>
+        <div class="slide-title">Case Overview</div>
+      </div>
+      <div class="slide-body">
+        <p>Process description, business challenges, use case summary, KPIs, business impact, and stakeholders.</p>
+        <div class="slide-tags">
+          <span class="slide-tag">What</span>
+          <span class="slide-tag">Why</span>
+          <span class="slide-tag">Who</span>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span class="view-html">View page &rarr;</span>
+      </div>
+    </a>
+
+    <a class="slide-card" href="html/02-business-process.html">
+      <div class="slide-header">
+        <span class="slide-num">02</span>
+        <div class="slide-title">Business Process Scope</div>
+      </div>
+      <div class="slide-body">
+        <p>Process hierarchy (L2-L4), agent-to-task mapping, automation classification, and outcome metrics.</p>
+        <div class="slide-tags">
+          <span class="slide-tag">Processes</span>
+          <span class="slide-tag">Agents</span>
+          <span class="slide-tag">Outcomes</span>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span class="view-html">View page &rarr;</span>
+      </div>
+    </a>
+
+    <a class="slide-card" href="html/03-functional-solution.html">
+      <div class="slide-header">
+        <span class="slide-num">03</span>
+        <div class="slide-title">Functional Solution + AI-Human Chemistry</div>
+      </div>
+      <div class="slide-body">
+        <p>Agent workflow diagrams with human decision points, fallback modes, and the "agents assist, clinicians decide" principle.</p>
+        <div class="slide-tags">
+          <span class="slide-tag">Workflows</span>
+          <span class="slide-tag">Human-in-the-loop</span>
+          <span class="slide-tag">Fallbacks</span>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span class="view-html">View page &rarr;</span>
+      </div>
+    </a>
+
+    <a class="slide-card" href="html/04-technical-solution.html">
+      <div class="slide-header">
+        <span class="slide-num">04</span>
+        <div class="slide-title">Technical Solution</div>
+      </div>
+      <div class="slide-body">
+        <p>Architecture diagram, Microsoft platform stack, agent technology mapping, security, and framework alignment.</p>
+        <div class="slide-tags">
+          <span class="slide-tag">Architecture</span>
+          <span class="slide-tag">Copilot Studio</span>
+          <span class="slide-tag">CAF / BXT</span>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span class="view-html">View page &rarr;</span>
+      </div>
+    </a>
+
+    <a class="slide-card" style="grid-column: span 2;" href="html/05-business-case.html">
+      <div class="slide-header" style="background: linear-gradient(135deg, #003A5D, #005a8c);">
+        <span class="slide-num">05</span>
+        <div class="slide-title">Business Case Proposal</div>
+      </div>
+      <div class="slide-body">
+        <p>KPI targets, cost analysis (current vs new), revenue impact, break-even analysis (3-5 months via savings), and risk mitigation.</p>
+        <div class="slide-tags">
+          <span class="slide-tag">KPIs</span>
+          <span class="slide-tag">Costs</span>
+          <span class="slide-tag">Break Even</span>
+          <span class="slide-tag">Risks</span>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span class="view-html">View page &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+
+
+</div>
+
+<div class="footer">
+  <span>AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026</span>
+  <span>Company Confidential &copy; Capgemini 2026</span>
+</div>
+
+</body>
+</html>
