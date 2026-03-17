@@ -434,60 +434,69 @@ tr:nth-child(even) { background: #f9fafb; }
     </div>
   </div>
 
-  <!-- WHAT -->
-  <div class="grid-2">
+  <!-- ==================== ROW 1: WHAT | WHY ==================== -->
+  <div style="display:grid; grid-template-columns:3fr 2fr; gap:24px;">
+
+    <!-- WHAT -->
     <div class="section">
-      <h2>Business Challenges</h2>
-      <div class="card red">
-        <h3>Fragmentation of Workflow</h3>
-        <p>Everyone (clinician, admin, patient) is compensating for a disconnected system. This leads to rework, errors, and burnout.</p>
-      </div>
-      <div class="card orange" style="margin-top:12px">
-        <h3>Information Bottlenecks</h3>
-        <p>Critical information locked inside emails, documents, phone calls, EMR notes. Not structured, visible, or sharable.</p>
-      </div>
-      <div class="card orange" style="margin-top:12px">
-        <h3>Constant Micro-Delays</h3>
-        <p>Waiting for replies, checking portals, re-typing data, correcting errors. Individually tiny, together catastrophic.</p>
-      </div>
-      <div class="card" style="margin-top:12px">
-        <h3>Failure to Surface Early Warnings</h3>
-        <p>No proactive highlighting of urgent triage cues, inconsistent documentation, missing referral fields, or duplicated appointments.</p>
+      <h2>WHAT</h2>
+
+      <div class="grid-2" style="gap:16px;">
+        <!-- Business Challenges -->
+        <div>
+          <h3>Business Challenges</h3>
+          <div class="card red" style="margin-top:8px;">
+            <h3>Fragmentation of Workflow</h3>
+            <p>Everyone (clinician, admin, patient) is compensating for a disconnected system. This leads to rework, errors, and burnout.</p>
+          </div>
+          <div class="card orange" style="margin-top:10px">
+            <h3>Information Bottlenecks</h3>
+            <p>Critical information locked inside emails, documents, phone calls, EMR notes. Not structured, visible, or sharable.</p>
+          </div>
+          <div class="card orange" style="margin-top:10px">
+            <h3>Constant Micro-Delays</h3>
+            <p>Waiting for replies, checking portals, re-typing data, correcting errors. Individually tiny, together catastrophic.</p>
+          </div>
+          <div class="card" style="margin-top:10px">
+            <h3>Failure to Surface Early Warnings</h3>
+            <p>No proactive highlighting of urgent triage cues, inconsistent documentation, missing referral fields, or duplicated appointments.</p>
+          </div>
+        </div>
+
+        <!-- Use Case Description -->
+        <div>
+          <h3>Use Case Description</h3>
+          <p style="margin:8px 0 12px; font-size:0.88rem; color:#444;">Five AI agents orchestrated through Microsoft Copilot Studio automate clinical admin and augment decision-making:</p>
+          <div class="agent-card core" style="margin-bottom:8px">
+            <h4>Clinical Decision Support <span class="badge agentic">Core</span></h4>
+            <p>Surfaces patient history, flags drug interactions, highlights NICE guidelines, catches missed referral pathways.</p>
+          </div>
+          <div class="agent-card" style="margin-bottom:8px">
+            <h4>Documentation Agent <span class="badge genai">Gen AI</span></h4>
+            <p>Auto-summarises consultations into structured clinical notes; feeds downstream agents.</p>
+          </div>
+          <div class="agent-card" style="margin-bottom:8px">
+            <h4>Triage Agent <span class="badge agentic">Agentic</span></h4>
+            <p>Patient-facing chatbot &#x2014; symptom assessment, urgency scoring, care routing.</p>
+          </div>
+          <div class="agent-card" style="margin-bottom:8px">
+            <h4>Referral Agent <span class="badge agentic">Agentic</span></h4>
+            <p>Auto-drafts referral letters, tracks status, provides patient updates.</p>
+          </div>
+          <div class="agent-card">
+            <h4>Scheduling Agent <span class="badge auto">Automation</span></h4>
+            <p>Self-service booking, priority slots for urgent cases, waitlist management.</p>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- WHY -->
     <div class="section">
-      <h2>Use Case Description</h2>
-      <p style="margin-bottom:16px; color:#444;">Five specialised AI agents orchestrated through Microsoft Copilot Studio automate clinical administration and augment decision-making:</p>
+      <h2>WHY</h2>
 
-      <div class="agent-card core" style="margin-bottom:10px">
-        <h4>Clinical Decision Support Agent <span class="badge agentic">Core</span></h4>
-        <p>Surfaces patient history, flags drug interactions, highlights NICE guidelines, catches missed referral pathways. Real-time + async.</p>
-      </div>
-      <div class="agent-card" style="margin-bottom:10px">
-        <h4>Documentation Agent <span class="badge genai">Gen AI</span></h4>
-        <p>Auto-summarises consultations into structured clinical notes; feeds downstream agents.</p>
-      </div>
-      <div class="agent-card" style="margin-bottom:10px">
-        <h4>Triage Agent <span class="badge agentic">Agentic</span></h4>
-        <p>Patient-facing chatbot — symptom assessment, urgency scoring, care routing.</p>
-      </div>
-      <div class="agent-card" style="margin-bottom:10px">
-        <h4>Referral Agent <span class="badge agentic">Agentic</span></h4>
-        <p>Auto-drafts referral letters, tracks status, provides patient updates.</p>
-      </div>
-      <div class="agent-card">
-        <h4>Scheduling Agent <span class="badge auto">Automation</span></h4>
-        <p>Self-service booking, priority slots for urgent cases, waitlist management.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHY -->
-  <div class="grid-2" style="margin-top:24px">
-    <div class="section">
-      <h2>KPIs Impacted</h2>
-      <div class="grid-2">
+      <h3>KPIs Impacted</h3>
+      <div class="grid-2" style="gap:10px; margin-top:8px;">
         <div class="kpi-box">
           <span class="value">-50%</span>
           <span class="label">Clinician Admin Time</span>
@@ -513,74 +522,86 @@ tr:nth-child(even) { background: #f9fafb; }
           <span class="label">Phone Call Volume</span>
         </div>
       </div>
-    </div>
 
-    <div class="section">
-      <h2>Business Impact</h2>
-      <div class="card green">
+      <h3 style="margin-top:20px;">Business Impact</h3>
+      <div class="card green" style="margin-top:8px;">
         <h3>Clinician Capacity</h3>
-        <p>20+ minutes recovered per hour of consultations — more patients seen with better outcomes</p>
+        <p>20+ minutes recovered per hour of consultations &#x2014; more patients seen with better outcomes</p>
       </div>
-      <div class="card green" style="margin-top:12px">
+      <div class="card green" style="margin-top:10px">
         <h3>Clinical Safety Net</h3>
-        <p>Systematic detection of drug interactions, guideline gaps, and missed referrals — evidence-based practice becomes the default</p>
+        <p>Systematic detection of drug interactions, guideline gaps, and missed referrals &#x2014; evidence-based practice becomes the default</p>
       </div>
-      <div class="card green" style="margin-top:12px">
+      <div class="card green" style="margin-top:10px">
         <h3>Patient Experience</h3>
         <p>Self-service triage and booking eliminates phone bottleneck; proactive referral updates reduce anxiety</p>
       </div>
-      <div class="card green" style="margin-top:12px">
+      <div class="card green" style="margin-top:10px">
         <h3>Operational Visibility</h3>
         <p>First-time data-driven insights into clinical quality metrics, agent performance, and workflow bottlenecks</p>
       </div>
     </div>
+
   </div>
 
-  <!-- HOW + WHO -->
-  <div class="grid-2" style="margin-top:24px">
+  <!-- ==================== ROW 2: HOW | WHO ==================== -->
+  <div style="display:grid; grid-template-columns:3fr 2fr; gap:24px; margin-top:24px;">
+
+    <!-- HOW -->
     <div class="section">
-      <h2>Solution Summary</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Functional</h3>
-          <ul>
-            <li>Central orchestration via Copilot Studio</li>
-            <li>Agents assist, clinicians decide</li>
-            <li>Every clinical action requires human approval</li>
-            <li>Graceful degradation with defined fallbacks</li>
-          </ul>
+      <h2>HOW</h2>
+
+      <div class="grid-2" style="gap:16px;">
+        <div>
+          <h3>Functional Solution</h3>
+          <div class="card" style="margin-top:8px;">
+            <ul>
+              <li>Central orchestration via Copilot Studio</li>
+              <li>Agents assist, clinicians decide</li>
+              <li>Every clinical action requires human approval</li>
+              <li>Graceful degradation with defined fallbacks</li>
+            </ul>
+          </div>
         </div>
-        <div class="card accent">
-          <h3>Technical</h3>
-          <ul>
-            <li>M365 Copilot (Teams/Outlook)</li>
-            <li>Copilot Studio (orchestration)</li>
-            <li>Power Platform (automation)</li>
-            <li>Dataverse (data backbone)</li>
-          </ul>
+        <div>
+          <h3>Technical Solution</h3>
+          <div class="card accent" style="margin-top:8px;">
+            <ul>
+              <li>M365 Copilot (Teams/Outlook)</li>
+              <li>Copilot Studio (orchestration)</li>
+              <li>Power Platform (automation)</li>
+              <li>Dataverse (data backbone)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- WHO -->
     <div class="section">
-      <h2>Stakeholders</h2>
-      <div class="stakeholder">
-        <div class="icon clinician">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
-        <div><strong>Clinicians</strong> — Primary users; interact via Teams/Outlook during consultations</div>
-      </div>
-      <div class="stakeholder">
-        <div class="icon patient">&#x1F9D1;</div>
-        <div><strong>Patients</strong> — Self-service triage, booking, and referral status via chatbot</div>
-      </div>
-      <div class="stakeholder">
-        <div class="icon admin">&#x1F4CB;</div>
-        <div><strong>Admin Staff</strong> — Automated scheduling and referral tracking</div>
-      </div>
-      <div class="stakeholder">
-        <div class="icon lead">&#x1F4CA;</div>
-        <div><strong>Clinical Leads</strong> — Oversight dashboards and audit trail access</div>
+      <h2>WHO</h2>
+
+      <h3>Stakeholders</h3>
+      <div style="margin-top:8px;">
+        <div class="stakeholder">
+          <div class="icon clinician">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
+          <div><strong>Clinicians</strong> &#x2014; Primary users; interact via Teams/Outlook during consultations</div>
+        </div>
+        <div class="stakeholder">
+          <div class="icon patient">&#x1F9D1;</div>
+          <div><strong>Patients</strong> &#x2014; Self-service triage, booking, and referral status via chatbot</div>
+        </div>
+        <div class="stakeholder">
+          <div class="icon admin">&#x1F4CB;</div>
+          <div><strong>Admin Staff</strong> &#x2014; Automated scheduling and referral tracking</div>
+        </div>
+        <div class="stakeholder">
+          <div class="icon lead">&#x1F4CA;</div>
+          <div><strong>Clinical Leads</strong> &#x2014; Oversight dashboards and audit trail access</div>
+        </div>
       </div>
     </div>
+
   </div>
 
 </div>
