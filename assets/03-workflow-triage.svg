@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 784" font-family="'Segoe UI', -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 754" font-family="'Segoe UI', -apple-system, sans-serif">
   <defs>
     <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
@@ -37,7 +37,7 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1100" height="784" rx="12" fill="#F5F7FA"/>
+  <rect width="1100" height="754" rx="12" fill="#F5F7FA"/>
 
   <!-- ==================== HEADER BAR ==================== -->
   <rect width="1100" height="56" rx="12" fill="url(#headerGrad)"/>
@@ -47,236 +47,232 @@
   <text x="1076" y="36" text-anchor="end" fill="white" font-size="11" opacity="0.7">Patient-facing &#x2014; Copilot Studio</text>
 
   <!-- ==================== LEGEND ==================== -->
-  <rect x="680" y="66" width="400" height="38" rx="6" fill="white" stroke="#ddd" stroke-width="1" filter="url(#shadowSmall)"/>
+  <rect x="680" y="74.0" width="400" height="38" rx="6" fill="white" stroke="#ddd" stroke-width="1" filter="url(#shadowSmall)"/>
   <!-- Agent icon legend -->
-  <circle cx="700" cy="85" r="9" fill="#003A5D"/>
-  <circle cx="700" cy="82" r="3" fill="white"/>
-  <path d="M694,90 Q700,86 706,90" fill="none" stroke="white" stroke-width="1.2"/>
-  <text x="716" y="89" font-size="9.5" fill="#444">Agent interacting only with systems</text>
+  <circle cx="700" cy="93.0" r="9" fill="#003A5D"/>
+  <circle cx="700" cy="90.0" r="3" fill="white"/>
+  <path d="M694,98 Q700,94 706,98" fill="none" stroke="white" stroke-width="1.2"/>
+  <text x="716" y="97.0" font-size="9.5" fill="#444">Agent interacting only with systems</text>
   <!-- Human icon legend -->
-  <circle cx="880" cy="85" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
-  <circle cx="880" cy="82" r="3" fill="#2E8B57"/>
-  <path d="M874,90 Q880,86 886,90" fill="none" stroke="#2E8B57" stroke-width="1.2"/>
-  <text x="896" y="89" font-size="9.5" fill="#444">Interaction (patient / staff)</text>
+  <circle cx="880" cy="93.0" r="10" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <circle cx="880" cy="90.0" r="3" fill="#2E8B57"/>
+  <path d="M874,98 Q880,94 886,98" fill="none" stroke="#2E8B57" stroke-width="1.2"/>
+  <text x="896" y="97.0" font-size="9.5" fill="#444">Interaction (patient / staff)</text>
 
-  <!-- ==================== ROW 1: INBOUND CHANNELS ==================== -->
-  <text x="24" y="82" font-size="10" font-weight="600" fill="#003A5D" letter-spacing="0.8">INBOUND CHANNELS</text>
+  <!-- ==================== INBOUND CHANNEL ==================== -->
+  <!-- Practice Website -->
+  <rect x="24" y="70.0" width="130" height="42" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="89" y="88.0" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">Practice Website</text>
+  <text x="89" y="102.0" text-anchor="middle" font-size="8" fill="#997a00">(embedded chatbot)</text>
 
-  <!-- Web chatbot -->
-  <rect x="24" y="90" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="81" y="113" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">Web Chatbot</text>
-
-  <!-- Phone -->
-  <rect x="24" y="132" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="81" y="155" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">Phone / IVR</text>
-
-  <!-- NHS App -->
-  <rect x="24" y="174" width="115" height="36" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="81" y="197" text-anchor="middle" font-size="10" font-weight="600" fill="#664d03">NHS App</text>
-
-  <!-- Converge arrows to triage agent -->
-  <line x1="139" y1="108" x2="160" y2="108" stroke="#0070AD" stroke-width="1.5"/>
-  <line x1="160" y1="108" x2="160" y2="150" stroke="#0070AD" stroke-width="1.5"/>
-  <line x1="139" y1="150" x2="160" y2="150" stroke="#0070AD" stroke-width="1.5"/>
-  <line x1="139" y1="192" x2="160" y2="192" stroke="#0070AD" stroke-width="1.5"/>
-  <line x1="160" y1="150" x2="160" y2="192" stroke="#0070AD" stroke-width="1.5"/>
-  <line x1="160" y1="150" x2="195" y2="150" stroke="#0070AD" stroke-width="1.5"/>
+  <!-- Channel → Patient logs in (horizontal) -->
+  <line x1="154" y1="91.0" x2="195" y2="91.0" stroke="#0070AD" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- ==================== TRIAGE AGENT COLUMN ==================== -->
-  <!-- Agent icon -->
-  <circle cx="214" cy="108" r="14" fill="#003A5D"/>
-  <circle cx="214" cy="104" r="4.5" fill="white"/>
-  <path d="M206,116 Q214,110 222,116" fill="none" stroke="white" stroke-width="1.5"/>
-
-  <text x="214" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Triage Agent</text>
-
   <!-- Step 1: Patient logs in + first message -->
-  <rect x="195" y="145" width="140" height="34" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="265" y="162" text-anchor="middle" font-size="9.5" font-weight="600" fill="#664d03">Patient logs in</text>
-  <text x="265" y="173" text-anchor="middle" font-size="8.5" fill="#997a00">Authenticated user</text>
+  <rect x="195" y="70.0" width="160" height="42" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="275" y="87.0" text-anchor="middle" font-size="8" font-weight="500" fill="#997a00">Patient</text>
+  <text x="275" y="99.0" text-anchor="middle" font-size="10" font-weight="700" fill="#664d03">Sign in</text>
+  <text x="275" y="110.0" text-anchor="middle" font-size="7.5" fill="#997a00">Authenticated (Entra ID)</text>
 
   <!-- Arrow down -->
-  <line x1="265" y1="179" x2="265" y2="195" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="275" y1="112.0" x2="275" y2="130.0" stroke="#0070AD" stroke-width="1.5"/>
 
   <!-- Step 2: Emergency scan (FIRST!) -->
-  <rect x="195" y="200" width="140" height="34" rx="6" fill="#fde8e8" stroke="#D9534F" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="265" y="217" text-anchor="middle" font-size="9.5" font-weight="600" fill="#721c24">Emergency scan</text>
-  <text x="265" y="228" text-anchor="middle" font-size="8.5" fill="#721c24">First message check</text>
+  <rect x="195" y="130.0" width="160" height="42" rx="6" fill="#fde8e8" stroke="#D9534F" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="213" cy="151.0" r="8" fill="#D9534F"/>
+  <circle cx="213" cy="148.0" r="2.5" fill="white"/>
+  <path d="M208,156 Q213,153 218,156" fill="none" stroke="white" stroke-width="1"/>
+  <text x="296" y="144.0" text-anchor="middle" font-size="8" font-weight="500" fill="#721c24">Triage Agent</text>
+  <text x="296" y="156.0" text-anchor="middle" font-size="10" font-weight="700" fill="#721c24">Emergency scan</text>
+  <text x="296" y="167.0" text-anchor="middle" font-size="7.5" fill="#721c24">First message check</text>
 
   <!-- Emergency branch right (immediate 999) — aligned with urgent/routine columns -->
-  <line x1="339" y1="217" x2="545" y2="217" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
-  <rect x="545" y="200" width="160" height="34" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
-  <text x="625" y="221" text-anchor="middle" font-size="10" font-weight="700" fill="white">CALL 999 NOW</text>
-  <line x1="710" y1="217" x2="930" y2="217" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
-  <rect x="930" y="200" width="100" height="34" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="980" y="215" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
-  <text x="980" y="228" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
+  <line x1="359" y1="151.0" x2="545" y2="151.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <rect x="545" y="134.0" width="160" height="34" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
+  <text x="625" y="155.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">CALL 999 NOW</text>
+  <line x1="710" y1="151.0" x2="930" y2="151.0" stroke="#D9534F" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+  <rect x="930" y="134.0" width="100" height="34" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="980" y="149.0" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
+  <text x="980" y="162.0" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
 
   <!-- Arrow down (not emergency) -->
-  <line x1="265" y1="234" x2="265" y2="250" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="275" y="248" font-size="7" fill="#2E8B57" font-weight="600">Not emergency</text>
+  <line x1="275" y1="172.0" x2="275" y2="185.0" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="295" y="182.0" font-size="7" fill="#2E8B57" font-weight="600">Not emergency</text>
 
   <!-- Step 3: Retrieve patient history (auto from auth) -->
-  <rect x="195" y="255" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="265" y="272" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Load history</text>
-  <text x="265" y="283" text-anchor="middle" font-size="8.5" fill="#555">from Dataverse (auth)</text>
+  <rect x="195" y="185.0" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="213" cy="202.0" r="8" fill="#003A5D"/>
+  <circle cx="213" cy="199.0" r="2.5" fill="white"/>
+  <path d="M208,207 Q213,204 218,207" fill="none" stroke="white" stroke-width="1"/>
+  <text x="296" y="198.0" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Triage Agent</text>
+  <text x="296" y="210.0" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Load history</text>
+  <text x="296" y="221.0" text-anchor="middle" font-size="7.5" fill="#555">From Dataverse (auth)</text>
 
   <!-- Dataverse link -->
-  <line x1="339" y1="272" x2="380" y2="272" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <rect x="385" y="260" width="90" height="24" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
-  <text x="430" y="276" text-anchor="middle" font-size="8" font-weight="600" fill="#666">Dataverse</text>
+  <line x1="359" y1="206.0" x2="390" y2="206.0" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="395" y="194.0" width="90" height="24" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
+  <text x="440" y="210.0" text-anchor="middle" font-size="8" font-weight="600" fill="#666">Dataverse</text>
 
   <!-- Arrow down -->
-  <line x1="265" y1="289" x2="265" y2="300" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="275" y1="227.0" x2="275" y2="239.0" stroke="#0070AD" stroke-width="1.5"/>
 
   <!-- Step 4: Collect symptoms -->
-  <rect x="195" y="305" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="265" y="322" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Collect symptoms</text>
-  <text x="265" y="333" text-anchor="middle" font-size="8.5" fill="#555">Guided questions</text>
+  <rect x="195" y="239.0" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="213" cy="256.0" r="8" fill="#003A5D"/>
+  <circle cx="213" cy="253.0" r="2.5" fill="white"/>
+  <path d="M208,261 Q213,258 218,261" fill="none" stroke="white" stroke-width="1"/>
+  <text x="296" y="252.0" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Triage Agent</text>
+  <text x="296" y="264.0" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Collect symptoms</text>
+  <text x="296" y="275.0" text-anchor="middle" font-size="7.5" fill="#555">Guided questions</text>
 
   <!-- Arrow down -->
-  <line x1="265" y1="339" x2="265" y2="350" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="275" y1="281.0" x2="275" y2="293.0" stroke="#0070AD" stroke-width="1.5"/>
 
   <!-- Step 5: Assess urgency (symptoms + history) -->
-  <rect x="195" y="355" width="140" height="34" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="265" y="372" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Assess urgency</text>
-  <text x="265" y="383" text-anchor="middle" font-size="8.5" fill="#555">Symptoms + history</text>
+  <rect x="195" y="293.0" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="213" cy="310.0" r="8" fill="#003A5D"/>
+  <circle cx="213" cy="307.0" r="2.5" fill="white"/>
+  <path d="M208,315 Q213,312 218,315" fill="none" stroke="white" stroke-width="1"/>
+  <text x="296" y="306.0" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Triage Agent</text>
+  <text x="296" y="318.0" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Assess urgency</text>
+  <text x="296" y="329.0" text-anchor="middle" font-size="7.5" fill="#555">Symptoms + history</text>
 
   <!-- Arrow down to decision -->
-  <line x1="265" y1="389" x2="265" y2="410" stroke="#0070AD" stroke-width="1.5"/>
+  <line x1="275" y1="335.0" x2="275" y2="380.0" stroke="#0070AD" stroke-width="1.5"/>
 
   <!-- ==================== DECISION DIAMOND ==================== -->
-  <polygon points="265,415 320,445 265,475 210,445" fill="#f0f0f0" stroke="#888" stroke-width="2" filter="url(#shadow)"/>
-  <text x="265" y="442" text-anchor="middle" font-size="10" font-weight="700" fill="#444">Urgency</text>
-  <text x="265" y="454" text-anchor="middle" font-size="9" fill="#666">level?</text>
+  <polygon points="275,380 330,410 275,440 220,410" fill="#f0f0f0" stroke="#888" stroke-width="2" filter="url(#shadow)"/>
+  <text x="275" y="407.0" text-anchor="middle" font-size="10" font-weight="700" fill="#444">Urgency</text>
+  <text x="275" y="419.0" text-anchor="middle" font-size="9" fill="#666">level?</text>
 
   <!-- ==================== EMERGENCY FROM ASSESSMENT (RED - history-aware) ==================== -->
-  <line x1="320" y1="435" x2="370" y2="435" stroke="#D9534F" stroke-width="1.5"/>
-  <line x1="370" y1="435" x2="370" y2="410" stroke="#D9534F" stroke-width="1.5"/>
-  <line x1="370" y1="410" x2="415" y2="410" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <line x1="330" y1="405.0" x2="370" y2="405.0" stroke="#D9534F" stroke-width="1.5"/>
+  <line x1="370" y1="405.0" x2="370" y2="380.0" stroke="#D9534F" stroke-width="1.5"/>
+  <line x1="370" y1="380.0" x2="415" y2="380.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
 
-  <rect x="395" y="388" width="680" height="46" rx="8" fill="#fde8e8" opacity="0.4"/>
+  <rect x="395" y="358.0" width="680" height="46" rx="8" fill="#fde8e8" opacity="0.4"/>
 
-  <rect x="415" y="393" width="85" height="36" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
-  <text x="457" y="416" text-anchor="middle" font-size="10" font-weight="700" fill="white">EMERGENCY</text>
+  <rect x="415" y="363.0" width="85" height="36" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
+  <text x="457" y="386.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">EMERGENCY</text>
 
-  <line x1="505" y1="411" x2="545" y2="411" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <line x1="505" y1="381.0" x2="545" y2="381.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
 
   <!-- Aligned with Scheduling Agent column (x=545) -->
-  <rect x="545" y="397" width="160" height="28" rx="6" fill="#fde8e8" stroke="#D9534F" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="625" y="416" text-anchor="middle" font-size="9" font-weight="600" fill="#721c24">History &#x2192; Call 999</text>
+  <rect x="545" y="367.0" width="160" height="28" rx="6" fill="#fde8e8" stroke="#D9534F" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="625" y="386.0" text-anchor="middle" font-size="9" font-weight="600" fill="#721c24">History &#x2192; Call 999</text>
 
-  <line x1="710" y1="411" x2="930" y2="411" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <line x1="710" y1="381.0" x2="930" y2="381.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
 
   <!-- Aligned with Log triage column (x=930) -->
-  <rect x="930" y="397" width="100" height="28" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="980" y="410" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Log triage</text>
-  <text x="980" y="422" text-anchor="middle" font-size="8" fill="#666">&#x2192; Dataverse</text>
+  <rect x="930" y="367.0" width="100" height="28" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="980" y="380.0" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Log triage</text>
+  <text x="980" y="392.0" text-anchor="middle" font-size="8" fill="#666">&#x2192; Dataverse</text>
 
-  <text x="380" y="390" font-size="8" font-weight="700" fill="#D9534F">RED (e.g. dizzy + heart condition)</text>
+  <text x="380" y="360.0" font-size="8" font-weight="700" fill="#D9534F">RED (e.g. dizzy + heart condition)</text>
 
   <!-- ==================== URGENT BRANCH (MIDDLE - AMBER) ==================== -->
-  <line x1="320" y1="445" x2="370" y2="445" stroke="#856404" stroke-width="1.5"/>
-  <line x1="370" y1="445" x2="370" y2="470" stroke="#856404" stroke-width="1.5"/>
-  <line x1="370" y1="470" x2="415" y2="470" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+  <line x1="330" y1="415.0" x2="370" y2="415.0" stroke="#856404" stroke-width="1.5"/>
+  <line x1="370" y1="415.0" x2="370" y2="440.0" stroke="#856404" stroke-width="1.5"/>
+  <line x1="370" y1="440.0" x2="415" y2="440.0" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
 
-  <rect x="395" y="440" width="680" height="60" rx="8" fill="#fef3cd" opacity="0.35"/>
+  <rect x="395" y="410.0" width="680" height="60" rx="8" fill="#fef3cd" opacity="0.35"/>
 
-  <rect x="415" y="454" width="85" height="36" rx="6" fill="#F0AD4E" filter="url(#shadowSmall)"/>
-  <text x="457" y="477" text-anchor="middle" font-size="10" font-weight="700" fill="white">URGENT</text>
+  <rect x="415" y="424.0" width="85" height="36" rx="6" fill="#F0AD4E" filter="url(#shadowSmall)"/>
+  <text x="457" y="447.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">URGENT</text>
 
-  <line x1="505" y1="472" x2="545" y2="472" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+  <line x1="505" y1="442.0" x2="545" y2="442.0" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
 
   <!-- Scheduling Agent books priority slot -->
-  <rect x="545" y="454" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <circle cx="563" cy="472" r="8" fill="#003A5D"/>
-  <circle cx="563" cy="469" r="2.5" fill="white"/>
-  <path d="M558,477 Q563,474 568,477" fill="none" stroke="white" stroke-width="1"/>
-  <text x="630" y="466" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Scheduling Agent</text>
-  <text x="630" y="478" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Book priority slot</text>
-  <text x="630" y="489" text-anchor="middle" font-size="7.5" fill="#555">Urgent appointment</text>
+  <rect x="545" y="424.0" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="563" cy="442.0" r="8" fill="#003A5D"/>
+  <circle cx="563" cy="439.0" r="2.5" fill="white"/>
+  <path d="M558,447 Q563,444 568,447" fill="none" stroke="white" stroke-width="1"/>
+  <text x="630" y="436.0" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Scheduling Agent</text>
+  <text x="630" y="448.0" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Book priority slot</text>
+  <text x="630" y="459.0" text-anchor="middle" font-size="7.5" fill="#555">Urgent appointment</text>
 
-  <line x1="710" y1="472" x2="750" y2="472" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+  <line x1="710" y1="442.0" x2="750" y2="442.0" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
 
   <!-- Pre-fill SOAP + confirm -->
-  <rect x="750" y="454" width="140" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="820" y="470" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Pre-fill SOAP (S)</text>
-  <text x="820" y="482" text-anchor="middle" font-size="8.5" fill="#555">+ confirm booking</text>
+  <rect x="750" y="424.0" width="140" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="820" y="440.0" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Pre-fill SOAP (S)</text>
+  <text x="820" y="452.0" text-anchor="middle" font-size="8.5" fill="#555">+ confirm booking</text>
 
-  <line x1="895" y1="472" x2="930" y2="472" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+  <line x1="895" y1="442.0" x2="930" y2="442.0" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
 
-  <rect x="930" y="454" width="100" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="980" y="470" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
-  <text x="980" y="482" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
+  <rect x="930" y="424.0" width="100" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="980" y="440.0" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
+  <text x="980" y="452.0" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
 
-  <text x="380" y="495" font-size="8" font-weight="700" fill="#856404">AMBER</text>
+  <text x="380" y="465.0" font-size="8" font-weight="700" fill="#856404">AMBER</text>
 
   <!-- ==================== ROUTINE BRANCH (BOTTOM - GREEN) ==================== -->
-  <line x1="265" y1="475" x2="265" y2="565" stroke="#2E8B57" stroke-width="1.5"/>
-  <line x1="265" y1="565" x2="415" y2="565" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="275" y1="440.0" x2="275" y2="535.0" stroke="#2E8B57" stroke-width="1.5"/>
+  <line x1="275" y1="535.0" x2="415" y2="535.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
-  <rect x="395" y="535" width="680" height="60" rx="8" fill="#d4edda" opacity="0.35"/>
+  <rect x="395" y="505.0" width="680" height="60" rx="8" fill="#d4edda" opacity="0.35"/>
 
-  <rect x="415" y="548" width="85" height="36" rx="6" fill="#2E8B57" filter="url(#shadowSmall)"/>
-  <text x="457" y="571" text-anchor="middle" font-size="10" font-weight="700" fill="white">ROUTINE</text>
+  <rect x="415" y="518.0" width="85" height="36" rx="6" fill="#2E8B57" filter="url(#shadowSmall)"/>
+  <text x="457" y="541.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">ROUTINE</text>
 
-  <line x1="505" y1="566" x2="545" y2="566" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="505" y1="536.0" x2="545" y2="536.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
   <!-- Scheduling Agent books -->
-  <rect x="545" y="548" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <circle cx="563" cy="566" r="8" fill="#003A5D"/>
-  <circle cx="563" cy="563" r="2.5" fill="white"/>
-  <path d="M558,571 Q563,568 568,571" fill="none" stroke="white" stroke-width="1"/>
-  <text x="630" y="560" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Scheduling Agent</text>
-  <text x="630" y="572" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Book appointment</text>
-  <text x="630" y="583" text-anchor="middle" font-size="7.5" fill="#555">Routine consultation</text>
+  <rect x="545" y="518.0" width="160" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <circle cx="563" cy="536.0" r="8" fill="#003A5D"/>
+  <circle cx="563" cy="533.0" r="2.5" fill="white"/>
+  <path d="M558,541 Q563,538 568,541" fill="none" stroke="white" stroke-width="1"/>
+  <text x="630" y="530.0" text-anchor="middle" font-size="8" font-weight="500" fill="#555">Scheduling Agent</text>
+  <text x="630" y="542.0" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Book appointment</text>
+  <text x="630" y="553.0" text-anchor="middle" font-size="7.5" fill="#555">Routine consultation</text>
 
-  <line x1="710" y1="566" x2="750" y2="566" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="710" y1="536.0" x2="750" y2="536.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
   <!-- Pre-fill SOAP + confirm -->
-  <rect x="750" y="548" width="140" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="820" y="564" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Pre-fill SOAP (S)</text>
-  <text x="820" y="576" text-anchor="middle" font-size="8.5" fill="#555">+ confirm booking</text>
+  <rect x="750" y="518.0" width="140" height="42" rx="6" fill="#E8F4FA" stroke="#0070AD" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="820" y="534.0" text-anchor="middle" font-size="9.5" font-weight="600" fill="#003A5D">Pre-fill SOAP (S)</text>
+  <text x="820" y="546.0" text-anchor="middle" font-size="8.5" fill="#555">+ confirm booking</text>
 
-  <line x1="895" y1="566" x2="930" y2="566" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="895" y1="536.0" x2="930" y2="536.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
-  <rect x="930" y="548" width="100" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
-  <text x="980" y="564" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
-  <text x="980" y="576" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
+  <rect x="930" y="518.0" width="100" height="36" rx="6" fill="#e8e8e8" stroke="#999" stroke-width="1.5" filter="url(#shadowSmall)"/>
+  <text x="980" y="534.0" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333">Log triage</text>
+  <text x="980" y="546.0" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
 
-  <text x="380" y="595" font-size="8" font-weight="700" fill="#2E8B57">GREEN</text>
+  <text x="380" y="565.0" font-size="8" font-weight="700" fill="#2E8B57">GREEN</text>
 
   <!-- ==================== COMMUNICATION / LOGGING COLUMN ==================== -->
-  <rect x="1050" y="200" width="30" height="400" rx="4" fill="#E8F4FA" stroke="#0070AD" stroke-width="1" opacity="0.6"/>
-  <text x="1065" y="400" text-anchor="middle" font-size="8" fill="#003A5D" transform="rotate(-90, 1065, 400)" font-weight="600">DATAVERSE LOGGING</text>
+  <rect x="1050" y="134.0" width="30" height="436" rx="4" fill="#E8F4FA" stroke="#0070AD" stroke-width="1" opacity="0.6"/>
+  <text x="1065" y="370.0" text-anchor="middle" font-size="8" fill="#003A5D" transform="rotate(-90, 1065, 370)" font-weight="600">DATAVERSE LOGGING</text>
 
   <!-- Grey connectors from Log triage boxes to Dataverse logging bar -->
-  <line x1="1030" y1="217" x2="1050" y2="217" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <line x1="1030" y1="411" x2="1050" y2="411" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <line x1="1030" y1="472" x2="1050" y2="472" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <line x1="1030" y1="566" x2="1050" y2="566" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1030" y1="151.0" x2="1050" y2="151.0" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1030" y1="381.0" x2="1050" y2="381.0" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1030" y1="442.0" x2="1050" y2="442.0" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1030" y1="536.0" x2="1050" y2="536.0" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
 
 
   <!-- ==================== HUMAN INTERACTION POINTS ==================== -->
-  <rect x="24" y="614" width="1052" height="118" rx="8" fill="white" stroke="#2E8B57" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="40" y="637" font-size="12" font-weight="700" fill="#003A5D">Human Interaction Points</text>
+  <rect x="24" y="584.0" width="1052" height="118" rx="8" fill="white" stroke="#2E8B57" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="40" y="607.0" font-size="12" font-weight="700" fill="#003A5D">Human Interaction Points</text>
 
-  <text x="40" y="659" font-size="12" fill="#2E8B57">&#x2705;</text>
-  <text x="60" y="659" font-size="10.5" fill="#444">Two-stage emergency: (1) first message scanned immediately, (2) history + symptoms can also escalate to 999</text>
+  <text x="40" y="629.0" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="629.0" font-size="10.5" fill="#444">Two-stage emergency: (1) first message scanned immediately, (2) history + symptoms can also escalate to 999</text>
 
-  <text x="40" y="679" font-size="12" fill="#2E8B57">&#x2705;</text>
-  <text x="60" y="679" font-size="10.5" fill="#444">Patient history auto-loaded from authentication &#x2014; existing conditions influence urgency classification</text>
+  <text x="40" y="649.0" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="649.0" font-size="10.5" fill="#444">Patient history auto-loaded from authentication &#x2014; existing conditions influence urgency classification</text>
 
-  <text x="40" y="699" font-size="12" fill="#2E8B57">&#x2705;</text>
-  <text x="60" y="699" font-size="10.5" fill="#444">Scheduling Agent books appointment directly &#x2014; triage data pre-fills SOAP (S) for consultation</text>
+  <text x="40" y="669.0" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="669.0" font-size="10.5" fill="#444">Scheduling Agent books appointment directly &#x2014; triage data pre-fills SOAP (S) for consultation</text>
 
-  <text x="40" y="719" font-size="12" fill="#2E8B57">&#x2705;</text>
-  <text x="60" y="719" font-size="10.5" fill="#444">All branches: complete triage record in Dataverse with symptoms, history context, urgency, and outcome</text>
+  <text x="40" y="689.0" font-size="12" fill="#2E8B57">&#x2705;</text>
+  <text x="60" y="689.0" font-size="10.5" fill="#444">All branches: complete triage record in Dataverse with symptoms, history context, urgency, and outcome</text>
 
   <!-- ==================== FOOTER BAR ==================== -->
-  <rect y="744" width="1100" height="40" fill="#003A5D"/>
-  <rect y="772" width="1100" height="12" rx="12" fill="#003A5D"/>
-  <text x="24" y="768" fill="white" font-size="9.5" opacity="0.7">AgentCare &#x2014; Capgemini | Microsoft Agentic Industry Hackathon 2026</text>
-  <text x="1076" y="768" text-anchor="end" fill="white" font-size="9.5" opacity="0.7">Triage + Scheduling &#x2014; No autonomous clinical decisions</text>
+  <rect y="714.0" width="1100" height="40" fill="#003A5D"/>
+  <rect y="742.0" width="1100" height="12" rx="12" fill="#003A5D"/>
+  <text x="24" y="738.0" fill="white" font-size="9.5" opacity="0.7">AgentCare &#x2014; Capgemini | Microsoft Agentic Industry Hackathon 2026</text>
+  <text x="1076" y="738.0" text-anchor="end" fill="white" font-size="9.5" opacity="0.7">Triage + Scheduling &#x2014; No autonomous clinical decisions</text>
 
 </svg>
