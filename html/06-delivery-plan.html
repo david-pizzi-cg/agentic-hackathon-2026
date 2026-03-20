@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Delivery Plan</title>
+  <style>
+:root {
+  --cap-blue: #0070AD;
+  --cap-dark: #003A5D;
+  --cap-light: #E8F4FA;
+  --cap-accent: #00B0F0;
+  --cap-green: #2E8B57;
+  --cap-red: #D9534F;
+  --cap-orange: #F0AD4E;
+  --cap-gray: #6C757D;
+  --cap-bg: #FAFBFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cap-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav {
+  background: white;
+  border-bottom: 2px solid var(--cap-light);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav a {
+  color: var(--cap-gray);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--cap-blue); border-bottom-color: var(--cap-accent); }
+.nav a.active { color: var(--cap-dark); font-weight: 700; border-bottom-color: var(--cap-blue); }
+.nav .nav-home { font-weight: 700; color: var(--cap-dark); margin-right: 4px; font-size: 1.3rem; line-height: 1; }
+.nav .nav-spacer { flex: 1; }
+
+.header {
+  background: linear-gradient(135deg, var(--cap-dark), var(--cap-blue));
+  color: white;
+  padding: 32px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+}
+.header .industry {
+  display: inline-block;
+  background: var(--cap-accent);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+.header .subtitle { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+
+.content { padding: 32px 48px; }
+
+.section { margin-bottom: 32px; }
+.section h2 {
+  color: var(--cap-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--cap-accent);
+}
+.section h3 {
+  color: var(--cap-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--cap-blue);
+}
+.card.accent { border-left-color: var(--cap-accent); }
+.card.green { border-left-color: var(--cap-green); }
+.card.orange { border-left-color: var(--cap-orange); }
+.card.red { border-left-color: var(--cap-red); }
+.card h3 { color: var(--cap-dark); margin: 0 0 8px 0; font-size: 1rem; }
+.card p, .card li { font-size: 0.9rem; color: #444; }
+.card ul { padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+th {
+  background: var(--cap-dark);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: #f9fafb; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.in { background: #d4edda; color: #155724; }
+.badge.out { background: #fde8e8; color: var(--cap-red); }
+.badge.partial { background: #fef3cd; color: #856404; }
+
+/* Sprint timeline */
+.sprint-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+  border-left: 4px solid var(--cap-blue);
+  position: relative;
+}
+.sprint-card .sprint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.sprint-card .sprint-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cap-dark);
+}
+.sprint-card .sprint-dates {
+  font-size: 0.85rem;
+  color: var(--cap-gray);
+  font-weight: 500;
+}
+.sprint-card .sprint-goal {
+  font-size: 0.9rem;
+  color: var(--cap-blue);
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.sprint-card table { margin: 8px 0 0 0; }
+
+.effort-bar {
+  display: inline-block;
+  height: 8px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.effort-bar.small { width: 40px; background: var(--cap-green); }
+.effort-bar.medium { width: 80px; background: var(--cap-orange); }
+.effort-bar.large { width: 120px; background: var(--cap-red); }
+
+.summary-box {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-accent);
+}
+.summary-box .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cap-blue);
+  display: block;
+}
+.summary-box .label {
+  font-size: 0.85rem;
+  color: var(--cap-gray);
+  display: block;
+  margin-top: 4px;
+}
+
+.footer {
+  background: var(--cap-dark);
+  color: white;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+@media print {
+  body { max-width: 100%; }
+  .header { break-after: avoid; }
+  .section { break-inside: avoid; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  table { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-home" href="../index.html" title="Home">&#x2302;</a>
+  <a href="01-case-overview.html">01 - Case Overview</a>
+  <a href="02-business-process.html">02 - Business Process</a>
+  <a href="03-functional-solution.html">03 - Functional Solution</a>
+  <a href="04-technical-solution.html">04 - Technical Solution</a>
+  <a href="05-business-case.html">05 - Business Case</a>
+  <span class="nav-spacer"></span>
+  <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a class="active" href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
+</div>
+
+<div class="header">
+  <div class="industry">Healthcare</div>
+  <h1>Delivery Plan</h1>
+  <div class="subtitle">AgentCare &mdash; Hackathon MVP scope, effort estimates, and sprint plan</div>
+</div>
+
+<div class="content">
+
+  <!-- ==================== SCOPE DECISION ==================== -->
+  <div class="section">
+    <h2>1. Hackathon Scope</h2>
+    <p style="margin-bottom:16px; font-size:0.95rem; color:#444;">
+      Focus is <strong>administrative automation</strong> &mdash; no clinical decision-making. Four sub-processes, four agents, covering the full patient journey from triage to referral.
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Sub-Process</th><th>Agent</th><th>Scope</th><th>Rationale</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Patient Intake &amp; Triage</strong></td>
+          <td>Triage Agent</td>
+          <td><span class="badge in">In scope</span></td>
+          <td>Emergency-first scan, symptom collection, history-aware urgency, care advice, FAQ</td>
+        </tr>
+        <tr>
+          <td><strong>Appointment Management</strong></td>
+          <td>Scheduling Agent</td>
+          <td><span class="badge in">In scope</span></td>
+          <td>Self-service booking, confirmations, waitlist management</td>
+        </tr>
+        <tr>
+          <td><strong>Consultation &amp; Documentation</strong></td>
+          <td>Documentation Agent</td>
+          <td><span class="badge in">In scope</span></td>
+          <td>SOAP pre-fill from triage, note structuring, entity extraction, patient email summary</td>
+        </tr>
+        <tr>
+          <td><strong>Referral Management</strong></td>
+          <td>Referral Agent</td>
+          <td><span class="badge in">In scope</span></td>
+          <td>Auto-draft letter, validate completeness, send via Outlook, notify patient</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== AGENT SCOPE BY PHASE ==================== -->
+  <div class="section">
+    <h2>2. Agent Scope by Consultation Phase</h2>
+
+    <table>
+      <thead>
+        <tr><th>Agent</th><th>Pre-consultation</th><th>During</th><th>Post-consultation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Triage</strong></td>
+          <td>Emergency scan, symptom collection, urgency classification, FAQ</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td><strong>Scheduling</strong></td>
+          <td>Availability check, booking, confirmations, waitlist</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td><strong>Documentation</strong></td>
+          <td>Load history, pre-fill SOAP (S) from triage</td>
+          <td>Structure notes as clinician types</td>
+          <td>Finalise record, extract entities, email patient summary</td>
+        </tr>
+        <tr>
+          <td><strong>Referral</strong></td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>Auto-triggered from SOAP; draft letter, validate, clinician approves, send, notify patient</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== MVP DEFINITION ==================== -->
+  <div class="section">
+    <h2>3. MVP Definition</h2>
+
+    <div class="grid-2">
+      <div class="card green">
+        <h3>In Scope (Must Have)</h3>
+        <ul>
+          <li><strong>Triage Agent</strong> &mdash; Emergency-first, symptom Q&amp;A, history-aware urgency, care advice</li>
+          <li><strong>Scheduling Agent</strong> &mdash; Appointment booking, confirmations, waitlist</li>
+          <li><strong>Documentation Agent</strong> &mdash; SOAP pre-fill, note structuring, entity extraction, patient email</li>
+          <li><strong>Referral Agent</strong> &mdash; Auto-draft letter, validate, send via Outlook, notify patient</li>
+          <li><strong>Dataverse</strong> &mdash; 6 tables (Patients, Triage Records, Appointments, Encounters, Referrals, Audit Logs)</li>
+          <li><strong>Power Automate</strong> &mdash; Agent flows for emails, confirmations, notifications</li>
+          <li><strong>Audit trail</strong> &mdash; All agent actions logged</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <h3>Out of Scope (Post-Hackathon)</h3>
+        <ul>
+          <li>Clinical decision support (drug interactions, guideline matching)</li>
+          <li>Referral status tracking (requires external system integration)</li>
+          <li>Real EMR/PAS integration (use synthetic data)</li>
+          <li>eRS (e-Referral Service) live integration</li>
+          <li>Patient-facing mobile app (use web chatbot)</li>
+          <li>Multi-practice deployment</li>
+          <li>Power BI dashboards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== EFFORT BREAKDOWN ==================== -->
+  <div class="section">
+    <h2>4. Effort Breakdown</h2>
+
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Tasks</th><th>Effort (days)</th><th>Skills</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Dataverse Setup</strong></td>
+          <td>6 tables (Patients, Triage Records, Appointments, Encounters, Referrals, Audit Logs), relationships, synthetic data</td>
+          <td>3</td>
+          <td>Power Platform</td>
+        </tr>
+        <tr>
+          <td><strong>Copilot Studio Setup</strong></td>
+          <td>Main copilot, topic routing, chatbot + Teams channels, Entra ID auth, fallback handling</td>
+          <td>2</td>
+          <td>Copilot Studio</td>
+        </tr>
+        <tr>
+          <td><strong>Triage Agent</strong></td>
+          <td>Emergency scan topic, symptom collection topic, history lookup, urgency prompt action, care advice, FAQ topics</td>
+          <td>4</td>
+          <td>Copilot Studio</td>
+        </tr>
+        <tr>
+          <td><strong>Scheduling Agent</strong></td>
+          <td>Availability query, booking topic, confirmation agent flow, waitlist logic, cancellation handling</td>
+          <td>3</td>
+          <td>Copilot Studio, Power Automate</td>
+        </tr>
+        <tr>
+          <td><strong>Documentation Agent</strong></td>
+          <td>SOAP pre-fill from triage, note structuring prompt action, entity extraction prompt, patient email agent flow</td>
+          <td>5</td>
+          <td>Copilot Studio, Power Automate</td>
+        </tr>
+        <tr>
+          <td><strong>Referral Agent</strong></td>
+          <td>Letter draft prompt action, completeness validation, clinician approval topic, send agent flow, patient notification</td>
+          <td>4</td>
+          <td>Copilot Studio, Power Automate</td>
+        </tr>
+        <tr>
+          <td><strong>Testing &amp; Demo Prep</strong></td>
+          <td>End-to-end scenario testing, demo script, synthetic patient data, screen recording</td>
+          <td>3</td>
+          <td>All</td>
+        </tr>
+        <tr style="background:#e8f4fa; font-weight:600;">
+          <td><strong>TOTAL</strong></td>
+          <td></td>
+          <td><strong>24 days</strong></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== SPRINT PLAN ==================== -->
+  <div class="section">
+    <h2>5. Sprint Plan (4 weeks)</h2>
+
+    <div class="sprint-card" style="border-left-color: var(--cap-dark);">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 0 &mdash; Foundation</div>
+        <div class="sprint-dates">Week 1 (31 Mar &ndash; 4 Apr)</div>
+      </div>
+      <div class="sprint-goal">Goal: Platform ready, data model in place, chatbot responding</div>
+      <table>
+        <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr><td>Dataverse tables + relationships + synthetic data</td><td>3d</td><td>6 tables with test records</td></tr>
+          <tr><td>Copilot Studio setup + channels (web chatbot + Teams)</td><td>2d</td><td>Chatbot live on web, copilot chat in Teams</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sprint-card">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 1 &mdash; Patient-Facing Agents</div>
+        <div class="sprint-dates">Week 2 (7 Apr &ndash; 11 Apr)</div>
+      </div>
+      <div class="sprint-goal">Goal: Triage + Scheduling working end-to-end (Scenarios 1 &amp; 4)</div>
+      <table>
+        <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr><td>Triage Agent &mdash; emergency scan, symptoms, urgency, advice</td><td>4d</td><td>Patient chatbot triages and advises</td></tr>
+          <tr><td>Scheduling Agent &mdash; booking, confirmation, waitlist</td><td>3d</td><td>Patient can book appointment via chatbot</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sprint-card" style="border-left-color: var(--cap-accent);">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 2 &mdash; Clinician-Facing Agents</div>
+        <div class="sprint-dates">Week 3 (14 Apr &ndash; 18 Apr)</div>
+      </div>
+      <div class="sprint-goal">Goal: Documentation + Referral working end-to-end (Scenarios 2 &amp; 3)</div>
+      <table>
+        <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr><td>Documentation Agent &mdash; SOAP pre-fill, structuring, entities, patient email</td><td>5d</td><td>Clinician types notes, agent structures and saves</td></tr>
+          <tr><td>Referral Agent &mdash; letter draft, validate, send, notify</td><td>4d</td><td>Referral auto-triggered from SOAP, sent via Outlook</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sprint-card" style="border-left-color: var(--cap-green);">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 3 &mdash; Polish + Demo</div>
+        <div class="sprint-dates">Week 4 (21 Apr &ndash; 25 Apr)</div>
+      </div>
+      <div class="sprint-goal">Goal: Demo-ready, all 4 scenarios tested, presentation materials complete</div>
+      <table>
+        <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr><td>End-to-end testing &mdash; all 4 scenarios</td><td>2d</td><td>Bugs fixed, edge cases handled</td></tr>
+          <tr><td>Demo preparation &mdash; script, sample data, recording</td><td>1d</td><td>5-min demo video or live walkthrough</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== SCENARIO COVERAGE ==================== -->
+  <div class="section">
+    <h2>6. Scenario Coverage</h2>
+    <table>
+      <thead>
+        <tr><th>Scenario</th><th>Agents</th><th>Sprint</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Patient Triage &amp; Booking</strong></td><td>Triage, Scheduling</td><td>Sprint 1</td></tr>
+        <tr><td><strong>2. Consultation &amp; Documentation</strong></td><td>Documentation</td><td>Sprint 2</td></tr>
+        <tr><td><strong>3. Referral Drafting &amp; Submission</strong></td><td>Referral</td><td>Sprint 2</td></tr>
+        <tr><td><strong>4. Patient Self-Service</strong></td><td>Triage (FAQ), Scheduling (reschedule)</td><td>Sprint 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== TEAM & ASSUMPTIONS ==================== -->
+  <div class="section">
+    <h2>7. Team &amp; Assumptions</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Team Composition (7 people)</h3>
+        <table style="box-shadow:none; margin:0;">
+          <tbody>
+            <tr><td><strong>Role</strong></td><td><strong>People</strong></td><td><strong>Focus</strong></td></tr>
+            <tr><td>Solution Architect / Dev Lead</td><td>1</td><td>Architecture, orchestration, code reviews</td></tr>
+            <tr><td>Solution Architect</td><td>1</td><td>Data model, security, integration design</td></tr>
+            <tr><td>Business Analyst</td><td>1</td><td>Requirements, test scenarios, demo script, synthetic data</td></tr>
+            <tr><td>Power Platform Developers</td><td>4</td><td>1 per agent (Triage, Scheduling, Documentation, Referral)</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:12px; font-size:0.85rem; color:var(--cap-gray);">
+          Estimated effort: <strong>24 person-days</strong><br>
+          With 4 developers building in parallel (1 agent each), core build completes in ~6 working days
+        </p>
+      </div>
+      <div class="card accent">
+        <h3>Key Assumptions</h3>
+        <ul>
+          <li>Power Platform dev environment available from day 1</li>
+          <li>Copilot Studio licences provisioned</li>
+          <li>Synthetic clinical data only (no real PII/PHI)</li>
+          <li>No external system integration &mdash; Dataverse-only</li>
+          <li>Chatbot deployed on practice website (Copilot Studio web channel)</li>
+          <li>Clinician uses Teams (Copilot chat channel)</li>
+          <li>Outlook for all email notifications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RISKS ==================== -->
+  <div class="section">
+    <h2>8. Risks &amp; Mitigations</h2>
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Impact</th><th>Likelihood</th><th>Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Copilot Studio topic routing between agents</td>
+          <td>High</td>
+          <td>Medium</td>
+          <td>Spike in Sprint 0; test multi-agent handoff early</td>
+        </tr>
+        <tr>
+          <td>Prompt action quality (SOAP structuring, letter drafting)</td>
+          <td>High</td>
+          <td>Medium</td>
+          <td>Invest in prompt engineering Sprint 1&ndash;2; use few-shot examples</td>
+        </tr>
+        <tr>
+          <td>Environment provisioning delays</td>
+          <td>High</td>
+          <td>Low</td>
+          <td>Request environment immediately; have backup tenant ready</td>
+        </tr>
+        <tr>
+          <td>Scope creep</td>
+          <td>Medium</td>
+          <td>Medium</td>
+          <td>Strict scope freeze after Sprint 0; no CDS, no external integrations</td>
+        </tr>
+        <tr>
+          <td>Demo data not realistic enough</td>
+          <td>Medium</td>
+          <td>Low</td>
+          <td>3 detailed patient personas with full history; scripted walkthrough</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026</span>
+  <span>Company Confidential &copy; Capgemini 2026</span>
+</div>
+
+</body>
+</html>

@@ -432,12 +432,13 @@ tr:nth-child(even) { background: #f9fafb; }
   <a href="05-business-case.html">05 - Business Case</a>
   <span class="nav-spacer"></span>
   <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
 </div>
 
 <div class="header">
   <span class="industry">Healthcare</span>
   <h1>Technical Solution</h1>
-  <div class="subtitle">Microsoft platform architecture aligned with CAF and AI Decision Framework</div>
+  <div class="subtitle">Copilot Studio + Power Platform architecture</div>
 </div>
 
 <div class="content">
@@ -454,84 +455,81 @@ tr:nth-child(even) { background: #f9fafb; }
     <img src="../assets/04-technical-architecture.svg" alt="Technical Architecture — full size" style="max-width:95vw; max-height:95vh;">
   </div>
 
-  <!-- Technology Mapping -->
+  <!-- Technology Stack -->
   <div class="section">
-    <h2>Microsoft Technologies</h2>
+    <h2>Technology Stack</h2>
     <table>
       <thead>
-        <tr><th>Technology</th><th>Purpose</th><th>Layer</th></tr>
+        <tr><th>Technology</th><th>Role</th><th>Used By</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="tech-badge copilot">Copilot Studio</span></td><td>Agent definitions, orchestration, topic flows, patient chatbot</td><td>Orchestration</td></tr>
-        <tr><td><span class="tech-badge copilot">M365 Copilot</span></td><td>Clinician interface via Teams/Outlook; declarative agents</td><td>User Interface</td></tr>
-        <tr><td><span class="tech-badge power">Power Automate</span></td><td>Event-driven workflows, notifications, status triggers</td><td>Automation</td></tr>
-        <tr><td><span class="tech-badge power">AI Builder</span></td><td>Document processing, entity extraction from clinical notes</td><td>AI Services</td></tr>
-        <tr><td><span class="tech-badge data">Dataverse</span></td><td>Structured data for all entities; RBAC</td><td>Data</td></tr>
-        <tr><td><span class="tech-badge analytics">Power BI</span></td><td>Dashboards, agent monitoring, audit reporting</td><td>Analytics</td></tr>
-        <tr><td><span class="tech-badge power">Power Apps</span></td><td>Admin portal for scheduling oversight</td><td>User Interface</td></tr>
-        <tr><td><span class="tech-badge data">Microsoft Fabric</span></td><td>Data pipeline for guideline ingestion (if needed)</td><td>Data Platform</td></tr>
+        <tr><td><strong>Copilot Studio</strong></td><td>Agent definitions, topic routing, prompt actions, patient chatbot</td><td>All agents</td></tr>
+        <tr><td><strong>Power Automate</strong></td><td>Agent flows: send emails, notifications, appointment confirmations</td><td>Scheduling, Documentation, Referral</td></tr>
+        <tr><td><strong>Dataverse</strong></td><td>All data: patients, triage records, appointments, encounters, referrals, audit logs</td><td>All agents</td></tr>
+        <tr><td><strong>Teams</strong></td><td>Clinician channel: Copilot chat for consultation notes and referral approval</td><td>Documentation, Referral</td></tr>
+        <tr><td><strong>Outlook</strong></td><td>Referral letters to specialists, patient notifications, appointment confirmations</td><td>Referral, Scheduling</td></tr>
+        <tr><td><strong>Entra ID</strong></td><td>Authentication for clinicians (Teams) and patients (chatbot)</td><td>All</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Agent-Technology Detail -->
+  <!-- Dataverse Schema -->
   <div class="section">
-    <h2>Agent Technology Mapping</h2>
-    <div class="grid-2" style="grid-template-columns: 1fr 1fr;">
-      <div class="card accent">
-        <h3>Clinical Decision Support Agent</h3>
-        <p><strong>Tech:</strong> Copilot Studio + Knowledge Sources</p>
-        <p><strong>AI:</strong> RAG over guidelines, drug interaction matching</p>
-        <p><strong>Integration:</strong> M365 Copilot (Teams), Power Automate (async)</p>
-      </div>
-      <div class="card">
-        <h3>Documentation Agent</h3>
-        <p><strong>Tech:</strong> Copilot Studio + AI Builder</p>
-        <p><strong>AI:</strong> Transcription, summarisation, entity extraction</p>
-        <p><strong>Integration:</strong> M365 Copilot (Teams), Dataverse</p>
-      </div>
-      <div class="card">
-        <h3>Triage Agent</h3>
-        <p><strong>Tech:</strong> Copilot Studio</p>
-        <p><strong>AI:</strong> Conversational AI, symptom classification</p>
-        <p><strong>Integration:</strong> Web/mobile chatbot, Dataverse</p>
-      </div>
-      <div class="card">
-        <h3>Referral Agent</h3>
-        <p><strong>Tech:</strong> Copilot Studio + Power Automate</p>
-        <p><strong>AI:</strong> Document generation, status tracking</p>
-        <p><strong>Integration:</strong> Dataverse, notifications</p>
-      </div>
-      <div class="card" style="grid-column: span 2;">
-        <h3>Scheduling Agent</h3>
-        <p><strong>Tech:</strong> Copilot Studio + Power Automate</p>
-        <p><strong>AI:</strong> Availability matching, priority scheduling</p>
-        <p><strong>Integration:</strong> Dataverse, Power Automate (waitlist), chatbot + admin portal</p>
-      </div>
-    </div>
-  </div>
+    <h2>Dataverse Schema</h2>
+    <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">All agents read from and write to <strong>Dataverse</strong>. Data flows between agents via Dataverse records, not point-to-point. All data is synthetic for the hackathon.</p>
 
-  <!-- Framework Alignment -->
-  <div class="section">
-    <h2>Framework Alignment</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Microsoft CAF for AI Agents</h3>
-        <ul>
-          <li><strong>Plan:</strong> Business case validated; agents classified by CAF categories</li>
-          <li><strong>Govern:</strong> Responsible AI controls, data governance, risk management</li>
-          <li><strong>Build:</strong> Copilot Studio primary; Power Platform for automation</li>
-          <li><strong>Manage:</strong> Monitoring via Power BI, alerting, lifecycle management</li>
-        </ul>
-      </div>
-      <div class="card accent">
-        <h3>Microsoft AI Decision Framework (BXT)</h3>
-        <ul>
-          <li><strong>Business:</strong> Clear KPIs and measurable outcomes defined</li>
-          <li><strong>Experience:</strong> Conversational (Teams, chatbot) + event-driven</li>
-          <li><strong>Technology:</strong> SaaS-first (Copilot Studio) before PaaS (Foundry)</li>
-        </ul>
-      </div>
+    <table>
+      <thead>
+        <tr><th>Table</th><th>Key Fields</th><th>Written By</th><th>Read By</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Patients</strong></td>
+          <td>ID, name, DOB, conditions, medications, allergies</td>
+          <td>Pre-loaded (synthetic)</td>
+          <td>Triage, Documentation, Referral</td>
+        </tr>
+        <tr>
+          <td><strong>Triage Records</strong></td>
+          <td>ID, patient, datetime, symptoms, history context, urgency, outcome</td>
+          <td>Triage Agent</td>
+          <td>Documentation Agent (SOAP pre-fill), Scheduling Agent</td>
+        </tr>
+        <tr>
+          <td><strong>Appointments</strong></td>
+          <td>ID, patient, clinician, datetime, type, status, triage ref</td>
+          <td>Scheduling Agent</td>
+          <td>Documentation Agent, Scheduling Agent (availability)</td>
+        </tr>
+        <tr>
+          <td><strong>Encounters</strong></td>
+          <td>ID, patient, clinician, date, SOAP (S/O/A/P), entities, referral flag, status</td>
+          <td>Documentation Agent</td>
+          <td>Referral Agent</td>
+        </tr>
+        <tr>
+          <td><strong>Referrals</strong></td>
+          <td>ID, patient, clinician, specialty, letter, status (draft/sent), dates</td>
+          <td>Referral Agent</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td><strong>Audit Logs</strong></td>
+          <td>ID, agent, action, entity ref, user, timestamp</td>
+          <td>All agents</td>
+          <td>Admin (reporting)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:16px;">Key Relationships</h3>
+    <div class="card" style="margin-top:8px;">
+      <ul>
+        <li><strong>Triage &rarr; Encounter:</strong> Triage record pre-fills SOAP (S); linked via patient + triage ref</li>
+        <li><strong>Triage &rarr; Appointment:</strong> Triage outcome triggers booking; linked via triage ref</li>
+        <li><strong>Encounter &rarr; Referral:</strong> Referral flag in encounter triggers Referral Agent; linked via encounter ID</li>
+        <li><strong>All &rarr; Audit Logs:</strong> Every agent action creates an audit record</li>
+      </ul>
     </div>
   </div>
 
@@ -541,11 +539,11 @@ tr:nth-child(even) { background: #f9fafb; }
     <div class="grid-3">
       <div class="card green">
         <h3>Authentication</h3>
-        <p>Microsoft Entra ID for all users and service principals</p>
+        <p>Microsoft Entra ID for clinicians (Teams) and patients (chatbot)</p>
       </div>
       <div class="card green">
         <h3>Authorisation</h3>
-        <p>Dataverse RBAC — clinicians see patient data; patients see own data only</p>
+        <p>Dataverse RBAC &mdash; clinicians see patient data; patients see own data only</p>
       </div>
       <div class="card green">
         <h3>Data Protection</h3>
@@ -553,11 +551,11 @@ tr:nth-child(even) { background: #f9fafb; }
       </div>
       <div class="card green">
         <h3>Audit Trail</h3>
-        <p>Immutable log of all agent actions, clinician decisions, overrides</p>
+        <p>Immutable log of all agent actions and clinician approvals</p>
       </div>
       <div class="card green">
         <h3>Responsible AI</h3>
-        <p>Confidence indicators, source citations, mandatory human approval</p>
+        <p>Agents handle admin only &mdash; no clinical decisions; nothing sent without approval</p>
       </div>
       <div class="card green">
         <h3>Compliance Ready</h3>
@@ -565,6 +563,7 @@ tr:nth-child(even) { background: #f9fafb; }
       </div>
     </div>
   </div>
+
 
 </div>
 

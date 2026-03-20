@@ -1,8 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" font-family="'Segoe UI', -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 404" font-family="'Segoe UI', -apple-system, sans-serif">
   <defs>
     <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
       <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
     </filter>
+    <marker id="arr" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="6" markerHeight="5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0070AD"/>
+    </marker>
+    <marker id="arrGrey" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="6" markerHeight="5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="6" markerHeight="5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2E8B57"/>
+    </marker>
     <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#003A5D"/>
       <stop offset="50%" stop-color="#0070AD"/>
@@ -10,206 +19,157 @@
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="1100" height="680" rx="12" fill="#FAFBFC"/>
+  <rect width="1100" height="404" rx="12" fill="#FAFBFC"/>
 
   <!-- Header -->
-  <rect width="1100" height="56" rx="12" fill="url(#headerGrad)"/>
-  <rect y="44" width="1100" height="12" fill="url(#headerGrad)"/>
-  <text x="24" y="28" fill="white" font-size="11" font-weight="600" letter-spacing="0.5">CASE OVERVIEW</text>
-  <text x="150" y="28" fill="white" font-size="11" opacity="0.8" font-style="italic">Healthcare</text>
-  <text x="1076" y="42" text-anchor="end" fill="white" font-size="20" font-weight="700">Technical Solution</text>
-  <text x="24" y="46" fill="white" font-size="13" font-weight="400">Clinical Workflow Orchestration</text>
+  <rect width="1100" height="46" rx="12" fill="url(#headerGrad)"/>
+  <rect y="34" width="1100" height="12" fill="url(#headerGrad)"/>
+  <text x="24" y="22" fill="white" font-size="10" font-weight="600" letter-spacing="0.5">CASE OVERVIEW | Healthcare</text>
+  <text x="1076" y="36" text-anchor="end" fill="white" font-size="18" font-weight="700">Technical Architecture</text>
+  <text x="24" y="38" fill="white" font-size="12" font-weight="400">AgentCare &#x2014; Component Integration</text>
 
-  <!-- Technologies sidebar -->
-  <rect x="920" y="68" width="168" height="600" rx="8" fill="white" filter="url(#shadow)"/>
-  <rect x="920" y="68" width="168" height="32" rx="8" fill="#003A5D"/>
-  <rect x="920" y="88" width="168" height="12" fill="#003A5D"/>
-  <text x="1004" y="89" text-anchor="middle" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">TECHNOLOGIES</text>
+  <!-- ===== LEFT: USERS ===== -->
+  <text x="65" y="66" text-anchor="middle" font-size="8" font-weight="700" fill="#6C757D" letter-spacing="1">USERS</text>
 
-  <text x="936" y="122" font-size="10" font-weight="600" fill="#003A5D">UI Layer</text>
-  <rect x="936" y="128" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
-  <text x="1006" y="142" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">M365 Copilot</text>
-  <rect x="936" y="152" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
-  <text x="1006" y="166" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">Copilot Studio Bot</text>
+  <rect x="16" y="76" width="98" height="50" rx="8" fill="white" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <text x="65" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#003A5D">Patient</text>
+  <text x="65" y="110" text-anchor="middle" font-size="7" fill="#555">Practice website</text>
 
-  <text x="936" y="194" font-size="10" font-weight="600" fill="#003A5D">Orchestration</text>
-  <rect x="936" y="200" width="140" height="20" rx="4" fill="#e0f7ff" stroke="#00B0F0" stroke-width="1"/>
-  <text x="1006" y="214" text-anchor="middle" font-size="9" font-weight="500" fill="#005a8c">Copilot Studio</text>
+  <rect x="16" y="140" width="98" height="50" rx="8" fill="white" stroke="#0070AD" stroke-width="2" filter="url(#shadow)"/>
+  <text x="65" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#003A5D">Clinician</text>
+  <text x="65" y="174" text-anchor="middle" font-size="7" fill="#555">Microsoft Teams</text>
 
-  <text x="936" y="248" font-size="10" font-weight="600" fill="#003A5D">Automation</text>
-  <rect x="936" y="254" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
-  <text x="1006" y="268" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">Power Automate</text>
-  <rect x="936" y="278" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
-  <text x="1006" y="292" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">AI Builder</text>
-  <rect x="936" y="302" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
-  <text x="1006" y="316" text-anchor="middle" font-size="9" font-weight="500" fill="#1b5e20">Power Apps</text>
+  <!-- ===== ENTRA ID (separate, between users and Power Platform) ===== -->
+  <rect x="130" y="76" width="70" height="114" rx="8" fill="#d4edda" stroke="#2E8B57" stroke-width="2" filter="url(#shadow)"/>
+  <text x="165" y="126" text-anchor="middle" font-size="9" font-weight="700" fill="#155724">Entra</text>
+  <text x="165" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#155724">ID</text>
+  <text x="165" y="156" text-anchor="middle" font-size="6" fill="#2E8B57">Auto (Teams)</text>
+  <text x="165" y="166" text-anchor="middle" font-size="6" fill="#2E8B57">Sign-in (web)</text>
 
-  <text x="936" y="348" font-size="10" font-weight="600" fill="#003A5D">Data &amp; Analytics</text>
-  <rect x="936" y="354" width="140" height="20" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
-  <text x="1006" y="368" text-anchor="middle" font-size="9" font-weight="500" fill="#333">Dataverse</text>
-  <rect x="936" y="378" width="140" height="20" rx="4" fill="#fef3cd" stroke="#ffc107" stroke-width="1"/>
-  <text x="1006" y="392" text-anchor="middle" font-size="9" font-weight="500" fill="#664d03">Power BI</text>
-  <rect x="936" y="402" width="140" height="20" rx="4" fill="#f0f0f0" stroke="#999" stroke-width="1"/>
-  <text x="1006" y="416" text-anchor="middle" font-size="9" font-weight="500" fill="#333">Microsoft Fabric</text>
+  <!-- User → Entra ID -->
+  <line x1="114" y1="101" x2="130" y2="101" stroke="#2E8B57" stroke-width="1.2" marker-end="url(#arrGreen)"/>
+  <line x1="114" y1="165" x2="130" y2="165" stroke="#2E8B57" stroke-width="1.2" marker-end="url(#arrGreen)"/>
 
-  <text x="936" y="450" font-size="10" font-weight="600" fill="#003A5D">Security</text>
-  <rect x="936" y="456" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
-  <text x="1006" y="470" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Entra ID (RBAC)</text>
-  <rect x="936" y="480" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
-  <text x="1006" y="494" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Encryption at rest/transit</text>
-  <rect x="936" y="504" width="140" height="20" rx="4" fill="#d4edda" stroke="#2E8B57" stroke-width="1"/>
-  <text x="1006" y="518" text-anchor="middle" font-size="9" font-weight="500" fill="#155724">Immutable Audit Log</text>
+  <!-- Entra ID → Power Platform -->
+  <line x1="200" y1="133" x2="220" y2="133" stroke="#0070AD" stroke-width="1.2" marker-end="url(#arr)"/>
 
-  <!-- ===== LAYER 1: USER INTERFACES ===== -->
-  <rect x="12" y="68" width="896" height="100" rx="8" fill="#e8f4fa" filter="url(#shadow)"/>
-  <rect x="12" y="68" width="896" height="28" rx="8" fill="#0070AD"/>
-  <rect x="12" y="84" width="896" height="12" fill="#0070AD"/>
-  <text x="24" y="88" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">USER INTERFACES</text>
+  <!-- ===== POWER PLATFORM (big container) ===== -->
+  <rect x="224" y="56" width="760" height="294" rx="12" fill="#f0f4f8" stroke="#6C757D" stroke-width="2"/>
+  <text x="604" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#6C757D" letter-spacing="1">MICROSOFT POWER PLATFORM</text>
 
-  <!-- UI boxes -->
-  <rect x="24" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="124" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Microsoft Teams / Outlook</text>
-  <text x="124" y="140" text-anchor="middle" font-size="9" fill="#555">Clinician workflows (M365 Copilot)</text>
+  <!-- === COPILOT STUDIO (inside Power Platform) === -->
+  <rect x="236" y="82" width="480" height="170" rx="10" fill="#E8F4FA" stroke="#003A5D" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="236" y="82" width="480" height="22" rx="10" fill="#003A5D"/>
+  <rect x="236" y="92" width="480" height="12" fill="#003A5D"/>
+  <text x="476" y="98" text-anchor="middle" fill="white" font-size="10" font-weight="700" letter-spacing="0.5">COPILOT STUDIO</text>
 
-  <rect x="236" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="336" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Copilot Studio Chatbot</text>
-  <text x="336" y="140" text-anchor="middle" font-size="9" fill="#555">Patient self-service (web/mobile)</text>
+  <!-- Agents -->
+  <text x="250" y="120" font-size="7" font-weight="700" fill="#003A5D">AGENTS</text>
+  <rect x="250" y="126" width="108" height="36" rx="4" fill="white" stroke="#0070AD" stroke-width="1.5"/>
+  <text x="304" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#003A5D">Triage</text>
+  <text x="304" y="154" text-anchor="middle" font-size="6" fill="#555">Emergency, urgency</text>
 
-  <rect x="448" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="548" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power BI Dashboards</text>
-  <text x="548" y="140" text-anchor="middle" font-size="9" fill="#555">Clinical Lead oversight</text>
+  <rect x="366" y="126" width="108" height="36" rx="4" fill="white" stroke="#0070AD" stroke-width="1.5"/>
+  <text x="420" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#003A5D">Scheduling</text>
+  <text x="420" y="154" text-anchor="middle" font-size="6" fill="#555">Booking, waitlist</text>
 
-  <rect x="660" y="102" width="200" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="760" y="122" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power Apps Portal</text>
-  <text x="760" y="140" text-anchor="middle" font-size="9" fill="#555">Admin operations</text>
+  <rect x="482" y="126" width="108" height="36" rx="4" fill="white" stroke="#0070AD" stroke-width="1.5"/>
+  <text x="536" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#003A5D">Documentation</text>
+  <text x="536" y="154" text-anchor="middle" font-size="6" fill="#555">SOAP, entities</text>
 
-  <!-- Vertical connectors -->
-  <line x1="124" y1="168" x2="124" y2="188" stroke="#0070AD" stroke-width="2"/>
-  <line x1="336" y1="168" x2="336" y2="188" stroke="#0070AD" stroke-width="2"/>
-  <line x1="548" y1="168" x2="548" y2="188" stroke="#0070AD" stroke-width="2"/>
-  <line x1="760" y1="168" x2="760" y2="188" stroke="#0070AD" stroke-width="2"/>
+  <rect x="598" y="126" width="108" height="36" rx="4" fill="white" stroke="#0070AD" stroke-width="1.5"/>
+  <text x="652" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#003A5D">Referral</text>
+  <text x="652" y="154" text-anchor="middle" font-size="6" fill="#555">Draft, validate, send</text>
 
-  <!-- ===== LAYER 2: ORCHESTRATION ===== -->
-  <rect x="12" y="188" width="896" height="120" rx="8" fill="#dce8f0" filter="url(#shadow)"/>
-  <rect x="12" y="188" width="896" height="28" rx="8" fill="#003A5D"/>
-  <rect x="12" y="204" width="896" height="12" fill="#003A5D"/>
-  <text x="24" y="208" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">COPILOT STUDIO — ORCHESTRATION LAYER</text>
+  <!-- Topics + Prompt Actions + Knowledge -->
+  <text x="250" y="178" font-size="7" font-weight="700" fill="#003A5D">CAPABILITIES</text>
+  <rect x="250" y="184" width="148" height="24" rx="4" fill="white" stroke="#0070AD" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="324" y="200" text-anchor="middle" font-size="8" font-weight="600" fill="#003A5D">Topics</text>
 
-  <!-- Agent boxes -->
-  <rect x="24" y="222" width="164" height="74" rx="6" fill="white" filter="url(#shadow)" stroke="#00B0F0" stroke-width="2"/>
-  <text x="106" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Clinical Decision</text>
-  <text x="106" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#003A5D">Support Agent</text>
-  <rect x="60" y="270" width="44" height="16" rx="4" fill="#00B0F0"/>
-  <text x="82" y="282" text-anchor="middle" font-size="8" font-weight="700" fill="white">CORE</text>
-  <rect x="108" y="270" width="68" height="16" rx="4" fill="#e8f4fa"/>
-  <text x="142" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC + RAG</text>
+  <rect x="406" y="184" width="148" height="24" rx="4" fill="white" stroke="#0070AD" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="480" y="200" text-anchor="middle" font-size="8" font-weight="600" fill="#003A5D">Prompt Actions</text>
 
-  <rect x="200" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="274" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Documentation</text>
-  <text x="274" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
-  <rect x="238" y="270" width="72" height="16" rx="4" fill="#f0e6ff"/>
-  <text x="274" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#6f42c1">GEN AI</text>
+  <rect x="562" y="184" width="148" height="24" rx="4" fill="white" stroke="#0070AD" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="636" y="200" text-anchor="middle" font-size="8" font-weight="600" fill="#003A5D">Knowledge</text>
 
-  <rect x="360" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="434" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Triage</text>
-  <text x="434" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
-  <rect x="398" y="270" width="72" height="16" rx="4" fill="#e8f4fa"/>
-  <text x="434" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC</text>
+  <!-- Agent routing labels -->
+  <text x="250" y="228" font-size="6" fill="#0070AD">Patient &#x2192; Triage + Scheduling</text>
+  <text x="250" y="238" font-size="6" fill="#0070AD">Clinician &#x2192; Documentation + Referral</text>
 
-  <rect x="520" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="594" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Referral</text>
-  <text x="594" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
-  <rect x="558" y="270" width="72" height="16" rx="4" fill="#e8f4fa"/>
-  <text x="594" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#0070AD">AGENTIC</text>
+  <!-- === POWER AUTOMATE (inside Power Platform, right of Copilot Studio) === -->
+  <rect x="736" y="82" width="236" height="170" rx="10" fill="#e8f5e9" stroke="#2E8B57" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="736" y="82" width="236" height="22" rx="10" fill="#2E8B57"/>
+  <rect x="736" y="92" width="236" height="12" fill="#2E8B57"/>
+  <text x="854" y="98" text-anchor="middle" fill="white" font-size="10" font-weight="700" letter-spacing="0.5">POWER AUTOMATE</text>
 
-  <rect x="680" y="222" width="148" height="74" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="754" y="244" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Scheduling</text>
-  <text x="754" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Agent</text>
-  <rect x="718" y="270" width="72" height="16" rx="4" fill="#e2e8f0"/>
-  <text x="754" y="282" text-anchor="middle" font-size="8" font-weight="600" fill="#475569">AUTOMATION</text>
+  <text x="750" y="120" font-size="7" font-weight="700" fill="#1b5e20">AGENT FLOWS</text>
+  <rect x="750" y="126" width="210" height="22" rx="4" fill="white" stroke="#2E8B57" stroke-width="1"/>
+  <text x="855" y="141" text-anchor="middle" font-size="7" font-weight="600" fill="#1b5e20">Appointment confirmations + reminders</text>
+  <rect x="750" y="152" width="210" height="22" rx="4" fill="white" stroke="#2E8B57" stroke-width="1"/>
+  <text x="855" y="167" text-anchor="middle" font-size="7" font-weight="600" fill="#1b5e20">Send referral + notify patient</text>
 
-  <!-- Vertical connectors -->
-  <line x1="200" y1="308" x2="200" y2="328" stroke="#0070AD" stroke-width="2"/>
-  <line x1="400" y1="308" x2="400" y2="328" stroke="#0070AD" stroke-width="2"/>
-  <line x1="600" y1="308" x2="600" y2="328" stroke="#0070AD" stroke-width="2"/>
+  <text x="750" y="192" font-size="7" font-weight="700" fill="#1b5e20">CONNECTORS</text>
+  <rect x="750" y="198" width="210" height="22" rx="4" fill="white" stroke="#2E8B57" stroke-width="1"/>
+  <text x="855" y="213" text-anchor="middle" font-size="7" font-weight="600" fill="#2E8B57">Dataverse Connector</text>
+  <rect x="750" y="224" width="210" height="22" rx="4" fill="white" stroke="#2E8B57" stroke-width="1"/>
+  <text x="855" y="239" text-anchor="middle" font-size="7" font-weight="600" fill="#2E8B57">Outlook Connector</text>
 
-  <!-- ===== LAYER 3: AUTOMATION ===== -->
-  <rect x="12" y="328" width="896" height="100" rx="8" fill="#e8f5e9" filter="url(#shadow)"/>
-  <rect x="12" y="328" width="896" height="28" rx="8" fill="#2E8B57"/>
-  <rect x="12" y="344" width="896" height="12" fill="#2E8B57"/>
-  <text x="24" y="348" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">POWER PLATFORM — AUTOMATION &amp; INTEGRATION</text>
+  <!-- Copilot Studio → Power Automate (horizontal) -->
+  <line x1="716" y1="133" x2="736" y2="133" stroke="#2E8B57" stroke-width="1.2" marker-end="url(#arrGreen)"/>
 
-  <rect x="24" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="159" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Power Automate</text>
-  <text x="159" y="400" text-anchor="middle" font-size="9" fill="#555">Event triggers, notifications, status updates</text>
+  <!-- === DATAVERSE (inside Power Platform, bottom) === -->
+  <rect x="236" y="270" width="736" height="66" rx="10" fill="white" stroke="#6C757D" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="236" y="270" width="736" height="22" rx="10" fill="#6C757D"/>
+  <rect x="236" y="280" width="736" height="12" fill="#6C757D"/>
+  <text x="604" y="288" text-anchor="middle" fill="white" font-size="10" font-weight="700" letter-spacing="0.5">DATAVERSE</text>
 
-  <rect x="306" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="441" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">AI Builder</text>
-  <text x="441" y="400" text-anchor="middle" font-size="9" fill="#555">Document processing, entity extraction</text>
+  <rect x="250" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="304" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Patients</text>
+  <rect x="366" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="420" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Triage Records</text>
+  <rect x="482" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="536" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Appointments</text>
+  <rect x="598" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="652" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Encounters</text>
+  <rect x="714" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="768" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Referrals</text>
+  <rect x="830" y="300" width="108" height="22" rx="3" fill="#f0f0f0"/>
+  <text x="884" y="315" text-anchor="middle" font-size="7" font-weight="500" fill="#333">Audit Logs</text>
 
-  <rect x="588" y="362" width="270" height="54" rx="6" fill="white" filter="url(#shadow)"/>
-  <text x="723" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#003A5D">Custom Connectors</text>
-  <text x="723" y="400" text-anchor="middle" font-size="9" fill="#555">Clinical guidelines (NICE, BNF)</text>
+  <!-- Copilot Studio → Dataverse (vertical) -->
+  <line x1="476" y1="252" x2="476" y2="270" stroke="#6C757D" stroke-width="1.2" marker-end="url(#arrGrey)"/>
+  <text x="490" y="264" font-size="6" fill="#6C757D" font-weight="600">Read / Write</text>
 
-  <!-- Vertical connectors -->
-  <line x1="200" y1="428" x2="200" y2="448" stroke="#6C757D" stroke-width="2"/>
-  <line x1="460" y1="428" x2="460" y2="448" stroke="#6C757D" stroke-width="2"/>
-  <line x1="720" y1="428" x2="720" y2="448" stroke="#6C757D" stroke-width="2"/>
+  <!-- Power Automate → Dataverse (vertical) -->
+  <line x1="854" y1="252" x2="854" y2="270" stroke="#6C757D" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrGrey)"/>
+  <text x="868" y="264" font-size="6" fill="#6C757D">audit log</text>
 
-  <!-- ===== LAYER 4: DATA ===== -->
-  <rect x="12" y="448" width="896" height="100" rx="8" fill="#f0f0f0" filter="url(#shadow)"/>
-  <rect x="12" y="448" width="896" height="28" rx="8" fill="#6C757D"/>
-  <rect x="12" y="464" width="896" height="12" fill="#6C757D"/>
-  <text x="24" y="468" fill="white" font-size="11" font-weight="700" letter-spacing="0.5">DATAVERSE — DATA BACKBONE</text>
+  <!-- ===== RIGHT: EXTERNAL ===== -->
+  <text x="1020" y="66" text-anchor="middle" font-size="8" font-weight="700" fill="#6C757D" letter-spacing="1">EXTERNAL</text>
 
-  <!-- Data entity boxes -->
-  <rect x="24" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="74" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Patients</text>
+  <rect x="1000" y="82" width="90" height="100" rx="8" fill="white" stroke="#E8912D" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1045" y="116" text-anchor="middle" font-size="10" font-weight="700" fill="#003A5D">Outlook</text>
+  <text x="1045" y="134" text-anchor="middle" font-size="7" fill="#555">Referral letters</text>
+  <text x="1045" y="146" text-anchor="middle" font-size="7" fill="#555">Confirmations</text>
+  <text x="1045" y="158" text-anchor="middle" font-size="7" fill="#555">Patient emails</text>
 
-  <rect x="132" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="182" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Encounters</text>
+  <!-- Power Automate → Outlook (horizontal) -->
+  <line x1="972" y1="133" x2="1000" y2="133" stroke="#E8912D" stroke-width="1.2" marker-end="url(#arr)"/>
 
-  <rect x="240" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="290" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Guidelines</text>
-
-  <rect x="348" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="398" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Medications</text>
-
-  <rect x="456" y="484" width="100" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="506" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Referrals</text>
-
-  <rect x="564" y="484" width="110" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="619" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Appointments</text>
-
-  <rect x="682" y="484" width="110" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="737" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Triage Records</text>
-
-  <rect x="800" y="484" width="96" height="48" rx="5" fill="white" filter="url(#shadow)"/>
-  <text x="848" y="512" text-anchor="middle" font-size="10" font-weight="500" fill="#333">Audit Logs</text>
-
-  <!-- ===== SECURITY BAR ===== -->
-  <rect x="12" y="564" width="896" height="40" rx="6" fill="#d4edda" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="460" y="589" text-anchor="middle" font-size="10" fill="#155724">
-    <tspan font-weight="700">Security &amp; Governance: </tspan>
-    <tspan>Entra ID (RBAC)</tspan>
-    <tspan dx="12">|</tspan>
-    <tspan dx="12">Encryption at rest &amp; transit</tspan>
-    <tspan dx="12">|</tspan>
-    <tspan dx="12">Synthetic data only</tspan>
-    <tspan dx="12">|</tspan>
-    <tspan dx="12">Immutable audit trail</tspan>
-    <tspan dx="12">|</tspan>
-    <tspan dx="12">NHS/HIPAA-ready design</tspan>
+  <!-- ===== SECURITY + FRAMEWORKS ===== -->
+  <rect x="16" y="366" width="1064" height="24" rx="6" fill="#d4edda" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="550" y="382" text-anchor="middle" font-size="8" fill="#155724">
+    <tspan font-weight="700">Security: </tspan>
+    <tspan>Entra ID (auth)</tspan>
+    <tspan dx="8">|</tspan>
+    <tspan dx="8">Dataverse RBAC</tspan>
+    <tspan dx="8">|</tspan>
+    <tspan dx="8">Encryption at rest &#x26; transit</tspan>
+    <tspan dx="8">|</tspan>
+    <tspan dx="8">Synthetic data (hackathon)</tspan>
+    <tspan dx="8">|</tspan>
+    <tspan dx="8">Immutable audit trail</tspan>
   </text>
 
-  <!-- ===== FRAMEWORK ALIGNMENT ===== -->
-  <rect x="12" y="618" width="440" height="48" rx="6" fill="white" stroke="#0070AD" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="24" y="639" font-size="10" font-weight="700" fill="#003A5D">Microsoft CAF for AI Agents</text>
-  <text x="24" y="655" font-size="9" fill="#555">Plan &#x2192; Govern &#x2192; Build &#x2192; Manage lifecycle</text>
-
-  <rect x="464" y="618" width="444" height="48" rx="6" fill="white" stroke="#00B0F0" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="476" y="639" font-size="10" font-weight="700" fill="#003A5D">Microsoft AI Decision Framework (BXT)</text>
-  <text x="476" y="655" font-size="9" fill="#555">Business (KPIs) + Experience (Teams/chatbot) + Technology (SaaS-first)</text>
 
 </svg>

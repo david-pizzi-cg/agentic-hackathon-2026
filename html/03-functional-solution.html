@@ -479,29 +479,30 @@ tr:nth-child(even) { background: #f9fafb; }
   <a href="05-business-case.html">05 - Business Case</a>
   <span class="nav-spacer"></span>
   <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
 </div>
 
 <div class="header">
   <span class="industry">Healthcare</span>
   <h1>Functional Solution + AI-Human Chemistry</h1>
-  <div class="subtitle">Agents assist, clinicians decide — every clinical action requires human approval</div>
+  <div class="subtitle">Agents automate admin tasks — clinicians focus on patients</div>
 </div>
 
 <div class="content">
 
-  <!-- Workflow 1: Triage (chronological first) -->
+  <!-- Workflow 1: Triage -->
   <div class="section">
-    <img src="../assets/03-workflow-triage.svg" alt="Workflow 1: Patient Triage and Self-Service Booking" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal1').style.display='flex'" title="Click to zoom">
+    <img src="../assets/03-workflow-triage.svg" alt="Workflow 1: Patient Triage" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal1').style.display='flex'" title="Click to zoom">
   </div>
 
   <!-- Workflow 2: Consultation -->
   <div class="section">
-    <img src="../assets/03-workflow-consultation.svg" alt="Workflow 2: Consultation with Real-Time Decision Support" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal2').style.display='flex'" title="Click to zoom">
+    <img src="../assets/03-workflow-consultation.svg" alt="Workflow 2: Consultation and Documentation" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal2').style.display='flex'" title="Click to zoom">
   </div>
 
   <!-- Workflow 3: Post-Consultation Review -->
   <div class="section">
-    <img src="../assets/03-workflow-referral.svg" alt="Workflow 3: Post-Consultation Review and Missed Referral Catch" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal3').style.display='flex'" title="Click to zoom">
+    <img src="../assets/03-workflow-referral.svg" alt="Workflow 3: Referral Drafting and Submission" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal3').style.display='flex'" title="Click to zoom">
   </div>
 
   <!-- Zoom Modals -->
@@ -532,11 +533,10 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><th>Agent</th><th>Criticality</th><th>Fallback</th></tr>
       </thead>
       <tbody>
-        <tr><td>Clinical Decision Support</td><td><span class="badge high">HIGH</span></td><td>Clinician proceeds without AI support; manual guideline lookup</td></tr>
         <tr><td>Triage</td><td><span class="badge high">HIGH</span></td><td>Patient directed to phone; receptionist triages manually</td></tr>
-        <tr><td>Documentation</td><td><span class="badge medium">MEDIUM</span></td><td>Clinician writes notes manually</td></tr>
-        <tr><td>Referral</td><td><span class="badge medium">MEDIUM</span></td><td>Manual referral letter; admin tracks by phone</td></tr>
-        <tr><td>Scheduling</td><td><span class="badge medium">MEDIUM</span></td><td>Receptionist books appointments manually</td></tr>
+        <tr><td>Scheduling</td><td><span class="badge medium">MEDIUM</span></td><td>Receptionist books appointments manually via calendar</td></tr>
+        <tr><td>Documentation</td><td><span class="badge medium">MEDIUM</span></td><td>Clinician writes and structures notes manually</td></tr>
+        <tr><td>Referral</td><td><span class="badge medium">MEDIUM</span></td><td>Clinician drafts referral letter manually; admin sends</td></tr>
       </tbody>
     </table>
     <p style="margin-top:12px; font-size:0.9rem; color:#555;">No agent is a single point of failure for patient safety. All fallbacks are clearly communicated to users.</p>

@@ -478,6 +478,7 @@ tr:nth-child(even) { background: #f9fafb; }
   <a class="active" href="05-business-case.html">05 - Business Case</a>
   <span class="nav-spacer"></span>
   <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
 </div>
 
 <div class="header">
@@ -494,30 +495,30 @@ tr:nth-child(even) { background: #f9fafb; }
 
         <h3>KPIs Impacted</h3>
         <ul style="font-size:0.9rem; color:#444; padding-left:20px; margin-bottom:16px;">
-          <li><strong>-50%</strong> Clinician admin time per consultation</li>
+          <li><strong>-35%</strong> Clinician admin time per consultation (documentation + referral automation)</li>
           <li><strong>-95%</strong> Documentation turnaround (minutes &rarr; seconds)</li>
-          <li><strong>-80%</strong> Triage to appointment time (hours &rarr; minutes)</li>
           <li><strong>+20-30%</strong> Guideline adherence (from ~70% to &gt;90%)</li>
-          <li><strong>&gt;85%</strong> Missed referral catch rate (new capability)</li>
-          <li><strong>-40%</strong> Phone call volume reduction</li>
           <li><strong>&gt;95%</strong> Drug interaction detection rate</li>
+          <li><strong>&gt;85%</strong> Missed referral catch rate (new capability)</li>
           <li><strong>-70%</strong> Patient referral query calls</li>
+          <li><strong>&gt;95%</strong> Triage accuracy (urgency classification)</li>
+          <li><strong>-40%</strong> Phone call volume reduction (self-service triage)</li>
         </ul>
 
         <h3>Business Impact</h3>
         <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
-          Today&#x2019;s clinical workflows are fragmented &#x2014; clinicians, admin, and patients all compensate for disconnected systems. This creates information bottlenecks, constant micro-delays, and a failure to surface early warning signals. AgentCare recovers <strong>20+ minutes per hour</strong> of clinician time, enabling 2-3 extra patient appointments per clinician per day.
+          Clinicians spend significant time on documentation and referral administration during and after consultations. AgentCare automates note-taking, clinical entity extraction, guideline checking, and referral drafting &#x2014; recovering <strong>~15 minutes per hour</strong> of clinician time, enabling 1-2 extra patient appointments per clinician per day.
         </p>
         <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
-          The clinical safety net (drug interactions, guideline gaps, missed referrals) makes <strong>evidence-based practice the default</strong>. Self-service triage replaces the phone bottleneck &#x2014; the #1 source of patient frustration in primary care.
+          The clinical safety net (drug interactions, guideline gaps, missed referrals) makes <strong>evidence-based practice the default</strong>, reducing clinical risk and improving patient outcomes.
         </p>
 
         <div style="background:var(--cap-light); border-radius:8px; padding:16px; margin-top:12px; font-size:0.85rem;">
           <strong style="color:var(--cap-dark);">Illustrative scenario — 5-GP practice:</strong>
           <ul style="padding-left:16px; margin-top:8px; color:#444;">
-            <li>GP admin time saved: ~&pound;114k/year (50% of &pound;228k admin cost)</li>
-            <li>Extra revenue: ~&pound;100-150k/year (2-3 extra appointments/GP/day)</li>
-            <li>Reduced locum dependency, fewer adverse events, better patient satisfaction</li>
+            <li>GP documentation &amp; referral time saved: ~&pound;80k/year (35% of &pound;228k admin cost)</li>
+            <li>Extra revenue: ~&pound;60-100k/year (1-2 extra appointments/GP/day)</li>
+            <li>Reduced adverse events from missed interactions/referrals, better audit compliance</li>
           </ul>
         </div>
 
@@ -525,19 +526,19 @@ tr:nth-child(even) { background: #f9fafb; }
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #00B0F0;">
             <strong style="color:#003A5D; font-size:0.88rem;">Reducing cognitive load</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Not just workload &#x2014; synthesis, summarisation, and context-bridging across fragmented systems</p>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Automated note-taking, entity extraction, and guideline matching &#x2014; clinician focuses on the patient, not the screen</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #0070AD;">
-            <strong style="color:#003A5D; font-size:0.88rem;">Creating workflow certainty</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Status visibility, predictable next steps, no more chasing across channels</p>
+            <strong style="color:#003A5D; font-size:0.88rem;">Clinical safety net</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Drug interaction alerts, NICE guideline matching, and missed referral detection &#x2014; systematic, not reliant on memory</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #2E8B57;">
-            <strong style="color:#003A5D; font-size:0.88rem;">Replacing ambiguity with clarity</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Structured triage data, complete referrals, consistent patient communication</p>
+            <strong style="color:#003A5D; font-size:0.88rem;">Referral accuracy</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Complete, structured referral letters from consultation notes &#x2014; fewer rejections, faster processing</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #F0AD4E;">
-            <strong style="color:#003A5D; font-size:0.88rem;">Removing fragmentation</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Single orchestration layer across email, Teams, EMR, templates, and patient interactions</p>
+            <strong style="color:#003A5D; font-size:0.88rem;">Full audit trail</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Every AI recommendation, clinician decision, and referral action logged &#x2014; compliance by design</p>
           </div>
         </div>
       </div>
@@ -549,23 +550,23 @@ tr:nth-child(even) { background: #f9fafb; }
         <!-- Row 1: Current Costs | Current Income -->
         <div class="grid-2" style="gap:16px; margin-bottom:16px;">
           <div class="cost-section">
-            <div class="cost-header current">Current Costs</div>
+            <div class="cost-header current">Current Costs (Consultation &amp; Referral)</div>
             <div class="cost-body">
               <div class="cost-row">
-                <span class="label">Running (R1): Clinician admin time</span>
-                <span class="value">~&pound;228k/yr</span>
+                <span class="label">Running (R1): Clinician documentation time</span>
+                <span class="value">~&pound;160k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Running (R1): Admin staff (phones, referrals)</span>
-                <span class="value">~&pound;75k/yr</span>
+                <span class="label">Running (R1): Admin staff (referral tracking)</span>
+                <span class="value">~&pound;40k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Maintenance (M1): Error correction, rework</span>
-                <span class="value">~&pound;15k/yr</span>
+                <span class="label">Maintenance (M1): Referral rework, incomplete notes</span>
+                <span class="value">~&pound;12k/yr</span>
               </div>
               <div class="cost-total">
                 <span>TOTAL CURRENT COST (TCC) = R1 + M1</span>
-                <span>~&pound;318k/yr</span>
+                <span>~&pound;212k/yr</span>
               </div>
             </div>
           </div>
@@ -574,7 +575,11 @@ tr:nth-child(even) { background: #f9fafb; }
             <div class="cost-body">
               <div class="cost-row">
                 <span class="label">Revenue (Rv1): Patient throughput</span>
-                <span class="value">Constrained by admin burden</span>
+                <span class="value">Constrained by documentation burden</span>
+              </div>
+              <div class="cost-row">
+                <span class="label">Hidden cost: Missed/rejected referrals</span>
+                <span class="value">Unquantified risk</span>
               </div>
             </div>
           </div>
@@ -586,20 +591,20 @@ tr:nth-child(even) { background: #f9fafb; }
             <div class="cost-header new">New Costs (With AgentCare)</div>
             <div class="cost-body">
               <div class="cost-row">
-                <span class="label">Implementation (I): Design, config, testing</span>
-                <span class="value">~&pound;40k</span>
+                <span class="label">Implementation (I): 3 agents, Dataverse, integration</span>
+                <span class="value">~&pound;25k</span>
               </div>
               <div class="cost-row">
                 <span class="label">Running (R2): M365 Copilot + Copilot Studio</span>
-                <span class="value">~&pound;14k/yr</span>
+                <span class="value">~&pound;12k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Maintenance (M2): Agent tuning, updates</span>
-                <span class="value">~&pound;10k/yr</span>
+                <span class="label">Maintenance (M2): Agent tuning, guideline updates</span>
+                <span class="value">~&pound;8k/yr</span>
               </div>
               <div class="cost-total">
                 <span>TOTAL NEW COST (TNC) = I + R2 + M2</span>
-                <span>&pound;40k + &pound;24k/yr</span>
+                <span>&pound;25k + &pound;20k/yr</span>
               </div>
             </div>
           </div>
@@ -607,16 +612,16 @@ tr:nth-child(even) { background: #f9fafb; }
             <div class="cost-header" style="background:var(--cap-green); color:white;">New Income</div>
             <div class="cost-body">
               <div class="cost-row">
-                <span class="label">Revenue (Rv2): Extra appointments</span>
-                <span class="value">~&pound;100-150k/yr</span>
+                <span class="label">Revenue (Rv2): Extra appointments (1-2/GP/day)</span>
+                <span class="value">~&pound;60-100k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Savings: Reduced admin time (50%)</span>
-                <span class="value">~&pound;114k/yr</span>
+                <span class="label">Savings: Reduced documentation time (35%)</span>
+                <span class="value">~&pound;56k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Savings: Reduced locum &amp; risk costs</span>
-                <span class="value">~&pound;30-50k/yr</span>
+                <span class="label">Savings: Referral admin + rework reduction</span>
+                <span class="value">~&pound;25-35k/yr</span>
               </div>
             </div>
           </div>
@@ -625,18 +630,18 @@ tr:nth-child(even) { background: #f9fafb; }
         <!-- Row 3: Break Even -->
         <div class="grid-2" style="gap:16px; margin-bottom:12px;">
           <div class="breakeven-box">
-            <span class="be-label">Via Implementation Savings</span>
-            <span class="be-value">3-5 months</span>
-            <span class="be-label">&pound;40k implementation / ~&pound;114k annual savings = payback in under 5 months</span>
+            <span class="be-label">Via Savings (documentation + referral)</span>
+            <span class="be-value">3-4 months</span>
+            <span class="be-label">&pound;25k implementation / ~&pound;81-91k annual savings = payback in ~4 months</span>
           </div>
           <div class="breakeven-box" style="background:linear-gradient(135deg, var(--cap-green), #1a6b3c);">
             <span class="be-label">Via Extra Revenue</span>
-            <span class="be-value">4-8 months</span>
-            <span class="be-label">&pound;40k implementation / ~&pound;100-150k additional throughput revenue</span>
+            <span class="be-value">3-5 months</span>
+            <span class="be-label">&pound;25k implementation / ~&pound;60-100k additional throughput revenue</span>
           </div>
         </div>
         <p style="font-size:0.85rem; color:#555; background:#f9fafb; padding:12px 16px; border-radius:6px;">
-          <strong>BREAK EVEN:</strong> Payback is driven primarily by clinician time recovery. At a 5-GP practice, annual savings (~&pound;114k) plus extra revenue (~&pound;125k) far exceed ongoing costs (~&pound;24k/yr). Implementation cost (&pound;40k) is recovered within 3-5 months. At multi-practice scale, implementation cost is amortised further and ROI accelerates.
+          <strong>BREAK EVEN:</strong> Payback is driven by clinician time recovery on documentation and referral tasks. At a 5-GP practice, annual savings (~&pound;85k) plus extra revenue (~&pound;80k) far exceed ongoing costs (~&pound;20k/yr). Lower implementation cost (&pound;25k for 3 agents) accelerates payback vs full-scope deployment. Phase 2 (Triage + Scheduling) extends savings further.
         </p>
       </div>
 

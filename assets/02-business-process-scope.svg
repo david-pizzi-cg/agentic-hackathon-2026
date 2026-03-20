@@ -21,15 +21,15 @@
   <!-- BODY -->
   <rect y="46" width="1200" height="424" fill="#FAFBFC"/>
 
-  <!-- SCOPE INDICATOR -->
+  <!-- SCOPE INDICATOR (all 4 sub-processes in scope) -->
   <rect x="8" y="66" width="1190" height="350" rx="10" fill="none" stroke="#00B0F0" stroke-width="3" stroke-dasharray="12 6" opacity="0.6"/>
   <rect x="1040" y="60" width="130" height="20" rx="4" fill="#00B0F0"/>
   <text x="1105" y="74" text-anchor="middle" fill="white" font-size="9" font-weight="600" letter-spacing="0.5">USE CASE SCOPE</text>
 
   <!-- Column shading (alternating) spanning PROCESSES + DATA & AI -->
   <rect x="92" y="86" width="264" height="274" fill="#e8eef3" opacity="0.5"/>
-  <rect x="356" y="86" width="308" height="274" fill="#dfe8f0" opacity="0.5"/>
-  <rect x="664" y="86" width="255" height="274" fill="#e8eef3" opacity="0.5"/>
+  <rect x="356" y="86" width="254" height="274" fill="#dfe8f0" opacity="0.5"/>
+  <rect x="610" y="86" width="309" height="274" fill="#e8eef3" opacity="0.5"/>
   <rect x="919" y="86" width="273" height="274" fill="#dfe8f0" opacity="0.5"/>
 
   <!-- ============================================================ -->
@@ -50,43 +50,47 @@
   <!-- Sub-processes -->
   <rect x="92" y="110" width="264" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
   <text x="224" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Patient Intake &amp; Triage</text>
-  <rect x="360" y="110" width="300" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
-  <text x="510" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Consultation &amp; Documentation</text>
-  <rect x="668" y="110" width="247" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
-  <text x="791" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Clinical Review &amp; CDS</text>
+  <rect x="360" y="110" width="250" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
+  <text x="485" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Appointment Management</text>
+  <rect x="614" y="110" width="305" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
+  <text x="766" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Consultation &amp; Documentation</text>
   <rect x="923" y="110" width="269" height="22" rx="4" fill="#003A5D" opacity="0.82"/>
-  <text x="1057" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Referral &amp; Follow-Up</text>
+  <text x="1057" y="125" text-anchor="middle" fill="white" font-size="9" font-weight="600">Referral Management</text>
 
   <!-- Macro tasks -->
+  <!-- Triage -->
   <rect x="96" y="138" width="80" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="136" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Symptom Collect.</text>
+  <text x="136" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Emergency Scan</text>
   <rect x="180" y="138" width="80" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="220" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Urgency Assess.</text>
-  <rect x="264" y="138" width="80" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="304" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Care Routing</text>
+  <text x="220" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Symptom Collect.</text>
+  <rect x="264" y="138" width="88" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="308" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Urgency Classify</text>
 
-  <rect x="364" y="138" width="68" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="398" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Context Retr.</text>
-  <rect x="436" y="138" width="72" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="472" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Consult. Capture</text>
-  <rect x="512" y="138" width="68" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="546" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Note Struct.</text>
-  <rect x="584" y="138" width="68" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="618" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Note Gen.</text>
+  <!-- Scheduling -->
+  <rect x="364" y="138" width="78" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="403" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Availability</text>
+  <rect x="446" y="138" width="78" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="485" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Booking</text>
+  <rect x="528" y="138" width="78" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="567" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Confirmation</text>
 
-  <rect x="672" y="138" width="75" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="709" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Drug Intxn Chk</text>
-  <rect x="751" y="138" width="75" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="788" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Guideline Match</text>
-  <rect x="830" y="138" width="79" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="869" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Post-Consult Rev.</text>
+  <!-- Documentation -->
+  <rect x="618" y="138" width="72" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="654" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">History Load</text>
+  <rect x="694" y="138" width="72" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="730" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">SOAP Pre-fill</text>
+  <rect x="770" y="138" width="72" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="806" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Note Struct.</text>
+  <rect x="846" y="138" width="72" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="882" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Entity Extract</text>
 
-  <rect x="927" y="138" width="80" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="967" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Referral Draft</text>
-  <rect x="1011" y="138" width="80" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="1051" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Status Track.</text>
-  <rect x="1095" y="138" width="93" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
-  <text x="1141" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Patient Notif.</text>
+  <!-- Referral -->
+  <rect x="927" y="138" width="85" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="969" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Letter Draft</text>
+  <rect x="1016" y="138" width="85" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="1058" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Validate</text>
+  <rect x="1105" y="138" width="83" height="22" rx="3" fill="white" stroke="#bbb" stroke-width="1"/>
+  <text x="1146" y="153" text-anchor="middle" fill="#333" font-size="7.5" font-weight="600">Send + Notify</text>
 
   <!-- ============================================================ -->
   <!-- DATA & AI                                                    -->
@@ -95,42 +99,38 @@
   <text x="30" y="265" text-anchor="middle" fill="white" font-size="8" font-weight="700" letter-spacing="0.5" transform="rotate(-90 30 265)">DATA &amp; AI</text>
   <!-- Row labels to the right of sidebar -->
   <text x="46" y="206" fill="#0070AD" font-size="7" font-weight="700">AGENTS</text>
-  <text x="46" y="214" fill="#6C757D" font-size="5.5">5 AI agents</text>
+  <text x="46" y="214" fill="#6C757D" font-size="5.5">4 AI agents</text>
   <text x="46" y="242" fill="#0070AD" font-size="7" font-weight="700">L4</text>
-  <text x="46" y="250" fill="#6C757D" font-size="5.5">36 micro tasks</text>
+  <text x="46" y="250" fill="#6C757D" font-size="5.5">30 micro tasks</text>
 
   <!-- Connector lines from macro tasks down to agents -->
   <!-- Triage Agent connectors -->
   <line x1="136" y1="160" x2="136" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
   <line x1="220" y1="160" x2="220" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="308" y1="160" x2="308" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
   <!-- Scheduling Agent connectors -->
-  <line x1="304" y1="160" x2="304" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="403" y1="160" x2="403" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="485" y1="160" x2="485" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="567" y1="160" x2="567" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
   <!-- Documentation Agent connectors -->
-  <line x1="398" y1="160" x2="398" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="472" y1="160" x2="472" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="546" y1="160" x2="546" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="618" y1="160" x2="618" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <!-- CDS Agent connectors -->
-  <line x1="709" y1="160" x2="709" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="788" y1="160" x2="788" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="869" y1="160" x2="869" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="654" y1="160" x2="654" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="730" y1="160" x2="730" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="806" y1="160" x2="806" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="882" y1="160" x2="882" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
   <!-- Referral Agent connectors -->
-  <line x1="967" y1="160" x2="967" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="1051" y1="160" x2="1051" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-  <line x1="1141" y1="160" x2="1141" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="969" y1="160" x2="969" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="1058" y1="160" x2="1058" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="1146" y1="160" x2="1146" y2="196" stroke="#0070AD" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
 
   <!-- Agents (width matches their macro tasks) -->
-  <rect x="92" y="196" width="166" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
-  <text x="175" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Triage Agent</text>
+  <rect x="92" y="196" width="260" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
+  <text x="222" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Triage Agent</text>
 
-  <rect x="266" y="196" width="84" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
-  <text x="308" y="213" text-anchor="middle" fill="white" font-size="7" font-weight="600">Scheduling Agent</text>
+  <rect x="360" y="196" width="250" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
+  <text x="485" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Scheduling Agent</text>
 
-  <rect x="360" y="196" width="296" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
-  <text x="508" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Documentation Agent</text>
-
-  <rect x="668" y="194" width="247" height="30" rx="4" fill="#00B0F0" filter="url(#shadow)"/>
-  <text x="791" y="213" text-anchor="middle" fill="white" font-size="9.5" font-weight="700">Clinical Decision Support</text>
+  <rect x="614" y="196" width="305" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
+  <text x="766" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Documentation Agent</text>
 
   <rect x="923" y="196" width="269" height="26" rx="4" fill="#0070AD" filter="url(#shadow)"/>
   <text x="1057" y="213" text-anchor="middle" fill="white" font-size="8.5" font-weight="600">Referral Agent</text>
@@ -141,85 +141,71 @@
   <!-- Micro tasks (under their owning agent) -->
   <!-- Triage Agent -->
   <circle cx="104" cy="242" r="4" fill="#0070AD"/>
-  <text x="112" y="245" fill="#444" font-size="7">Chatbot intake</text>
+  <text x="112" y="245" fill="#444" font-size="7">First msg emergency scan</text>
   <circle cx="104" cy="256" r="4" fill="#0070AD"/>
-  <text x="112" y="259" fill="#444" font-size="7">Symptom form</text>
+  <text x="112" y="259" fill="#444" font-size="7">Patient auth + history load</text>
   <circle cx="104" cy="270" r="4" fill="#0070AD"/>
-  <text x="112" y="273" fill="#444" font-size="7">History pull</text>
+  <text x="112" y="273" fill="#444" font-size="7">Symptom Q&amp;A</text>
   <circle cx="104" cy="284" r="4" fill="#0070AD"/>
-  <text x="112" y="287" fill="#444" font-size="7">Risk scoring</text>
+  <text x="112" y="287" fill="#444" font-size="7">History-aware urgency</text>
   <circle cx="104" cy="298" r="4" fill="#0070AD"/>
-  <text x="112" y="301" fill="#444" font-size="7">Priority flag</text>
+  <text x="112" y="301" fill="#444" font-size="7">Care advice / routing</text>
+  <circle cx="250" cy="242" r="4" fill="#475569"/>
+  <text x="258" y="245" fill="#444" font-size="7">FAQ handling</text>
+  <circle cx="250" cy="256" r="4" fill="#475569"/>
+  <text x="258" y="259" fill="#444" font-size="7">SOAP (S) pre-fill</text>
+  <circle cx="250" cy="270" r="4" fill="#475569"/>
+  <text x="258" y="273" fill="#444" font-size="7">Triage log to Dataverse</text>
 
   <!-- Scheduling Agent -->
-  <circle cx="274" cy="242" r="4" fill="#0070AD"/>
-  <text x="282" y="245" fill="#444" font-size="7">RED escalation</text>
-  <circle cx="274" cy="256" r="4" fill="#0070AD"/>
-  <text x="282" y="259" fill="#444" font-size="7">Slot matching</text>
-  <circle cx="274" cy="270" r="4" fill="#475569"/>
-  <text x="282" y="273" fill="#444" font-size="7">Booking confirm</text>
-  <circle cx="274" cy="284" r="4" fill="#475569"/>
-  <text x="282" y="287" fill="#444" font-size="7">Patient SMS</text>
+  <circle cx="372" cy="242" r="4" fill="#475569"/>
+  <text x="380" y="245" fill="#444" font-size="7">Check availability</text>
+  <circle cx="372" cy="256" r="4" fill="#475569"/>
+  <text x="380" y="259" fill="#444" font-size="7">Book / reschedule</text>
+  <circle cx="372" cy="270" r="4" fill="#475569"/>
+  <text x="380" y="273" fill="#444" font-size="7">Send confirmation email</text>
+  <circle cx="372" cy="284" r="4" fill="#475569"/>
+  <text x="380" y="287" fill="#444" font-size="7">Waitlist management</text>
+  <circle cx="510" cy="242" r="4" fill="#475569"/>
+  <text x="518" y="245" fill="#444" font-size="7">Cancellation handling</text>
+  <circle cx="510" cy="256" r="4" fill="#475569"/>
+  <text x="518" y="259" fill="#444" font-size="7">Appointment reminder</text>
 
   <!-- Documentation Agent -->
-  <circle cx="372" cy="242" r="4" fill="#0070AD"/>
-  <text x="380" y="245" fill="#444" font-size="7">Patient history</text>
-  <circle cx="372" cy="256" r="4" fill="#0070AD"/>
-  <text x="380" y="259" fill="#444" font-size="7">Prior notes</text>
-  <circle cx="372" cy="270" r="4" fill="#0070AD"/>
-  <text x="380" y="273" fill="#444" font-size="7">Medication list</text>
-  <circle cx="372" cy="284" r="4" fill="#6f42c1"/>
-  <text x="380" y="287" fill="#444" font-size="7">Transcription</text>
-  <circle cx="372" cy="298" r="4" fill="#6f42c1"/>
-  <text x="380" y="301" fill="#444" font-size="7">Key extraction</text>
-  <circle cx="510" cy="242" r="4" fill="#6f42c1"/>
-  <text x="518" y="245" fill="#444" font-size="7">SOAP format</text>
-  <circle cx="510" cy="256" r="4" fill="#6f42c1"/>
-  <text x="518" y="259" fill="#444" font-size="7">SNOMED coding</text>
-  <circle cx="510" cy="270" r="4" fill="#6f42c1"/>
-  <text x="518" y="273" fill="#444" font-size="7">Summary gen</text>
-  <circle cx="510" cy="284" r="4" fill="#475569"/>
-  <text x="518" y="287" fill="#444" font-size="7">EMR write-back</text>
-  <circle cx="510" cy="298" r="4" fill="#475569"/>
-  <text x="518" y="301" fill="#444" font-size="7">Review flag</text>
-
-  <!-- CDS Agent -->
-  <circle cx="680" cy="242" r="4" fill="#0070AD"/>
-  <text x="688" y="245" fill="#444" font-size="7">BNF lookup</text>
-  <circle cx="680" cy="256" r="4" fill="#0070AD"/>
-  <text x="688" y="259" fill="#444" font-size="7">Interaction alert</text>
-  <circle cx="680" cy="270" r="4" fill="#0070AD"/>
-  <text x="688" y="273" fill="#444" font-size="7">NICE match</text>
-  <circle cx="680" cy="284" r="4" fill="#0070AD"/>
-  <text x="688" y="287" fill="#444" font-size="7">Evidence citation</text>
-  <circle cx="810" cy="242" r="4" fill="#0070AD"/>
-  <text x="818" y="245" fill="#444" font-size="7">Missed referral det.</text>
-  <circle cx="810" cy="256" r="4" fill="#0070AD"/>
-  <text x="818" y="259" fill="#444" font-size="7">Quality score</text>
-  <circle cx="810" cy="270" r="4" fill="#0070AD"/>
-  <text x="818" y="273" fill="#444" font-size="7">Confidence ind.</text>
-  <circle cx="810" cy="284" r="4" fill="#0070AD"/>
-  <text x="818" y="287" fill="#444" font-size="7">Accept/dismiss</text>
-  <circle cx="810" cy="298" r="4" fill="#475569"/>
-  <text x="818" y="301" fill="#444" font-size="7">Audit trail log</text>
+  <circle cx="626" cy="242" r="4" fill="#0070AD"/>
+  <text x="634" y="245" fill="#444" font-size="7">Load patient history</text>
+  <circle cx="626" cy="256" r="4" fill="#0070AD"/>
+  <text x="634" y="259" fill="#444" font-size="7">Load triage data</text>
+  <circle cx="626" cy="270" r="4" fill="#6f42c1"/>
+  <text x="634" y="273" fill="#444" font-size="7">Pre-fill SOAP (S)</text>
+  <circle cx="626" cy="284" r="4" fill="#6f42c1"/>
+  <text x="634" y="287" fill="#444" font-size="7">Structure into SOAP</text>
+  <circle cx="626" cy="298" r="4" fill="#6f42c1"/>
+  <text x="634" y="301" fill="#444" font-size="7">Entity extraction</text>
+  <circle cx="790" cy="242" r="4" fill="#475569"/>
+  <text x="798" y="245" fill="#444" font-size="7">Save to Dataverse</text>
+  <circle cx="790" cy="256" r="4" fill="#475569"/>
+  <text x="798" y="259" fill="#444" font-size="7">Email patient summary</text>
+  <circle cx="790" cy="270" r="4" fill="#475569"/>
+  <text x="798" y="273" fill="#444" font-size="7">Trigger referral if needed</text>
 
   <!-- Referral Agent -->
   <circle cx="935" cy="242" r="4" fill="#6f42c1"/>
-  <text x="943" y="245" fill="#444" font-size="7">Letter generation</text>
-  <circle cx="935" cy="256" r="4" fill="#6f42c1"/>
-  <text x="943" y="259" fill="#444" font-size="7">eRS submission</text>
+  <text x="943" y="245" fill="#444" font-size="7">Draft referral letter</text>
+  <circle cx="935" cy="256" r="4" fill="#0070AD"/>
+  <text x="943" y="259" fill="#444" font-size="7">Validate completeness</text>
   <circle cx="935" cy="270" r="4" fill="#475569"/>
-  <text x="943" y="273" fill="#444" font-size="7">Status polling</text>
+  <text x="943" y="273" fill="#444" font-size="7">Clinician review</text>
   <circle cx="935" cy="284" r="4" fill="#475569"/>
-  <text x="943" y="287" fill="#444" font-size="7">Dashboard update</text>
+  <text x="943" y="287" fill="#444" font-size="7">Send via Outlook</text>
   <circle cx="1070" cy="242" r="4" fill="#475569"/>
-  <text x="1078" y="245" fill="#444" font-size="7">SMS to patient</text>
+  <text x="1078" y="245" fill="#444" font-size="7">Email to specialist</text>
   <circle cx="1070" cy="256" r="4" fill="#475569"/>
-  <text x="1078" y="259" fill="#444" font-size="7">Portal update</text>
-  <circle cx="1070" cy="270" r="4" fill="#0070AD"/>
-  <text x="1078" y="273" fill="#444" font-size="7">Appt scheduling</text>
+  <text x="1078" y="259" fill="#444" font-size="7">Email to patient</text>
+  <circle cx="1070" cy="270" r="4" fill="#475569"/>
+  <text x="1078" y="273" fill="#444" font-size="7">Save to Dataverse</text>
   <circle cx="1070" cy="284" r="4" fill="#475569"/>
-  <text x="1078" y="287" fill="#444" font-size="7">Follow-up remind</text>
+  <text x="1078" y="287" fill="#444" font-size="7">Audit trail log</text>
 
   <!-- Data platform bar -->
   <text x="96" y="324" fill="#333" font-size="7" font-weight="600" opacity="0.5" letter-spacing="0.5">DATA PLATFORM, DATA GOVERNANCE, DATA MANAGEMENT</text>
@@ -228,22 +214,20 @@
     <tspan font-weight="700">Dataverse</tspan>
     <tspan dx="8">Patients</tspan>
     <tspan dx="5">|</tspan>
-    <tspan dx="5">Encounters</tspan>
-    <tspan dx="5">|</tspan>
-    <tspan dx="5">Guidelines</tspan>
-    <tspan dx="5">|</tspan>
-    <tspan dx="5">Medications</tspan>
-    <tspan dx="5">|</tspan>
-    <tspan dx="5">Referrals</tspan>
+    <tspan dx="5">Triage Records</tspan>
     <tspan dx="5">|</tspan>
     <tspan dx="5">Appointments</tspan>
+    <tspan dx="5">|</tspan>
+    <tspan dx="5">Encounters</tspan>
+    <tspan dx="5">|</tspan>
+    <tspan dx="5">Referrals</tspan>
     <tspan dx="5">|</tspan>
     <tspan dx="5">Audit Logs</tspan>
   </text>
 
   <!-- Vertical dividers between sub-process columns -->
   <line x1="356" y1="86" x2="356" y2="360" stroke="#0070AD" stroke-width="0.8" opacity="0.12"/>
-  <line x1="664" y1="86" x2="664" y2="360" stroke="#0070AD" stroke-width="0.8" opacity="0.12"/>
+  <line x1="610" y1="86" x2="610" y2="360" stroke="#0070AD" stroke-width="0.8" opacity="0.12"/>
   <line x1="919" y1="86" x2="919" y2="360" stroke="#0070AD" stroke-width="0.8" opacity="0.12"/>
 
   <!-- ============================================================ -->
@@ -254,28 +238,18 @@
 
   <rect x="92" y="364" width="1100" height="45" fill="#e8f5e9"/>
 
-  <rect x="96" y="370" width="105" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="148" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">M365 Copilot</text>
-  <rect x="207" y="370" width="105" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="259" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Copilot Studio</text>
-  <rect x="318" y="370" width="110" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="373" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Power Automate</text>
-  <rect x="434" y="370" width="80" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="474" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Power BI</text>
-  <rect x="520" y="370" width="90" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="565" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Power Apps</text>
-  <rect x="616" y="370" width="85" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="658" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">AI Builder</text>
-  <rect x="707" y="370" width="80" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="747" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Teams</text>
-  <rect x="793" y="370" width="80" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="833" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Outlook</text>
-  <rect x="879" y="370" width="95" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="926" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Azure AD</text>
-  <rect x="980" y="370" width="105" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="1032" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">SharePoint</text>
-  <rect x="1091" y="370" width="97" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
-  <text x="1139" y="389" text-anchor="middle" fill="#333" font-size="8.5" font-weight="500">Dynamics 365</text>
+  <rect x="96" y="370" width="178" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="185" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Copilot Studio</text>
+  <rect x="280" y="370" width="178" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="369" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Power Automate</text>
+  <rect x="464" y="370" width="178" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="553" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Dataverse</text>
+  <rect x="648" y="370" width="178" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="737" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Teams</text>
+  <rect x="832" y="370" width="178" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="921" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Outlook</text>
+  <rect x="1016" y="370" width="176" height="30" rx="4" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="1104" y="389" text-anchor="middle" fill="#333" font-size="9" font-weight="600">Entra ID</text>
 
   <!-- ============================================================ -->
   <!-- LEGEND (bottom)                                              -->

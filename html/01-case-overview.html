@@ -409,6 +409,7 @@ tr:nth-child(even) { background: #f9fafb; }
   <a href="05-business-case.html">05 - Business Case</a>
   <span class="nav-spacer"></span>
   <a href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
 </div>
 
 <div class="header">
@@ -466,26 +467,22 @@ tr:nth-child(even) { background: #f9fafb; }
         <!-- Use Case Description -->
         <div>
           <h3>Use Case Description</h3>
-          <p style="margin:8px 0 12px; font-size:0.88rem; color:#444;">Five AI agents orchestrated through Microsoft Copilot Studio automate clinical admin and augment decision-making:</p>
-          <div class="agent-card core" style="margin-bottom:8px">
-            <h4>Clinical Decision Support <span class="badge agentic">Core</span></h4>
-            <p>Surfaces patient history, flags drug interactions, highlights NICE guidelines, catches missed referral pathways.</p>
+          <p style="margin:8px 0 12px; font-size:0.88rem; color:#444;">Four AI agents orchestrated through Microsoft Copilot Studio automate clinical administration, freeing clinicians from paperwork:</p>
+          <div class="agent-card" style="margin-bottom:8px">
+            <h4>Triage Agent <span class="badge agentic">Agentic</span></h4>
+            <p>Patient chatbot: emergency-first scan, symptom collection, history-aware urgency classification, care advice.</p>
+          </div>
+          <div class="agent-card" style="margin-bottom:8px">
+            <h4>Scheduling Agent <span class="badge auto">Automation</span></h4>
+            <p>Self-service appointment booking, confirmations, cancellation waitlist management.</p>
           </div>
           <div class="agent-card" style="margin-bottom:8px">
             <h4>Documentation Agent <span class="badge genai">Gen AI</span></h4>
-            <p>Auto-summarises consultations into structured clinical notes; feeds downstream agents.</p>
-          </div>
-          <div class="agent-card" style="margin-bottom:8px">
-            <h4>Triage Agent <span class="badge agentic">Agentic</span></h4>
-            <p>Patient-facing chatbot &#x2014; symptom assessment, urgency scoring, care routing.</p>
+            <p>Pre-fills SOAP from triage, structures clinician notes in real-time, extracts entities, emails patient summary.</p>
           </div>
           <div class="agent-card" style="margin-bottom:8px">
             <h4>Referral Agent <span class="badge agentic">Agentic</span></h4>
-            <p>Auto-drafts referral letters, tracks status, provides patient updates.</p>
-          </div>
-          <div class="agent-card">
-            <h4>Scheduling Agent <span class="badge auto">Automation</span></h4>
-            <p>Self-service booking, priority slots for urgent cases, waitlist management.</p>
+            <p>Auto-drafts referral letters from SOAP, validates completeness, sends via Outlook, notifies patient.</p>
           </div>
         </div>
       </div>
@@ -498,47 +495,47 @@ tr:nth-child(even) { background: #f9fafb; }
       <h3>KPIs Impacted</h3>
       <div class="grid-2" style="gap:10px; margin-top:8px;">
         <div class="kpi-box">
-          <span class="value">-50%</span>
+          <span class="value">-35%</span>
           <span class="label">Clinician Admin Time</span>
         </div>
         <div class="kpi-box">
+          <span class="value">-95%</span>
+          <span class="label">Documentation Turnaround</span>
+        </div>
+        <div class="kpi-box">
           <span class="value">&gt;95%</span>
-          <span class="label">Drug Interaction Detection</span>
+          <span class="label">Referral Completeness</span>
         </div>
         <div class="kpi-box">
-          <span class="value">&gt;90%</span>
-          <span class="label">Guideline Adherence</span>
-        </div>
-        <div class="kpi-box">
-          <span class="value">&gt;85%</span>
-          <span class="label">Missed Referral Catch Rate</span>
-        </div>
-        <div class="kpi-box">
-          <span class="value">&lt;15 min</span>
-          <span class="label">Triage to Appointment</span>
+          <span class="value">&gt;95%</span>
+          <span class="label">Triage Accuracy</span>
         </div>
         <div class="kpi-box">
           <span class="value">-40%</span>
           <span class="label">Phone Call Volume</span>
+        </div>
+        <div class="kpi-box">
+          <span class="value">&lt;5%</span>
+          <span class="label">Appointment No-Show Rate</span>
         </div>
       </div>
 
       <h3 style="margin-top:20px;">Business Impact</h3>
       <div class="card green" style="margin-top:8px;">
         <h3>Clinician Capacity</h3>
-        <p>20+ minutes recovered per hour of consultations &#x2014; more patients seen with better outcomes</p>
+        <p>~15 minutes recovered per hour &#x2014; automated note structuring, pre-filled SOAP, instant referral drafting</p>
       </div>
       <div class="card green" style="margin-top:10px">
-        <h3>Clinical Safety Net</h3>
-        <p>Systematic detection of drug interactions, guideline gaps, and missed referrals &#x2014; evidence-based practice becomes the default</p>
+        <h3>Admin Relief</h3>
+        <p>Self-service triage and booking via chatbot reduces phone volume by 40%; no more manual referral tracking</p>
       </div>
       <div class="card green" style="margin-top:10px">
         <h3>Patient Experience</h3>
-        <p>Self-service triage and booking eliminates phone bottleneck; proactive referral updates reduce anxiety</p>
+        <p>24/7 triage chatbot, self-service booking, automatic appointment confirmations, referral notifications</p>
       </div>
       <div class="card green" style="margin-top:10px">
-        <h3>Operational Visibility</h3>
-        <p>First-time data-driven insights into clinical quality metrics, agent performance, and workflow bottlenecks</p>
+        <h3>Referral Quality</h3>
+        <p>Auto-drafted letters from structured SOAP notes; completeness validated before sending; no more rejections</p>
       </div>
     </div>
 
@@ -557,8 +554,8 @@ tr:nth-child(even) { background: #f9fafb; }
           <div class="card" style="margin-top:8px;">
             <ul>
               <li>Central orchestration via Copilot Studio</li>
-              <li>Agents assist, clinicians decide</li>
-              <li>Every clinical action requires human approval</li>
+              <li>Agents automate admin, clinicians focus on patients</li>
+              <li>Nothing saved or sent without clinician approval</li>
               <li>Graceful degradation with defined fallbacks</li>
             </ul>
           </div>
@@ -567,10 +564,10 @@ tr:nth-child(even) { background: #f9fafb; }
           <h3>Technical Solution</h3>
           <div class="card accent" style="margin-top:8px;">
             <ul>
-              <li>M365 Copilot (Teams/Outlook)</li>
-              <li>Copilot Studio (orchestration)</li>
-              <li>Power Platform (automation)</li>
+              <li>Copilot Studio (agents + prompt actions)</li>
+              <li>Power Automate (agent flows)</li>
               <li>Dataverse (data backbone)</li>
+              <li>Teams + Outlook (clinician + patient channels)</li>
             </ul>
           </div>
         </div>
@@ -585,15 +582,15 @@ tr:nth-child(even) { background: #f9fafb; }
       <div style="margin-top:8px;">
         <div class="stakeholder">
           <div class="icon clinician">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
-          <div><strong>Clinicians</strong> &#x2014; Primary users; interact via Teams/Outlook during consultations</div>
+          <div><strong>Clinicians</strong> &#x2014; Copilot chat for consultations, note structuring, referral approval</div>
         </div>
         <div class="stakeholder">
           <div class="icon patient">&#x1F9D1;</div>
-          <div><strong>Patients</strong> &#x2014; Self-service triage, booking, and referral status via chatbot</div>
+          <div><strong>Patients</strong> &#x2014; Self-service triage, appointment booking, referral notifications via chatbot</div>
         </div>
         <div class="stakeholder">
           <div class="icon admin">&#x1F4CB;</div>
-          <div><strong>Admin Staff</strong> &#x2014; Automated scheduling and referral tracking</div>
+          <div><strong>Admin Staff</strong> &#x2014; Reduced phone volume, automated scheduling, triage data for demand planning</div>
         </div>
         <div class="stakeholder">
           <div class="icon lead">&#x1F4CA;</div>

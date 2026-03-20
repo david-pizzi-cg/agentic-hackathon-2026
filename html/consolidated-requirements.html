@@ -347,6 +347,7 @@ tr:nth-child(even) { background: #f9fafb; }
   <a href="05-business-case.html">05 - Business Case</a>
   <span class="nav-spacer"></span>
   <a class="active" href="consolidated-requirements.html" style="font-size:0.78rem;">Requirements</a>
+  <a href="06-delivery-plan.html" style="font-size:0.78rem;">Delivery Plan</a>
 </div>
 
 <div class="header">
@@ -416,7 +417,7 @@ tr:nth-child(even) { background: #f9fafb; }
 
           <div class="persona-channels">
             <strong>Channels:</strong> Microsoft Teams, Outlook (M365 Copilot)<br>
-            <strong>Agents:</strong> Documentation, Clinical Decision Support, Referral, Scheduling
+            <strong>Agents:</strong> Documentation, Referral
           </div>
         </div>
       </div>
@@ -474,7 +475,7 @@ tr:nth-child(even) { background: #f9fafb; }
           </div>
 
           <div class="persona-channels">
-            <strong>Channels:</strong> Power Apps portal, Teams<br>
+            <strong>Channels:</strong> Teams<br>
             <strong>Agents:</strong> Scheduling, Referral
           </div>
         </div>
@@ -530,7 +531,7 @@ tr:nth-child(even) { background: #f9fafb; }
 
           <div class="persona-channels">
             <strong>Channels:</strong> Copilot Studio chatbot (web/mobile), proactive notifications (email/SMS)<br>
-            <strong>Agents:</strong> Triage, Scheduling, Referral (status queries)
+            <strong>Agents:</strong> Triage, Referral (status queries)
           </div>
         </div>
       </div>
@@ -564,7 +565,7 @@ tr:nth-child(even) { background: #f9fafb; }
 
           <div class="persona-channels">
             <strong>Channels:</strong> Power BI dashboards, Teams<br>
-            <strong>Agents:</strong> All agents (via reporting/audit), CDS (quality metrics)
+            <strong>Agents:</strong> All agents (via reporting/audit dashboards)
           </div>
         </div>
       </div>
@@ -575,53 +576,18 @@ tr:nth-child(even) { background: #f9fafb; }
   <div class="section">
     <h2>2. User Stories</h2>
 
-    <h3>Clinical Decision Support Agent</h3>
-    <table>
-      <thead>
-        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CDS-01</td><td>As a clinician, I want relevant patient history surfaced during a consultation so I can make informed decisions</td><td>Allergies, medications, recent encounters displayed within 5s; data from Dataverse</td></tr>
-        <tr><td>CDS-02</td><td>As a clinician, I want drug interaction alerts when discussing new prescriptions</td><td>Interactions flagged in real-time; severity rated; source cited</td></tr>
-        <tr><td>CDS-03</td><td>As a clinician, I want NICE guidelines highlighted based on presenting symptoms</td><td>Guidelines matched to symptoms; displayed as suggestions; dismissible with one click</td></tr>
-        <tr><td>CDS-04</td><td>As a clinician, I want post-consultation review of my notes against guidelines</td><td>Async review triggered after consultation; gaps sent via Outlook with references</td></tr>
-        <tr><td>CDS-05</td><td>As a clinical lead, I want to see override rates and guideline adherence trends</td><td>Dashboard showing acceptance/dismissal rates per clinician, per category</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Documentation Agent</h3>
-    <table>
-      <thead>
-        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>DOC-01</td><td>As a clinician, I want my consultation auto-summarised into structured clinical notes</td><td>Summary within 60s; structured as complaint, history, examination, plan</td></tr>
-        <tr><td>DOC-02</td><td>As a clinician, I want to review and edit auto-generated notes before finalising</td><td>Draft presented for review; edit, approve, or regenerate; nothing saved without approval</td></tr>
-        <tr><td>DOC-03</td><td>As a clinician, I want structured data extracted from notes for downstream agents</td><td>Diagnosis codes, medications, follow-up actions extracted and passed to orchestration</td></tr>
-      </tbody>
-    </table>
-
     <h3>Triage Agent</h3>
     <table>
       <thead>
         <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
       </thead>
       <tbody>
-        <tr><td>TRI-01</td><td>As a patient, I want to describe my symptoms and get an urgency assessment</td><td>Urgency categorised (emergency/urgent/routine); emergency directed to 999/A&amp;E</td></tr>
-        <tr><td>TRI-02</td><td>As a patient, I want to be routed to the right service after triage</td><td>Outcome triggers: book appointment, direct to A&amp;E, or self-care advice</td></tr>
-        <tr><td>TRI-03</td><td>As an admin, I want triage results logged for demand planning</td><td>Interactions stored with timestamps, urgency, outcome; accessible via dashboard</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Referral Agent</h3>
-    <table>
-      <thead>
-        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>REF-01</td><td>As a clinician, I want referral letters auto-drafted from consultation notes</td><td>Draft from structured notes + patient record; includes history, diagnosis, reason</td></tr>
-        <tr><td>REF-02</td><td>As a clinician, I want to be alerted if a referral was potentially missed</td><td>Post-consultation check flags conditions where referral is recommended per guidelines</td></tr>
-        <tr><td>REF-03</td><td>As a patient, I want to check the status of my referral</td><td>Query chatbot for status; proactive notifications on changes</td></tr>
+        <tr><td>TRI-01</td><td>As a patient in a critical situation, I want immediate emergency advice without answering questions</td><td>First message scanned for emergency signals (chest pain, severe bleeding, etc.); immediate 999 directive if detected</td></tr>
+        <tr><td>TRI-02</td><td>As a patient, I want to describe my symptoms via chatbot and get an urgency assessment</td><td>Authenticated patient; if no emergency, history auto-loaded; guided symptom collection; urgency classified</td></tr>
+        <tr><td>TRI-03</td><td>As a patient, I want my existing conditions automatically considered when assessing urgency</td><td>Patient history (meds, allergies, conditions) loaded from authentication; factored into classification</td></tr>
+        <tr><td>TRI-04</td><td>As a patient, I want clear advice based on my triage outcome</td><td>Urgent: contact practice; Routine: book appointment; Self-care: guidance + when to escalate</td></tr>
+        <tr><td>TRI-05</td><td>As a patient, I want answers to common questions without calling the practice</td><td>FAQ topics handled by chatbot; reduces phone volume for admin</td></tr>
+        <tr><td>TRI-06</td><td>As an admin, I want triage results logged for demand planning</td><td>Interactions stored with timestamps, urgency, outcome; accessible via dashboard</td></tr>
       </tbody>
     </table>
 
@@ -631,126 +597,124 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
       </thead>
       <tbody>
-        <tr><td>SCH-01</td><td>As a patient, I want to book/reschedule/cancel appointments via chatbot</td><td>Self-service booking; real-time availability; confirmation sent</td></tr>
-        <tr><td>SCH-02</td><td>As an admin, I want urgent triage cases auto-prioritised in the schedule</td><td>Urgent outcomes trigger priority slot allocation; admin notified</td></tr>
-        <tr><td>SCH-03</td><td>As an admin, I want cancelled slots offered to waiting patients</td><td>Cancelled slot notifies next patient; auto-rebooks if confirmed in time window</td></tr>
+        <tr><td>SCH-01</td><td>As a patient, I want to book, reschedule, or cancel appointments via chatbot</td><td>Self-service booking; real-time availability from Dataverse; confirmation sent</td></tr>
+        <tr><td>SCH-02</td><td>As a patient, I want to receive appointment confirmations automatically</td><td>Confirmation via email/SMS after booking; reminder before appointment</td></tr>
+        <tr><td>SCH-03</td><td>As an admin, I want cancelled slots offered to waiting patients automatically</td><td>Cancelled slot triggers notification to next patient on waitlist; auto-rebooks if confirmed</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Documentation Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DOC-01</td><td>As a clinician, I want patient history and triage data auto-loaded when I start a consultation</td><td>Consultation ID retrieves triage record + patient history from Dataverse; SOAP (S) pre-filled</td></tr>
+        <tr><td>DOC-02</td><td>As a clinician, I want my free-text notes structured into SOAP format automatically</td><td>Clinician types notes; agent structures into Subjective, Objective, Assessment, Plan</td></tr>
+        <tr><td>DOC-03</td><td>As a clinician, I want to review and edit notes before they are saved</td><td>Draft presented for review; edit, approve, or regenerate; nothing saved without approval</td></tr>
+        <tr><td>DOC-04</td><td>As a clinician, I want key data extracted from notes for referrals and records</td><td>Diagnosis, medications, follow-up actions extracted and saved to Dataverse</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Referral Agent</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>REF-01</td><td>As a clinician, I want a referral to be auto-triggered when my SOAP note indicates one is needed</td><td>Documentation Agent detects referral in Plan (P); automatically triggers Referral Agent</td></tr>
+        <tr><td>REF-02</td><td>As a clinician, I want a referral letter auto-drafted from my consultation notes</td><td>Draft generated from SOAP note + patient record; includes history, diagnosis, reason</td></tr>
+        <tr><td>REF-03</td><td>As a clinician, I want the referral validated for completeness before it is sent</td><td>Required fields checked; missing information flagged before sending</td></tr>
+        <tr><td>REF-04</td><td>As a clinician, I want to review and approve the referral draft before it goes out</td><td>Draft shown in Copilot chat; clinician edits if needed, approves; nothing sent without approval</td></tr>
+        <tr><td>REF-05</td><td>As a clinician, I want the referral letter sent automatically after I approve</td><td>Agent flow sends letter via Outlook to specialist; referral saved to Dataverse as "sent"</td></tr>
+        <tr><td>REF-06</td><td>As a patient, I want to be notified when my referral has been sent</td><td>Auto notification via email/SMS after referral is sent</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- ==================== 2b. TASK AUTOMATION MAPPING ==================== -->
+  <div class="section">
+    <h2>Task Automation Mapping</h2>
+    <p style="font-size:0.9rem; color:#444; margin-bottom:16px;">Maps current manual tasks to agents and consultation phases. Focus is on <strong>administrative automation</strong>, not clinical decision-making.</p>
+
+    <h3>Patient Intake</h3>
+    <table>
+      <thead>
+        <tr><th>Task</th><th>Currently</th><th>Agent</th><th>Phase</th><th>What Agent Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Answer common patient questions</td><td>Admin (phone)</td><td>Triage</td><td>Pre-consultation</td><td>FAQ chatbot, deflects calls</td></tr>
+        <tr><td>Collect symptoms</td><td>Admin (phone)</td><td>Triage</td><td>Pre-consultation</td><td>Guided chatbot Q&amp;A</td></tr>
+        <tr><td>Classify urgency</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Symptoms + history &rarr; urgency level</td></tr>
+        <tr><td>Route patient (999 / GP / self-care)</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Advice based on classification</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Appointment Management</h3>
+    <table>
+      <thead>
+        <tr><th>Task</th><th>Currently</th><th>Agent</th><th>Phase</th><th>What Agent Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Check availability</td><td>Admin (manual calendars)</td><td>Scheduling</td><td>Pre-consultation</td><td>Query Dataverse slots</td></tr>
+        <tr><td>Book / reschedule / cancel</td><td>Admin (phone + system)</td><td>Scheduling</td><td>Pre-consultation</td><td>Self-service via chatbot</td></tr>
+        <tr><td>Send confirmation</td><td>Admin (manual)</td><td>Scheduling</td><td>Pre-consultation</td><td>Auto SMS/email via agent flow</td></tr>
+        <tr><td>Handle cancellations / waitlist</td><td>Admin (manual tracking)</td><td>Scheduling</td><td>Pre-consultation</td><td>Offer cancelled slot to next patient</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Consultation</h3>
+    <table>
+      <thead>
+        <tr><th>Task</th><th>Currently</th><th>Agent</th><th>Phase</th><th>What Agent Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Search patient history across systems</td><td>Clinician (manual)</td><td>Documentation</td><td>Pre-consultation</td><td>Auto-load from Dataverse</td></tr>
+        <tr><td>Pre-fill consultation notes</td><td>Nobody (doesn't exist)</td><td>Documentation</td><td>Pre-consultation</td><td>SOAP (S) from triage data</td></tr>
+        <tr><td>Clinician types notes</td><td>Clinician</td><td>Documentation</td><td>During</td><td>Accepts free-text, structures into SOAP</td></tr>
+        <tr><td>Format notes into SOAP</td><td>Clinician (after hours)</td><td>Documentation</td><td>During</td><td>Real-time structuring as clinician types</td></tr>
+        <tr><td>Finalise and save clinical record</td><td>Clinician (manual)</td><td>Documentation</td><td>Post-consultation</td><td>Structure final note, extract entities, save to Dataverse</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Referral Management</h3>
+    <table>
+      <thead>
+        <tr><th>Task</th><th>Currently</th><th>Agent</th><th>Phase</th><th>What Agent Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Detect referral needed from notes</td><td>Clinician (manual decision)</td><td>Documentation</td><td>Post-consultation</td><td>Detects referral in SOAP Plan; triggers Referral Agent</td></tr>
+        <tr><td>Draft referral letter</td><td>Clinician (copy/paste into template)</td><td>Referral</td><td>Post-consultation</td><td>Auto-draft from SOAP note + patient record</td></tr>
+        <tr><td>Validate referral completeness</td><td>Nobody / rejected later</td><td>Referral</td><td>Post-consultation</td><td>Check required fields before sending</td></tr>
+        <tr><td>Clinician reviews and approves</td><td>N/A</td><td>Referral</td><td>Post-consultation</td><td>Draft shown in Copilot chat; only human step</td></tr>
+        <tr><td>Send referral letter</td><td>Clinician (manual email/portal)</td><td>Referral</td><td>Post-consultation</td><td>Agent flow sends via Outlook after approval</td></tr>
+        <tr><td>Notify patient</td><td>Admin (phone/letter)</td><td>Referral</td><td>Post-consultation</td><td>Agent flow sends email/SMS to patient</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- ==================== 3. KEY SCENARIOS ==================== -->
+  <!-- ==================== 3. AGENT INTERACTION MODEL ==================== -->
   <div class="section">
-    <h2>3. Key Scenarios (End-to-End Workflows)</h2>
+    <h2>3. Interaction Channels</h2>
+    <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">End-to-end workflows are detailed in <a href="03-functional-solution.html">03 - Functional Solution</a>.</p>
 
-    <div class="scenario" style="border-top-color: var(--cap-accent);">
-      <h4>Scenario 1: Consultation with Real-Time Decision Support</h4>
-      <div class="trigger">Trigger: Clinician starts a Teams consultation with a patient</div>
-      <ol>
-        <li><strong>Documentation Agent</strong> joins the call, begins transcribing</li>
-        <li><strong>CDS Agent</strong> retrieves patient record from Dataverse &mdash; surfaces allergies, current medications, recent encounters in the Teams side panel</li>
-        <li>Clinician discusses symptoms; CDS Agent matches symptoms to NICE guidelines, displays relevant pathways</li>
-        <li>Clinician considers prescribing; CDS Agent flags a potential interaction with existing medication (severity: high, source: BNF)</li>
-        <li>Clinician adjusts prescription based on alert</li>
-        <li>Consultation ends; <strong>Documentation Agent</strong> generates structured summary</li>
-        <li>Clinician reviews, edits, and approves notes</li>
-        <li>CDS Agent runs post-consultation review &mdash; no gaps found</li>
-        <li>Approved notes trigger <strong>Referral Agent</strong> to draft a referral letter</li>
-        <li>Clinician reviews and sends referral; patient notified via chatbot</li>
-      </ol>
-      <div class="scenario-meta">
-        <span><strong>Personas:</strong> Clinician, Patient</span>
-        <span><strong>Agents:</strong> Documentation, CDS, Referral</span>
-        <span><strong>KPIs:</strong> Time saved, drug alerts, guideline adherence</span>
-      </div>
-    </div>
-
-    <div class="scenario">
-      <h4>Scenario 2: Patient Self-Service Triage and Booking</h4>
-      <div class="trigger">Trigger: Patient accesses the practice chatbot feeling unwell</div>
-      <ol>
-        <li><strong>Triage Agent</strong> greets patient, asks structured symptom questions (empathetic, plain language)</li>
-        <li>Patient describes chest pain and shortness of breath</li>
-        <li>Triage Agent classifies as <strong style="color:var(--cap-red);">emergency</strong> &mdash; advises calling 999, provides clear instructions</li>
-        <li><em>(Alternative: non-urgent)</em> Triage Agent classifies as routine &mdash; asks about preferences</li>
-        <li><strong>Scheduling Agent</strong> shows available GP slots; patient selects and confirms</li>
-        <li>Confirmation sent; encounter pre-populated with triage summary for the clinician</li>
-        <li>Triage data logged for demand planning</li>
-      </ol>
-      <div class="scenario-meta">
-        <span><strong>Personas:</strong> Patient, Admin</span>
-        <span><strong>Agents:</strong> Triage, Scheduling</span>
-        <span><strong>KPIs:</strong> Triage accuracy, time to appointment, phone reduction</span>
-      </div>
-    </div>
-
-    <div class="scenario" style="border-top-color: var(--cap-orange);">
-      <h4>Scenario 3: Missed Referral Catch</h4>
-      <div class="trigger">Trigger: Post-consultation async review</div>
-      <ol>
-        <li><strong>Documentation Agent</strong> has finalised consultation notes</li>
-        <li><strong>CDS Agent</strong> reviews notes against NICE guidelines</li>
-        <li>CDS Agent identifies symptoms + diagnosis match a referral pathway (e.g. suspected cancer two-week-wait) but no referral was initiated</li>
-        <li>Alert sent to clinician via Outlook: <em>"Based on [guideline], a referral to [specialty] may be indicated. Review recommended."</em></li>
-        <li>Clinician reviews, agrees, initiates referral</li>
-        <li><strong>Referral Agent</strong> drafts letter; clinician approves; patient notified</li>
-        <li>Event logged in audit trail</li>
-      </ol>
-      <div class="scenario-meta">
-        <span><strong>Personas:</strong> Clinician, Patient, Clinical Lead</span>
-        <span><strong>Agents:</strong> Documentation, CDS, Referral</span>
-        <span><strong>KPIs:</strong> Missed referrals caught, time to referral, compliance</span>
-      </div>
-    </div>
-
-    <div class="scenario" style="border-top-color: var(--cap-green);">
-      <h4>Scenario 4: Referral Status Check (Patient-Initiated)</h4>
-      <div class="trigger">Trigger: Patient messages the chatbot asking about their referral</div>
-      <ol>
-        <li>Patient asks: "What's happening with my referral?"</li>
-        <li><strong>Referral Agent</strong> queries Dataverse for referral status</li>
-        <li>Responds in plain language: <em>"Your referral to cardiology was sent on 10 March. The hospital has acknowledged it and you should receive an appointment letter within 2 weeks."</em></li>
-        <li>Patient asks follow-up; agent answers or escalates to admin if outside scope</li>
-        <li>Interaction logged</li>
-      </ol>
-      <div class="scenario-meta">
-        <span><strong>Personas:</strong> Patient</span>
-        <span><strong>Agents:</strong> Referral (via Triage chatbot)</span>
-        <span><strong>KPIs:</strong> Queries resolved without phone call, satisfaction</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== 4. AGENT INTERACTION MODEL ==================== -->
-  <div class="section">
-    <h2>4. Agent Interaction Model</h2>
-
-    <h3>Channels</h3>
     <table>
       <thead>
         <tr><th>Channel</th><th>Mechanism</th><th>Primary Agents</th><th>Personas</th></tr>
       </thead>
       <tbody>
-        <tr><td>Clinician-driven</td><td>Teams / Outlook via M365 Copilot</td><td>Documentation, CDS, Referral</td><td>Clinician</td></tr>
-        <tr><td>Patient-facing</td><td>Copilot Studio chatbot (web/mobile)</td><td>Triage, Scheduling, Referral (status)</td><td>Patient</td></tr>
-        <tr><td>Event-driven</td><td>Power Automate triggers</td><td>CDS (post-consult), Referral (status), Scheduling (slots)</td><td>Automated</td></tr>
+        <tr><td>Clinician-driven</td><td>Copilot chat (via Teams)</td><td>Documentation, Referral</td><td>Clinician</td></tr>
+        <tr><td>Patient-facing</td><td>Copilot Studio chatbot (web/mobile)</td><td>Triage, Scheduling</td><td>Patient</td></tr>
+        <tr><td>Event-driven</td><td>Power Automate agent flows</td><td>Referral (send letter + notify patient), Scheduling (confirmations, waitlist)</td><td>Automated</td></tr>
         <tr><td>Oversight</td><td>Power BI dashboards</td><td>All agents (reporting)</td><td>Clinical Lead, Admin</td></tr>
       </tbody>
     </table>
-
-    <h3>Agent Communication</h3>
-    <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">Agents communicate through a <strong>central orchestration layer</strong> (Copilot Studio), not point-to-point:</p>
-    <div class="flow-code">
-      Documentation Agent &rarr; [structured notes] &rarr; Orchestrator &rarr; Clinical Decision Support Agent<br>
-      CDS Agent &rarr; [recommendations] &rarr; Orchestrator &rarr; Clinician (Teams)<br>
-      CDS Agent &rarr; [referral recommendation] &rarr; Orchestrator &rarr; Referral Agent<br>
-      Triage Agent &rarr; [urgency + routing] &rarr; Orchestrator &rarr; Scheduling Agent<br>
-      Scheduling Agent &rarr; [confirmation] &rarr; Orchestrator &rarr; Patient (chatbot)
-    </div>
   </div>
 
-  <!-- ==================== 5. DATA REQUIREMENTS ==================== -->
+  <!-- ==================== 4. DATA REQUIREMENTS ==================== -->
   <div class="section">
-    <h2>5. Data Requirements</h2>
+    <h2>4. Data Requirements</h2>
 
     <h3>Dataverse Entity Model</h3>
     <p style="font-size:0.85rem; color:#555; margin-bottom:8px;">All agents operate against <strong>synthetic data</strong> in Dataverse. No real patient data at any stage.</p>
@@ -759,14 +723,12 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><th>Entity</th><th>Key Fields</th><th>Used By</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Patient</strong></td><td>ID, name, DOB, allergies, current medications, history summary</td><td>All agents</td></tr>
-        <tr><td><strong>Encounter</strong></td><td>ID, patient, date, clinician, complaint, diagnosis, plan, notes status</td><td>Documentation, CDS</td></tr>
-        <tr><td><strong>Clinical Guideline</strong></td><td>ID, condition, pathway, source (NICE ref), summary, actions</td><td>CDS</td></tr>
-        <tr><td><strong>Medication</strong></td><td>ID, name, class, interactions, contraindications</td><td>CDS</td></tr>
-        <tr><td><strong>Referral</strong></td><td>ID, patient, from clinician, to specialty, status, letter, dates</td><td>Referral</td></tr>
+        <tr><td><strong>Patient</strong></td><td>ID, name, DOB, allergies, current medications, conditions, history summary</td><td>All agents</td></tr>
+        <tr><td><strong>Triage Record</strong></td><td>ID, patient, datetime, symptoms, history context, urgency, outcome, routing</td><td>Triage, Documentation</td></tr>
         <tr><td><strong>Appointment</strong></td><td>ID, patient, clinician, datetime, type, status, triage ref</td><td>Scheduling</td></tr>
-        <tr><td><strong>Triage Record</strong></td><td>ID, patient, datetime, symptoms, urgency, outcome, routing</td><td>Triage</td></tr>
-        <tr><td><strong>Audit Log</strong></td><td>ID, agent, action, entity ref, clinician, timestamp, decision</td><td>All agents</td></tr>
+        <tr><td><strong>Encounter</strong></td><td>ID, patient, date, clinician, SOAP note (S/O/A/P), notes status, referral flag, triage ref</td><td>Documentation (write), Referral (read)</td></tr>
+        <tr><td><strong>Referral</strong></td><td>ID, patient, from clinician, to specialty, status, letter, required fields, dates</td><td>Referral</td></tr>
+        <tr><td><strong>Audit Log</strong></td><td>ID, agent, action, entity ref, clinician/patient, timestamp</td><td>All agents</td></tr>
       </tbody>
     </table>
 
@@ -774,14 +736,14 @@ tr:nth-child(even) { background: #f9fafb; }
     <ul style="font-size:0.9rem; color:#444; padding-left:20px;">
       <li>Use <strong>Synthea</strong> or hand-crafted scenarios to generate realistic patient records</li>
       <li>Minimum dataset: 20 patients with varied histories to demonstrate all scenarios</li>
-      <li>Must include cases that trigger: drug interactions, missed referrals, emergency triage, routine bookings</li>
+      <li>Must include cases that trigger: different urgency levels, referrals, appointment types</li>
       <li>All data clearly marked as synthetic &mdash; no ambiguity</li>
     </ul>
   </div>
 
-  <!-- ==================== 6. NON-FUNCTIONAL REQUIREMENTS ==================== -->
+  <!-- ==================== 5. NON-FUNCTIONAL REQUIREMENTS ==================== -->
   <div class="section">
-    <h2>6. Non-Functional Requirements</h2>
+    <h2>5. Non-Functional Requirements</h2>
 
     <div class="grid-2">
       <div class="card">
@@ -797,18 +759,18 @@ tr:nth-child(even) { background: #f9fafb; }
       <div class="card accent">
         <h3>Responsible AI</h3>
         <ul>
-          <li>Agents present evidence with cited sources &mdash; never state diagnoses</li>
-          <li>Confidence indicators on all suggestions (high/medium/low)</li>
-          <li>Clinician override always available and logged</li>
-          <li>No autonomous clinical decisions &mdash; every suggestion requires human approval</li>
-          <li>Bias monitoring: track recommendation patterns across demographics</li>
+          <li>Agents handle administrative tasks only &mdash; never make clinical decisions or diagnoses</li>
+          <li>Triage classifies urgency but does not diagnose &mdash; always directs to clinician or 999</li>
+          <li>Documentation structures clinician's notes &mdash; does not add clinical content</li>
+          <li>Clinician approval required before any record is saved or referral sent</li>
+          <li>Emergency triage always directs to 999 &mdash; no exceptions</li>
         </ul>
       </div>
 
       <div class="card orange">
         <h3>Resilience</h3>
         <ul>
-          <li><span class="badge high">High</span> Triage, CDS &mdash; must have defined fallback to human</li>
+          <li><span class="badge high">High</span> Triage &mdash; must have defined fallback to phone/reception</li>
           <li><span class="badge medium">Medium</span> Documentation, Referral, Scheduling &mdash; manual fallback acceptable</li>
           <li>Graceful degradation over hard failure</li>
           <li>Patient-facing agents must clearly communicate when they cannot help</li>
@@ -819,31 +781,31 @@ tr:nth-child(even) { background: #f9fafb; }
       <div class="card green">
         <h3>Audit &amp; Governance</h3>
         <ul>
-          <li>Every agent action logged: agent ID, action type, entity affected, clinician decision, timestamp</li>
+          <li>Every agent action logged: agent ID, action type, entity affected, timestamp</li>
           <li>Audit trail persists independently of agent availability</li>
-          <li>Clinical Lead can review all agent activity via dashboard</li>
-          <li>Override rates and guideline adherence tracked for quality improvement</li>
+          <li>Clinical Lead and Admin can review agent activity via dashboard</li>
+          <li>Triage volumes, booking rates, referral completeness tracked for quality improvement</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ==================== 7. SUCCESS METRICS ==================== -->
+  <!-- ==================== 6. SUCCESS METRICS ==================== -->
   <div class="section">
-    <h2>7. Success Metrics (KPIs)</h2>
+    <h2>6. Success Metrics (KPIs)</h2>
     <table>
       <thead>
         <tr><th>KPI</th><th>Baseline (Manual)</th><th>Target (With AgentCare)</th><th>Measurement</th></tr>
       </thead>
       <tbody>
         <tr><td>Clinician admin time / consultation</td><td>~40% of appointment</td><td>&lt;20%</td><td>Time tracking in pilot</td></tr>
-        <tr><td>Drug interaction alerts caught</td><td>Variable (human memory)</td><td>&gt;95% detection rate</td><td>Alert log vs known interactions</td></tr>
-        <tr><td>Guideline adherence</td><td>~70% (estimated)</td><td>&gt;90%</td><td>CDS review pass rate</td></tr>
-        <tr><td>Missed referral detection</td><td>Unknown (uncaught)</td><td>&gt;85% catch rate</td><td>CDS flags vs expected referrals</td></tr>
-        <tr><td>Triage to appointment time</td><td>Hours&ndash;days (phone)</td><td>&lt;15 min (self-service)</td><td>Triage &rarr; booking timestamp</td></tr>
-        <tr><td>Phone call volume</td><td>100% (baseline)</td><td>-40% reduction</td><td>Call logs vs chatbot interactions</td></tr>
-        <tr><td>Patient satisfaction (referral)</td><td>Low (anecdotal)</td><td>&gt;80% positive</td><td>Post-interaction survey</td></tr>
         <tr><td>Documentation turnaround</td><td>Minutes&ndash;hours (manual)</td><td>&lt;60 seconds</td><td>Generation timestamp</td></tr>
+        <tr><td>Referral completeness</td><td>~70% first-time pass</td><td>&gt;95%</td><td>Validation pass rate before submission</td></tr>
+        <tr><td>Referral admin time</td><td>20-30 min (manual drafting)</td><td>&lt;5 min (review only)</td><td>Time from consultation to referral sent</td></tr>
+        <tr><td>Phone call volume</td><td>100% (baseline)</td><td>-40% reduction</td><td>Call logs vs chatbot interactions</td></tr>
+        <tr><td>Triage accuracy</td><td>Variable (receptionist)</td><td>&gt;95% correct classification</td><td>Clinician review of triage outcomes</td></tr>
+        <tr><td>Patient satisfaction</td><td>Low (anecdotal)</td><td>&gt;80% positive</td><td>Post-interaction survey</td></tr>
+        <tr><td>Appointment no-show rate</td><td>~10-15%</td><td>&lt;5% (with reminders)</td><td>No-show count vs total bookings</td></tr>
       </tbody>
     </table>
   </div>
