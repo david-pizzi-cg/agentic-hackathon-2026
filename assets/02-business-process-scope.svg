@@ -101,7 +101,7 @@
   <text x="46" y="206" fill="#0070AD" font-size="7" font-weight="700">AGENTS</text>
   <text x="46" y="214" fill="#6C757D" font-size="5.5">4 AI agents</text>
   <text x="46" y="242" fill="#0070AD" font-size="7" font-weight="700">L4</text>
-  <text x="46" y="250" fill="#6C757D" font-size="5.5">30 micro tasks</text>
+  <text x="46" y="250" fill="#6C757D" font-size="5.5">31 micro tasks</text>
 
   <!-- Connector lines from macro tasks down to agents -->
   <!-- Triage Agent connectors -->
@@ -141,9 +141,9 @@
   <!-- Micro tasks (under their owning agent) -->
   <!-- Triage Agent -->
   <circle cx="104" cy="242" r="4" fill="#0070AD"/>
-  <text x="112" y="245" fill="#444" font-size="7">First msg emergency scan</text>
+  <text x="112" y="245" fill="#444" font-size="7">Emergency scan (pre-auth)</text>
   <circle cx="104" cy="256" r="4" fill="#0070AD"/>
-  <text x="112" y="259" fill="#444" font-size="7">Patient auth + history load</text>
+  <text x="112" y="259" fill="#444" font-size="7">Sign-in + history load</text>
   <circle cx="104" cy="270" r="4" fill="#0070AD"/>
   <text x="112" y="273" fill="#444" font-size="7">Symptom Q&amp;A</text>
   <circle cx="104" cy="284" r="4" fill="#0070AD"/>
@@ -156,6 +156,8 @@
   <text x="258" y="259" fill="#444" font-size="7">SOAP (S) pre-fill</text>
   <circle cx="250" cy="270" r="4" fill="#475569"/>
   <text x="258" y="273" fill="#444" font-size="7">Triage log to Dataverse</text>
+  <circle cx="250" cy="284" r="4" fill="#0070AD"/>
+  <text x="258" y="287" fill="#444" font-size="7">Receptionist escalation</text>
 
   <!-- Scheduling Agent -->
   <circle cx="372" cy="242" r="4" fill="#475569"/>

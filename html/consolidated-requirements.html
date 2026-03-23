@@ -582,12 +582,13 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
       </thead>
       <tbody>
-        <tr><td>TRI-01</td><td>As a patient in a critical situation, I want immediate emergency advice without answering questions</td><td>First message scanned for emergency signals (chest pain, severe bleeding, etc.); immediate 999 directive if detected</td></tr>
-        <tr><td>TRI-02</td><td>As a patient, I want to describe my symptoms via chatbot and get an urgency assessment</td><td>Authenticated patient; if no emergency, history auto-loaded; guided symptom collection; urgency classified</td></tr>
-        <tr><td>TRI-03</td><td>As a patient, I want my existing conditions automatically considered when assessing urgency</td><td>Patient history (meds, allergies, conditions) loaded from authentication; factored into classification</td></tr>
-        <tr><td>TRI-04</td><td>As a patient, I want clear advice based on my triage outcome</td><td>Urgent: contact practice; Routine: book appointment; Self-care: guidance + when to escalate</td></tr>
+        <tr><td>TRI-01</td><td>As a patient in a critical situation, I want immediate emergency advice without signing in</td><td>Emergency scan runs on first message BEFORE authentication; immediate 999 advice if detected; anonymous triage logged to Dataverse for audit</td></tr>
+        <tr><td>TRI-02</td><td>As a patient, I want to describe my symptoms via chatbot and get an urgency assessment</td><td>If no emergency, patient signs in (Entra ID); history auto-loaded from Dataverse; guided symptom collection; urgency classified using symptoms + history</td></tr>
+        <tr><td>TRI-03</td><td>As a patient, I want my existing conditions automatically considered when assessing urgency</td><td>Patient history (meds, allergies, conditions) factored into classification; e.g. "dizzy" + heart condition = emergency escalation</td></tr>
+        <tr><td>TRI-04</td><td>As a patient, I want clear advice based on my triage outcome</td><td>Emergency: advise call 999; Urgent: book priority slot (if no slot, escalate to live receptionist); Routine: book standard appointment; Self-care: guidance + when to escalate</td></tr>
         <tr><td>TRI-05</td><td>As a patient, I want answers to common questions without calling the practice</td><td>FAQ topics handled by chatbot; reduces phone volume for admin</td></tr>
-        <tr><td>TRI-06</td><td>As an admin, I want triage results logged for demand planning</td><td>Interactions stored with timestamps, urgency, outcome; accessible via dashboard</td></tr>
+        <tr><td>TRI-06</td><td>As an admin, I want triage results logged for demand planning</td><td>All triage interactions stored with timestamps, urgency, outcome; accessible via dashboard</td></tr>
+        <tr><td>TRI-07</td><td>As a receptionist, I want urgent patients escalated to me with full triage context</td><td>When no priority slot available, Copilot Studio hands off to live receptionist chat with triage summary, symptoms, and history pre-loaded</td></tr>
       </tbody>
     </table>
 
@@ -604,6 +605,7 @@ tr:nth-child(even) { background: #f9fafb; }
     </table>
 
     <h3>Documentation Agent</h3>
+    <p style="font-size:0.85rem; color:#555; margin-bottom:10px;"><strong>SOAP</strong> is the standard clinical note format: <strong>S</strong>ubjective (patient-reported symptoms), <strong>O</strong>bjective (clinician observations/findings), <strong>A</strong>ssessment (diagnosis/impression), <strong>P</strong>lan (treatment, prescriptions, referrals, follow-up).</p>
     <table>
       <thead>
         <tr><th>ID</th><th>Story</th><th>Acceptance Criteria</th></tr>
@@ -644,10 +646,12 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><th>Task</th><th>Currently</th><th>Agent</th><th>Phase</th><th>What Agent Does</th></tr>
       </thead>
       <tbody>
+        <tr><td>Emergency screening</td><td>Admin (phone, judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Scans first message BEFORE sign-in; immediate 999 advice; anonymous log to Dataverse</td></tr>
         <tr><td>Answer common patient questions</td><td>Admin (phone)</td><td>Triage</td><td>Pre-consultation</td><td>FAQ chatbot, deflects calls</td></tr>
-        <tr><td>Collect symptoms</td><td>Admin (phone)</td><td>Triage</td><td>Pre-consultation</td><td>Guided chatbot Q&amp;A</td></tr>
-        <tr><td>Classify urgency</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Symptoms + history &rarr; urgency level</td></tr>
-        <tr><td>Route patient (999 / GP / self-care)</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Advice based on classification</td></tr>
+        <tr><td>Collect symptoms</td><td>Admin (phone)</td><td>Triage</td><td>Pre-consultation</td><td>Guided chatbot Q&amp;A (after sign-in)</td></tr>
+        <tr><td>Classify urgency</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Symptoms + history &rarr; urgency level (two-stage: immediate + history-aware)</td></tr>
+        <tr><td>Route patient (999 / GP / self-care)</td><td>Admin (judgement)</td><td>Triage</td><td>Pre-consultation</td><td>Emergency: advise 999; Urgent: book priority slot or escalate to receptionist; Routine: book appointment</td></tr>
+        <tr><td>Handle urgent escalation</td><td>Receptionist (phone)</td><td>Triage</td><td>Pre-consultation</td><td>If no urgent slot available, hand off to live receptionist with full triage context</td></tr>
       </tbody>
     </table>
 

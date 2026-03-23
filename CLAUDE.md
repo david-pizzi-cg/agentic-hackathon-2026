@@ -31,6 +31,15 @@ Idea submission preparation — deadline 30 March 2026. Focus on:
 - Branches: `feature/<short-desc>`, `fix/<short-desc>`, `docs/<short-desc>`
 - Document decisions as lightweight ADRs
 
+## SVG Diagram Quality Checks
+
+Every time an SVG diagram is created or modified:
+1. **Validate XML** — run `python -c "import xml.etree.ElementTree as ET; ET.parse('file.svg')"` to catch syntax errors
+2. **Check for overlapping elements** — verify that no boxes, text, or connectors overlap by comparing y/x coordinates and dimensions
+3. **Consistent styling** — headers, footers, legends, font sizes, colours, and spacing must match across all workflow SVGs
+4. **No double-dashes in XML comments** — `<!-- text -->` is valid, `<!-- --- text --- -->` is NOT (breaks browser rendering silently)
+5. **Arrow markers** — verify arrowheads are visible and correctly oriented (use manual polygon for vertical arrows if marker orientation fails)
+
 ## Don't
 
 - Don't jump to implementation before architecture is agreed

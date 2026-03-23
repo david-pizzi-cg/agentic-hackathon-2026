@@ -281,7 +281,7 @@ tr:nth-child(even) { background: #f9fafb; }
           <td><strong>Patient Intake &amp; Triage</strong></td>
           <td>Triage Agent</td>
           <td><span class="badge in">In scope</span></td>
-          <td>Emergency-first scan, symptom collection, history-aware urgency, care advice, FAQ</td>
+          <td>Emergency scan (before sign-in), symptom collection, history-aware urgency, care advice, receptionist escalation, FAQ</td>
         </tr>
         <tr>
           <td><strong>Appointment Management</strong></td>
@@ -316,7 +316,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <tbody>
         <tr>
           <td><strong>Triage</strong></td>
-          <td>Emergency scan, symptom collection, urgency classification, FAQ</td>
+          <td>Emergency scan (pre-auth), symptom collection, urgency classification, receptionist escalation, FAQ</td>
           <td>&mdash;</td>
           <td>&mdash;</td>
         </tr>
@@ -350,7 +350,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <div class="card green">
         <h3>In Scope (Must Have)</h3>
         <ul>
-          <li><strong>Triage Agent</strong> &mdash; Emergency-first, symptom Q&amp;A, history-aware urgency, care advice</li>
+          <li><strong>Triage Agent</strong> &mdash; Emergency scan (pre-auth), symptom Q&amp;A, history-aware urgency, care advice, receptionist escalation</li>
           <li><strong>Scheduling Agent</strong> &mdash; Appointment booking, confirmations, waitlist</li>
           <li><strong>Documentation Agent</strong> &mdash; SOAP pre-fill, note structuring, entity extraction, patient email</li>
           <li><strong>Referral Agent</strong> &mdash; Auto-draft letter, validate, send via Outlook, notify patient</li>
@@ -397,7 +397,7 @@ tr:nth-child(even) { background: #f9fafb; }
         </tr>
         <tr>
           <td><strong>Triage Agent</strong></td>
-          <td>Emergency scan topic, symptom collection topic, history lookup, urgency prompt action, care advice, FAQ topics</td>
+          <td>Emergency scan topic (pre-auth), symptom collection, history lookup, urgency prompt action, care advice, receptionist escalation handoff, FAQ topics</td>
           <td>4</td>
           <td>Copilot Studio</td>
         </tr>
@@ -463,7 +463,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <table>
         <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
         <tbody>
-          <tr><td>Triage Agent &mdash; emergency scan, symptoms, urgency, advice</td><td>4d</td><td>Patient chatbot triages and advises</td></tr>
+          <tr><td>Triage Agent &mdash; pre-auth emergency scan, symptoms, urgency, advice, receptionist escalation</td><td>4d</td><td>Patient chatbot triages, advises, escalates if needed</td></tr>
           <tr><td>Scheduling Agent &mdash; booking, confirmation, waitlist</td><td>3d</td><td>Patient can book appointment via chatbot</td></tr>
         </tbody>
       </table>
