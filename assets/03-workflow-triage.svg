@@ -143,17 +143,17 @@
   <line x1="275" y1="434.0" x2="275" y2="464.0" stroke="#0070AD" stroke-width="1.5"/>
 
   <!-- DECISION DIAMOND -->
-  <polygon points="275,440 330,470 275,500 220,470" fill="#f0f0f0" stroke="#888" stroke-width="2" filter="url(#shadow)"/>
+  <polygon points="275,464 330,494 275,524 220,494" fill="#f0f0f0" stroke="#888" stroke-width="2" filter="url(#shadow)"/>
   <text x="275" y="491.0" text-anchor="middle" font-size="10" font-weight="700" fill="#444">Urgency</text>
   <text x="275" y="503.0" text-anchor="middle" font-size="9" fill="#666">level?</text>
 
   <!-- ==================== EMERGENCY FROM ASSESSMENT (RED) ==================== -->
-  <line x1="330" y1="487.0" x2="370" y2="487.0" stroke="#D9534F" stroke-width="1.5"/>
-  <line x1="370" y1="487.0" x2="370" y2="462.0" stroke="#D9534F" stroke-width="1.5"/>
-  <line x1="370" y1="462.0" x2="415" y2="462.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
-
   <rect x="395" y="442.0" width="680" height="42" rx="8" fill="#fde8e8" opacity="0.4"/>
   <text x="380" y="444.0" font-size="8" font-weight="700" fill="#D9534F">RED (e.g. dizzy + heart condition)</text>
+
+  <line x1="330" y1="487.0" x2="370" y2="487.0" stroke="#D9534F" stroke-width="1.5"/>
+  <line x1="370" y1="487.0" x2="370" y2="463.0" stroke="#D9534F" stroke-width="1.5"/>
+  <line x1="370" y1="463.0" x2="415" y2="463.0" stroke="#D9534F" stroke-width="1.5" marker-end="url(#arrowRed)"/>
 
   <rect x="415" y="447.0" width="85" height="32" rx="6" fill="#D9534F" filter="url(#shadowSmall)"/>
   <text x="457" y="468.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">EMERGENCY</text>
@@ -170,12 +170,12 @@
   <text x="980" y="474.0" text-anchor="middle" font-size="8" fill="#666">&#x2192; Dataverse</text>
 
   <!-- ==================== URGENT BRANCH (AMBER) ==================== -->
+  <rect x="395" y="496.0" width="680" height="80" rx="8" fill="#fef3cd" opacity="0.35"/>
+  <text x="380" y="572.0" font-size="8" font-weight="700" fill="#856404">AMBER</text>
+
   <line x1="330" y1="499.0" x2="370" y2="499.0" stroke="#856404" stroke-width="1.5"/>
   <line x1="370" y1="499.0" x2="370" y2="524.0" stroke="#856404" stroke-width="1.5"/>
   <line x1="370" y1="524.0" x2="415" y2="524.0" stroke="#856404" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
-
-  <rect x="395" y="496.0" width="680" height="80" rx="8" fill="#fef3cd" opacity="0.35"/>
-  <text x="380" y="572.0" font-size="8" font-weight="700" fill="#856404">AMBER</text>
 
   <rect x="415" y="508.0" width="85" height="32" rx="6" fill="#F0AD4E" filter="url(#shadowSmall)"/>
   <text x="457" y="529.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">URGENT</text>
@@ -212,11 +212,11 @@
   <text x="980" y="536.0" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
 
   <!-- ==================== ROUTINE BRANCH (GREEN) ==================== -->
-  <line x1="275" y1="524.0" x2="275" y2="639.0" stroke="#2E8B57" stroke-width="1.5"/>
-  <line x1="275" y1="639.0" x2="415" y2="639.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-
   <rect x="395" y="614.0" width="680" height="50" rx="8" fill="#d4edda" opacity="0.35"/>
   <text x="380" y="661.0" font-size="8" font-weight="700" fill="#2E8B57">GREEN</text>
+
+  <line x1="275" y1="524.0" x2="275" y2="639.0" stroke="#2E8B57" stroke-width="1.5"/>
+  <line x1="275" y1="639.0" x2="415" y2="639.0" stroke="#2E8B57" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
   <rect x="415" y="623.0" width="85" height="32" rx="6" fill="#2E8B57" filter="url(#shadowSmall)"/>
   <text x="457" y="644.0" text-anchor="middle" font-size="10" font-weight="700" fill="white">ROUTINE</text>
@@ -245,8 +245,8 @@
   <text x="980" y="649.0" text-anchor="middle" font-size="8.5" fill="#666">&#x2192; Dataverse</text>
 
   <!-- ==================== DATAVERSE LOGGING COLUMN ==================== -->
-  <rect x="1050" y="158.0" width="30" height="509" rx="4" fill="#E8F4FA" stroke="#0070AD" stroke-width="1" opacity="0.6"/>
-  <text x="1065" y="424.0" text-anchor="middle" font-size="8" fill="#003A5D" transform="rotate(-90, 1065, 400)" font-weight="600">DATAVERSE LOGGING</text>
+  <rect x="1050" y="158.0" width="30" height="500" rx="4" fill="#E8F4FA" stroke="#0070AD" stroke-width="1" opacity="0.6"/>
+  <text x="1065" y="408" text-anchor="middle" font-size="8" fill="#003A5D" transform="rotate(-90, 1065, 408)" font-weight="600">DATAVERSE LOGGING</text>
 
   <!-- Grey connectors from Log boxes to Dataverse bar -->
   <line x1="1030" y1="175.0" x2="1050" y2="175.0" stroke="#888" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>

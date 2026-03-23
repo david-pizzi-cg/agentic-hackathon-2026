@@ -31,14 +31,17 @@ Idea submission preparation — deadline 30 March 2026. Focus on:
 - Branches: `feature/<short-desc>`, `fix/<short-desc>`, `docs/<short-desc>`
 - Document decisions as lightweight ADRs
 
-## SVG Diagram Quality Checks
+## SVG Diagram Quality Checks (MANDATORY)
 
-Every time an SVG diagram is created or modified:
+EVERY time an SVG diagram is created or modified — before presenting to user:
 1. **Validate XML** — run `python -c "import xml.etree.ElementTree as ET; ET.parse('file.svg')"` to catch syntax errors
-2. **Check for overlapping elements** — verify that no boxes, text, or connectors overlap by comparing y/x coordinates and dimensions
-3. **Consistent styling** — headers, footers, legends, font sizes, colours, and spacing must match across all workflow SVGs
-4. **No double-dashes in XML comments** — `<!-- text -->` is valid, `<!-- --- text --- -->` is NOT (breaks browser rendering silently)
-5. **Arrow markers** — verify arrowheads are visible and correctly oriented (use manual polygon for vertical arrows if marker orientation fails)
+2. **Check ALL element positions** — when shifting elements (especially bulk shifts), verify EVERY element type was shifted: `rect`, `text`, `line`, `circle`, `path`, `polygon` (polygon `points` attributes are NOT caught by y= regex shifts)
+3. **Check for overlapping elements** — compare y/x coordinates and dimensions of adjacent elements. Verify no box/text/connector overlaps by calculating end positions (x+width, y+height)
+4. **Verify rotated text** — any `transform="rotate()"` must have its anchor point updated when the element moves. Check that rotation anchor matches the text's y position and is centred within its container
+5. **Consistent styling** — headers, footers, legends, font sizes, colours, and spacing must match across all workflow SVGs
+6. **No double-dashes in XML comments** — `<!-- text -->` is valid, `<!-- --- text --- -->` is NOT (breaks browser rendering silently)
+7. **Arrow markers** — verify arrowheads are visible and correctly oriented (use manual polygon for vertical arrows if marker orientation fails)
+8. **Connector endpoints** — verify connectors start/end at the correct box edges, not floating in space
 
 ## Don't
 
