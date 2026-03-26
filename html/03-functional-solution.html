@@ -500,10 +500,6 @@ tr:nth-child(even) { background: #f9fafb; }
     <img src="../assets/03-workflow-consultation.svg" alt="Workflow 2: Consultation and Documentation" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal2').style.display='flex'" title="Click to zoom">
   </div>
 
-  <!-- Workflow 3: Post-Consultation Review -->
-  <div class="section">
-    <img src="../assets/03-workflow-referral.svg" alt="Workflow 3: Referral Drafting and Submission" style="width:100%; border-radius:12px; cursor:pointer;" onclick="document.getElementById('modal3').style.display='flex'" title="Click to zoom">
-  </div>
 
   <!-- Zoom Modals -->
   <div id="modal1" style="display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'">
@@ -518,12 +514,6 @@ tr:nth-child(even) { background: #f9fafb; }
       <button style="position:absolute; top:8px; right:8px; background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; font-size:1.2rem; cursor:pointer; color:#333; font-weight:700;" onclick="event.stopPropagation(); document.getElementById('modal2').style.display='none'">&times;</button>
     </div>
   </div>
-  <div id="modal3" style="display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'">
-    <div style="position:relative; width:95vw; max-height:95vh; display:flex; align-items:center; justify-content:center;">
-      <img src="../assets/03-workflow-referral.svg" style="max-width:100%; max-height:95vh; border-radius:8px; background:white; padding:16px;">
-      <button style="position:absolute; top:8px; right:8px; background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:36px; height:36px; font-size:1.2rem; cursor:pointer; color:#333; font-weight:700;" onclick="event.stopPropagation(); document.getElementById('modal3').style.display='none'">&times;</button>
-    </div>
-  </div>
 
   <!-- Fallback Modes -->
   <div class="section" style="margin-top:24px;">
@@ -536,7 +526,6 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr><td>Triage</td><td><span class="badge high">HIGH</span></td><td>Patient directed to phone; receptionist triages manually</td></tr>
         <tr><td>Scheduling</td><td><span class="badge medium">MEDIUM</span></td><td>Receptionist books appointments manually via calendar</td></tr>
         <tr><td>Documentation</td><td><span class="badge medium">MEDIUM</span></td><td>Clinician writes and structures notes manually</td></tr>
-        <tr><td>Referral</td><td><span class="badge medium">MEDIUM</span></td><td>Clinician drafts referral letter manually; admin sends</td></tr>
       </tbody>
     </table>
     <p style="margin-top:12px; font-size:0.9rem; color:#555;">No agent is a single point of failure for patient safety. All fallbacks are clearly communicated to users.</p>
