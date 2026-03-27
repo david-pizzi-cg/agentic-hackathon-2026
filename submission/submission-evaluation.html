@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Self-Evaluation</title>
+  <style>
+:root {
+  --cap-blue: #0070AD;
+  --cap-dark: #003A5D;
+  --cap-accent: #00B0F0;
+  --cap-bg: #FAFBFC;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', -apple-system, sans-serif;
+  background: var(--cap-bg);
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.header {
+  background: linear-gradient(135deg, var(--cap-dark), var(--cap-blue));
+  color: white;
+  padding: 24px 48px;
+}
+.header h1 { font-size: 1.6rem; font-weight: 700; }
+.header .sub { font-size: 0.9rem; opacity: 0.85; }
+.content { padding: 24px 48px; }
+h2 {
+  color: var(--cap-dark);
+  font-size: 1.2rem;
+  margin: 16px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--cap-accent);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 12px 0;
+}
+th {
+  background: var(--cap-dark);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 8px 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background: #f9fafb; }
+.score { font-weight: 700; color: var(--cap-blue); font-size: 1rem; }
+.total td { background: var(--cap-dark); color: white; font-weight: 700; font-size: 0.95rem; }
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.summary-box {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--cap-accent);
+}
+.summary-box .val { font-size: 2rem; font-weight: 700; color: var(--cap-blue); }
+.summary-box .lbl { font-size: 0.8rem; color: #666; }
+.footer {
+  background: var(--cap-dark);
+  color: white;
+  padding: 12px 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AgentCare — Submission Self-Evaluation</h1>
+  <div class="sub">Based on Half Finals check criteria (Architecture + Use Case, 0-10 each)</div>
+</div>
+
+<div class="content">
+
+  <div class="summary">
+    <div class="summary-box"><div class="val">44/50</div><div class="lbl">Architecture</div></div>
+    <div class="summary-box"><div class="val">44/50</div><div class="lbl">Use Case</div></div>
+    <div class="summary-box"><div class="val">88/100</div><div class="lbl">Total</div></div>
+  </div>
+
+  <h2>Architecture (0-10 each)</h2>
+  <table>
+    <thead>
+      <tr><th>Criteria</th><th>Score</th><th>Strengths</th><th>Gaps</th><th>To improve</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Clarity &amp; Flow</strong></td>
+        <td class="score">8</td>
+        <td>Two detailed workflow diagrams showing end-to-end. Clear phase structure. Consent branching with both paths. SOAP convergence point.</td>
+        <td>Consultation workflow complex — 3 phases, 2 paths. No numbered steps.</td>
+        <td>Add 1-sentence flow summary above each diagram</td>
+      </tr>
+      <tr>
+        <td><strong>Platform Fit</strong></td>
+        <td class="score">9</td>
+        <td>100% Microsoft stack. Architecture diagram maps every component. Correct use of triggers/topics/prompts/agent flows/knowledge. GPT via built-in AI clarified.</td>
+        <td>No Azure AI services mentioned</td>
+        <td>Already clarified GPT is via Copilot Studio — minor gap only</td>
+      </tr>
+      <tr>
+        <td><strong>Data/Gov/Sec</strong></td>
+        <td class="score">9</td>
+        <td>RBAC, Entra ID, encryption, audit trail, GDPR Art. 22, NHS DSPT-aligned, synthetic data, UK data residency, consent-based retention</td>
+        <td>No data classification levels mentioned</td>
+        <td>Add "data classified per NHS IG Toolkit"</td>
+      </tr>
+      <tr>
+        <td><strong>Reliability/Perf/Cost</strong></td>
+        <td class="score">9</td>
+        <td>99.9% SLA, fallback modes for all 3 agents, no SPOF, response time targets (&lt;2s, &lt;30s), cost estimate (~&pound;500/practice/month)</td>
+        <td>No concurrency/load consideration</td>
+        <td>Add "Power Platform auto-scales"</td>
+      </tr>
+      <tr>
+        <td><strong>Scalability/Integration</strong></td>
+        <td class="score">9</td>
+        <td>Managed solution, one-click deploy, vertical reuse, swappable knowledge, Git CI/CD, env strategy, reusable patterns named, timeline</td>
+        <td>No multi-tenant detail</td>
+        <td>Minor — covered by "managed solution"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Use Case (0-10 each)</h2>
+  <table>
+    <thead>
+      <tr><th>Criteria</th><th>Score</th><th>Strengths</th><th>Gaps</th><th>To improve</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Value &amp; KPI Impact</strong></td>
+        <td class="score">9</td>
+        <td>6 quantified KPIs, NHS source cited, measurement method explained (Dataverse audit logs)</td>
+        <td>No baseline-to-target format</td>
+        <td>Add "from X to Y" for one KPI</td>
+      </tr>
+      <tr>
+        <td><strong>Innovation</strong></td>
+        <td class="score">9</td>
+        <td>Event-driven proactive architecture, LLM vs rules reasoning, compared to EMIS/SystmOne, transcript-to-SOAP, NHS 111 grounding</td>
+        <td>Innovation merged into problem statement — less prominent</td>
+        <td>Could be a standalone callout but space is tight</td>
+      </tr>
+      <tr>
+        <td><strong>AI Fit</strong></td>
+        <td class="score">9</td>
+        <td>Clear AI-Human Chemistry, 3 AI patterns, knowledge grounding, LLM handles ambiguity explained, clinician always decides</td>
+        <td>No responsible AI principles beyond "no autonomous decisions"</td>
+        <td>Add "Microsoft Responsible AI Standard applied"</td>
+      </tr>
+      <tr>
+        <td><strong>UX Simplicity</strong></td>
+        <td class="score">8</td>
+        <td>3 personas with clear channels, no app install, clinician stays in Teams, emergency before sign-in</td>
+        <td>No screenshot/mockup, no accessibility mention</td>
+        <td>Would need a mockup — hard to add to PDF</td>
+      </tr>
+      <tr>
+        <td><strong>Build-Scale-Reuse</strong></td>
+        <td class="score">9</td>
+        <td>Managed solution, CI/CD, vertical reuse, reusable patterns named, licensing model, hackathon + post-hackathon timeline</td>
+        <td>Reusable components could be more explicit</td>
+        <td>Minor — already named 3 patterns</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px; font-size:0.9rem; color:#555;">Remaining gaps are mostly implementation-phase (mockups, live demo) rather than document content.</p>
+
+</div>
+
+<div class="footer">
+  <span>AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026</span>
+  <span>Company Confidential &copy; Capgemini 2026</span>
+</div>
+
+</body>
+</html>
