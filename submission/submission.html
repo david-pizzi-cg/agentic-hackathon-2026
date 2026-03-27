@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCare — Submission</title>
+  <style>
+@page { size: A4; margin: 12mm 12mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', -apple-system, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.5;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 12px;
+  font-size: 9pt;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #003A5D, #0070AD);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 { font-size: 16pt; font-weight: 700; }
+.header .sub { font-size: 8pt; opacity: 0.85; }
+.header .tag {
+  background: #00B0F0;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 7pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Section titles */
+h2 {
+  color: #003A5D;
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 10px 0 6px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #00B0F0;
+}
+h3 {
+  color: #0070AD;
+  font-size: 9pt;
+  font-weight: 600;
+  margin: 6px 0 3px;
+}
+
+/* Content */
+p, li { font-size: 8.5pt; color: #333; }
+ul { padding-left: 16px; margin: 3px 0; }
+li { margin-bottom: 2px; }
+
+/* Grid */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+/* Cards */
+.card {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 8px 10px;
+  border-left: 3px solid #0070AD;
+}
+.card h4 { font-size: 8.5pt; color: #003A5D; margin-bottom: 2px; }
+.card p { font-size: 8pt; }
+.card.green { border-left-color: #2E8B57; }
+
+/* KPI row */
+.kpi-row {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0;
+}
+.kpi {
+  text-align: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-top: 3px solid #00B0F0;
+  border-radius: 4px;
+  padding: 6px 8px;
+  flex: 1;
+}
+.kpi .val { font-size: 12pt; font-weight: 700; color: #0070AD; }
+.kpi .lbl { font-size: 6.5pt; color: #666; }
+
+/* Diagrams */
+.diagram {
+  width: 100%;
+  border-radius: 6px;
+  margin: 6px 0;
+}
+
+/* Page breaks */
+.page-break { page-break-before: always; }
+
+/* Print */
+@media print {
+  body { padding: 0; }
+  .header { break-after: avoid; }
+  .no-break { break-inside: avoid; }
+}
+
+/* Footer */
+.footer {
+  font-size: 7pt;
+  color: #999;
+  text-align: center;
+  margin-top: 8px;
+  padding-top: 4px;
+  border-top: 1px solid #ddd;
+}
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1: Overview + Workflow 1 -->
+<div class="header">
+  <div>
+    <span class="tag">Healthcare</span>
+    <h1>AgentCare</h1>
+    <div class="sub">Agentic clinical admin automation | Capgemini | Microsoft Agentic Industry Hackathon 2026</div>
+  </div>
+</div>
+
+<h2>The Problem &amp; What's Different</h2>
+<p>UK GP clinicians spend <strong>35% of their time on admin</strong> (NHS England, GP Workload Survey 2023). Existing systems (EMIS, SystmOne) are passive record stores. AgentCare is <strong>event-driven and proactive</strong>: three AI agents via Copilot Studio trigger on calendar events and recordings, reach clinicians in Teams, draft SOAP notes from transcripts, and handle patient triage via LLM — understanding natural language ambiguity that rule-based systems cannot.</p>
+
+<div class="grid-3" style="margin: 8px 0;">
+  <div class="card">
+    <h4>Triage Agent</h4>
+    <p>Patient chatbot: emergency scan, NHS 111-guided symptom collection, urgency classification. Self-service booking or escalation to receptionist.</p>
+  </div>
+  <div class="card">
+    <h4>Scheduling Agent</h4>
+    <p>Appointment booking, confirmations, cancellation waitlist. Integrated with Triage for priority slots.</p>
+  </div>
+  <div class="card">
+    <h4>Documentation Agent</h4>
+    <p>Drafts SOAP notes from Teams consultation transcript, extracts clinical entities, saves to Dataverse, emails patient next steps.</p>
+  </div>
+</div>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="val">-35%</div><div class="lbl">Clinician Admin Time</div></div>
+  <div class="kpi"><div class="val">-95%</div><div class="lbl">Doc Turnaround</div></div>
+  <div class="kpi"><div class="val">>95%</div><div class="lbl">SOAP Completeness</div></div>
+  <div class="kpi"><div class="val">>95%</div><div class="lbl">Triage Accuracy</div></div>
+  <div class="kpi"><div class="val">-40%</div><div class="lbl">Phone Volume</div></div>
+  <div class="kpi"><div class="val">&lt;5%</div><div class="lbl">No-Show Rate</div></div>
+</div>
+
+<p style="font-size:7.5pt; color:#666; margin-top:2px;">KPIs measured via Dataverse audit logs: admin time = encounter duration delta, doc turnaround = transcript-to-approval timestamp, triage accuracy = clinician override rate.</p>
+
+<h2>Workflow 1: Patient Triage &amp; Consultation Preparation</h2>
+<img src="../assets/03-workflow-triage.svg" class="diagram" alt="Workflow 1: Triage">
+
+<!-- PAGE 2: Workflow 2 -->
+<div class="page-break"></div>
+
+<h2>Workflow 2: Consultation &amp; Documentation</h2>
+<img src="../assets/03-workflow-consultation.svg" class="diagram" alt="Workflow 2: Consultation">
+
+<div class="grid-2" style="margin-top: 8px;">
+  <div class="card green no-break">
+    <h4>Human-in-the-loop</h4>
+    <ul>
+      <li>Patient consents to recording</li>
+      <li>Clinician reviews and approves SOAP draft</li>
+      <li>No autonomous clinical decisions</li>
+      <li>Without consent: clinician types notes manually</li>
+    </ul>
+  </div>
+  <div class="card no-break">
+    <h4>AI-Human Chemistry</h4>
+    <ul>
+      <li><strong>Teams Copilot</strong> records + transcribes consultation</li>
+      <li><strong>Documentation Agent</strong> drafts SOAP from transcript</li>
+      <li><strong>Clinician</strong> reviews, edits, approves — owns the clinical content</li>
+      <li>Full audit trail in Dataverse</li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-2" style="margin-top: 8px;">
+  <div class="card no-break">
+    <h4>Reliability &amp; Fallback Modes</h4>
+    <ul>
+      <li><strong>Triage unavailable:</strong> Patient directed to phone; receptionist triages manually</li>
+      <li><strong>Scheduling unavailable:</strong> Receptionist books via calendar</li>
+      <li><strong>Documentation unavailable:</strong> Clinician writes notes manually</li>
+      <li>No agent is a single point of failure for patient safety</li>
+      <li>99.9% SLA via Power Platform guarantees</li>
+      <li>Triage response &lt;2s, SOAP draft &lt;30s</li>
+      <li>Est. cost: Power Platform + Copilot licensing ~&pound;500/practice/month</li>
+    </ul>
+  </div>
+  <div class="card no-break">
+    <h4>UX Simplicity</h4>
+    <ul>
+      <li><strong>Patients:</strong> Natural language chatbot on practice website — no app install, no login for emergency</li>
+      <li><strong>Clinicians:</strong> Stay in Teams — pre-consult briefing, SOAP draft, approvals all in chat</li>
+      <li><strong>Receptionists:</strong> Copilot Studio handoff for escalation — seamless</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAGE 3: Architecture -->
+<div class="page-break"></div>
+
+<h2>Technical Architecture</h2>
+<img src="../assets/04-technical-architecture.svg" class="diagram" alt="Technical Architecture">
+
+<h3>Platform Fit</h3>
+<div class="grid-2" style="margin: 4px 0 8px;">
+  <div class="card no-break">
+    <h4>Microsoft Power Platform</h4>
+    <ul>
+      <li><strong>Copilot Studio:</strong> 3 agents, topics, triggers (Outlook V3, OneDrive), prompt actions (GPT via built-in AI — no separate Azure OpenAI), agent flows, NHS 111 knowledge source</li>
+      <li><strong>Power Automate:</strong> Cloud flows for briefing, transcript fetch, confirmations, patient email</li>
+      <li><strong>Dataverse:</strong> Patients, triage records, appointments, encounters, audit logs</li>
+    </ul>
+  </div>
+  <div class="card no-break">
+    <h4>M365 Services</h4>
+    <ul>
+      <li><strong>Teams:</strong> Consultation recording + clinician chat</li>
+      <li><strong>Outlook:</strong> Calendar triggers (V3) + patient emails</li>
+      <li><strong>Graph API:</strong> Transcript fetch from recording</li>
+      <li><strong>OneDrive:</strong> Recording storage (.mp4)</li>
+      <li><strong>Entra ID:</strong> Authentication (SSO for clinicians, sign-in for patients)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card no-break">
+    <h4>Data, Governance &amp; Security</h4>
+    <ul>
+      <li>All data in Dataverse with RBAC</li>
+      <li>Entra ID authentication for all users</li>
+      <li>Encryption at rest and in transit</li>
+      <li>Immutable audit trail for every agent action</li>
+      <li>Synthetic data for hackathon — no real PII/PHI</li>
+      <li>No autonomous clinical decisions (GDPR Art. 22 compliant)</li>
+      <li>NHS DSPT-aligned design principles</li>
+      <li>UK data residency (Azure UK South)</li>
+      <li>Consent-based data retention policy</li>
+    </ul>
+  </div>
+  <div class="card no-break">
+    <h4>Scalability, Reuse &amp; Cost</h4>
+    <ul>
+      <li>Power Platform managed solution — one-click deploy to any practice</li>
+      <li>Agent pattern reusable: dentistry, physio, mental health</li>
+      <li>Knowledge source swappable (NHS 111 today, NICE guidelines tomorrow)</li>
+      <li>Dataverse Git integration for CI/CD (Azure DevOps)</li>
+      <li>Environment strategy: dev &gt; test &gt; prod via Power Platform pipelines</li>
+      <li>Reusable patterns: triage chatbot, transcript-to-SOAP, event-driven briefing</li>
+      <li>Hackathon: working prototype in 4 weeks | Post-hackathon: production pilot ~12 weeks</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  AgentCare | Capgemini | Microsoft Agentic Industry Hackathon 2026 | Company Confidential
+</div>
+
+</body>
+</html>
