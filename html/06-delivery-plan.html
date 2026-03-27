@@ -269,7 +269,7 @@ tr:nth-child(even) { background: #f9fafb; }
   <div class="section">
     <h2>1. Hackathon Scope</h2>
     <p style="margin-bottom:16px; font-size:0.95rem; color:#444;">
-      Focus is <strong>administrative automation</strong> &mdash; no clinical decision-making. Four sub-processes, four agents, covering the full patient journey from triage to referral.
+      Focus is <strong>administrative automation</strong> &mdash; no clinical decision-making. Three sub-processes, three agents, covering triage, scheduling, and documentation.
     </p>
 
     <table>
@@ -293,13 +293,7 @@ tr:nth-child(even) { background: #f9fafb; }
           <td><strong>Consultation &amp; Documentation</strong></td>
           <td>Documentation Agent</td>
           <td><span class="badge in">In scope</span></td>
-          <td>SOAP pre-fill from triage, note structuring, entity extraction, patient email summary</td>
-        </tr>
-        <tr>
-          <td><strong>Referral Management</strong></td>
-          <td>Referral Agent</td>
-          <td><span class="badge in">In scope</span></td>
-          <td>Auto-draft letter, validate completeness, send via Outlook, notify patient</td>
+          <td>Pre-consult briefing, SOAP drafting from transcript, entity extraction, patient email</td>
         </tr>
       </tbody>
     </table>
@@ -328,15 +322,9 @@ tr:nth-child(even) { background: #f9fafb; }
         </tr>
         <tr>
           <td><strong>Documentation</strong></td>
-          <td>Load history, pre-fill SOAP (S) from triage</td>
-          <td>Structure notes as clinician types</td>
-          <td>Finalise record, extract entities, email patient summary</td>
-        </tr>
-        <tr>
-          <td><strong>Referral</strong></td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>Auto-triggered from SOAP; draft letter, validate, clinician approves, send, notify patient</td>
+          <td>Load history, generate pre-consult briefing, send Teams message</td>
+          <td>Teams recording (passive)</td>
+          <td>Fetch transcript, draft SOAP, clinician reviews, extract entities, save, email patient</td>
         </tr>
       </tbody>
     </table>
@@ -352,9 +340,8 @@ tr:nth-child(even) { background: #f9fafb; }
         <ul>
           <li><strong>Triage Agent</strong> &mdash; Emergency scan (pre-auth), symptom Q&amp;A, history-aware urgency, care advice, receptionist escalation</li>
           <li><strong>Scheduling Agent</strong> &mdash; Appointment booking, confirmations, waitlist</li>
-          <li><strong>Documentation Agent</strong> &mdash; SOAP pre-fill, note structuring, entity extraction, patient email</li>
-          <li><strong>Referral Agent</strong> &mdash; Auto-draft letter, validate, send via Outlook, notify patient</li>
-          <li><strong>Dataverse</strong> &mdash; 6 tables (Patients, Triage Records, Appointments, Encounters, Referrals, Audit Logs)</li>
+          <li><strong>Documentation Agent</strong> &mdash; Pre-consult briefing, SOAP drafting from transcript, entity extraction, patient email</li>
+          <li><strong>Dataverse</strong> &mdash; 5 tables (Patients, Triage Records, Appointments, Encounters, Audit Logs)</li>
           <li><strong>Power Automate</strong> &mdash; Agent flows for emails, confirmations, notifications</li>
           <li><strong>Audit trail</strong> &mdash; All agent actions logged</li>
         </ul>
@@ -363,7 +350,7 @@ tr:nth-child(even) { background: #f9fafb; }
         <h3>Out of Scope (Post-Hackathon)</h3>
         <ul>
           <li>Clinical decision support (drug interactions, guideline matching)</li>
-          <li>Referral status tracking (requires external system integration)</li>
+          <li>Referral management (post-hackathon scope)</li>
           <li>Real EMR/PAS integration (use synthetic data)</li>
           <li>eRS (e-Referral Service) live integration</li>
           <li>Patient-facing mobile app (use web chatbot)</li>
@@ -385,7 +372,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <tbody>
         <tr>
           <td><strong>Dataverse Setup</strong></td>
-          <td>6 tables (Patients, Triage Records, Appointments, Encounters, Referrals, Audit Logs), relationships, synthetic data</td>
+          <td>5 tables (Patients, Triage Records, Appointments, Encounters, Audit Logs), relationships, synthetic data</td>
           <td>3</td>
           <td>Power Platform</td>
         </tr>
@@ -409,14 +396,8 @@ tr:nth-child(even) { background: #f9fafb; }
         </tr>
         <tr>
           <td><strong>Documentation Agent</strong></td>
-          <td>SOAP pre-fill from triage, note structuring prompt action, entity extraction prompt, patient email agent flow</td>
-          <td>5</td>
-          <td>Copilot Studio, Power Automate</td>
-        </tr>
-        <tr>
-          <td><strong>Referral Agent</strong></td>
-          <td>Letter draft prompt action, completeness validation, clinician approval topic, send agent flow, patient notification</td>
-          <td>4</td>
+          <td>Pre-consult briefing (Outlook trigger), transcript fetch (Graph API), SOAP draft prompt action, entity extraction, patient email agent flow</td>
+          <td>6</td>
           <td>Copilot Studio, Power Automate</td>
         </tr>
         <tr>
@@ -428,7 +409,7 @@ tr:nth-child(even) { background: #f9fafb; }
         <tr style="background:#e8f4fa; font-weight:600;">
           <td><strong>TOTAL</strong></td>
           <td></td>
-          <td><strong>24 days</strong></td>
+          <td><strong>21 days</strong></td>
           <td></td>
         </tr>
       </tbody>
@@ -474,12 +455,11 @@ tr:nth-child(even) { background: #f9fafb; }
         <div class="sprint-title">Sprint 2 &mdash; Clinician-Facing Agents</div>
         <div class="sprint-dates">Week 3 (14 Apr &ndash; 18 Apr)</div>
       </div>
-      <div class="sprint-goal">Goal: Documentation + Referral working end-to-end (Scenarios 2 &amp; 3)</div>
+      <div class="sprint-goal">Goal: Documentation Agent working end-to-end (Scenario 2)</div>
       <table>
         <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
         <tbody>
-          <tr><td>Documentation Agent &mdash; SOAP pre-fill, structuring, entities, patient email</td><td>5d</td><td>Clinician types notes, agent structures and saves</td></tr>
-          <tr><td>Referral Agent &mdash; letter draft, validate, send, notify</td><td>4d</td><td>Referral auto-triggered from SOAP, sent via Outlook</td></tr>
+          <tr><td>Documentation Agent &mdash; pre-consult briefing, transcript fetch, SOAP draft, entity extraction, patient email</td><td>6d</td><td>Agent drafts SOAP from transcript, clinician reviews and approves</td></tr>
         </tbody>
       </table>
     </div>
@@ -489,11 +469,11 @@ tr:nth-child(even) { background: #f9fafb; }
         <div class="sprint-title">Sprint 3 &mdash; Polish + Demo</div>
         <div class="sprint-dates">Week 4 (21 Apr &ndash; 25 Apr)</div>
       </div>
-      <div class="sprint-goal">Goal: Demo-ready, all 4 scenarios tested, presentation materials complete</div>
+      <div class="sprint-goal">Goal: Demo-ready, all 3 scenarios tested, presentation materials complete</div>
       <table>
         <thead><tr><th>Task</th><th>Effort</th><th>Deliverable</th></tr></thead>
         <tbody>
-          <tr><td>End-to-end testing &mdash; all 4 scenarios</td><td>2d</td><td>Bugs fixed, edge cases handled</td></tr>
+          <tr><td>End-to-end testing &mdash; all 3 scenarios</td><td>2d</td><td>Bugs fixed, edge cases handled</td></tr>
           <tr><td>Demo preparation &mdash; script, sample data, recording</td><td>1d</td><td>5-min demo video or live walkthrough</td></tr>
         </tbody>
       </table>
@@ -510,8 +490,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <tbody>
         <tr><td><strong>1. Patient Triage &amp; Booking</strong></td><td>Triage, Scheduling</td><td>Sprint 1</td></tr>
         <tr><td><strong>2. Consultation &amp; Documentation</strong></td><td>Documentation</td><td>Sprint 2</td></tr>
-        <tr><td><strong>3. Referral Drafting &amp; Submission</strong></td><td>Referral</td><td>Sprint 2</td></tr>
-        <tr><td><strong>4. Patient Self-Service</strong></td><td>Triage (FAQ), Scheduling (reschedule)</td><td>Sprint 1</td></tr>
+        <tr><td><strong>3. Patient Self-Service</strong></td><td>Triage (FAQ), Scheduling (reschedule)</td><td>Sprint 1</td></tr>
       </tbody>
     </table>
   </div>
@@ -521,19 +500,19 @@ tr:nth-child(even) { background: #f9fafb; }
     <h2>7. Team &amp; Assumptions</h2>
     <div class="grid-2">
       <div class="card">
-        <h3>Team Composition (7 people)</h3>
+        <h3>Team Composition (6 people)</h3>
         <table style="box-shadow:none; margin:0;">
           <tbody>
             <tr><td><strong>Role</strong></td><td><strong>People</strong></td><td><strong>Focus</strong></td></tr>
             <tr><td>Solution Architect / Dev Lead</td><td>1</td><td>Architecture, orchestration, code reviews</td></tr>
             <tr><td>Solution Architect</td><td>1</td><td>Data model, security, integration design</td></tr>
             <tr><td>Business Analyst</td><td>1</td><td>Requirements, test scenarios, demo script, synthetic data</td></tr>
-            <tr><td>Power Platform Developers</td><td>4</td><td>1 per agent (Triage, Scheduling, Documentation, Referral)</td></tr>
+            <tr><td>Power Platform Developers</td><td>3</td><td>1 per agent (Triage, Scheduling, Documentation)</td></tr>
           </tbody>
         </table>
         <p style="margin-top:12px; font-size:0.85rem; color:var(--cap-gray);">
-          Estimated effort: <strong>24 person-days</strong><br>
-          With 4 developers building in parallel (1 agent each), core build completes in ~6 working days
+          Estimated effort: <strong>21 person-days</strong><br>
+          With 3 developers building in parallel (1 agent each), core build completes in ~7 working days
         </p>
       </div>
       <div class="card accent">
@@ -566,7 +545,7 @@ tr:nth-child(even) { background: #f9fafb; }
           <td>Spike in Sprint 0; test multi-agent handoff early</td>
         </tr>
         <tr>
-          <td>Prompt action quality (SOAP structuring, letter drafting)</td>
+          <td>Prompt action quality (SOAP drafting from transcript, triage classification)</td>
           <td>High</td>
           <td>Medium</td>
           <td>Invest in prompt engineering Sprint 1&ndash;2; use few-shot examples</td>
@@ -581,7 +560,7 @@ tr:nth-child(even) { background: #f9fafb; }
           <td>Scope creep</td>
           <td>Medium</td>
           <td>Medium</td>
-          <td>Strict scope freeze after Sprint 0; no CDS, no external integrations</td>
+          <td>Strict scope freeze after Sprint 0; no CDS, no referrals, no external integrations</td>
         </tr>
         <tr>
           <td>Demo data not realistic enough</td>

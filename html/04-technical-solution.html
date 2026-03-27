@@ -464,10 +464,10 @@ tr:nth-child(even) { background: #f9fafb; }
       </thead>
       <tbody>
         <tr><td><strong>Copilot Studio</strong></td><td>Agent definitions, topic routing, prompt actions, patient chatbot</td><td>All agents</td></tr>
-        <tr><td><strong>Power Automate</strong></td><td>Agent flows: send emails, notifications, appointment confirmations</td><td>Scheduling, Documentation, Referral</td></tr>
-        <tr><td><strong>Dataverse</strong></td><td>All data: patients, triage records, appointments, encounters, referrals, audit logs</td><td>All agents</td></tr>
-        <tr><td><strong>Teams</strong></td><td>Clinician channel: Copilot chat for consultation notes and referral approval</td><td>Documentation, Referral</td></tr>
-        <tr><td><strong>Outlook</strong></td><td>Referral letters to specialists, patient notifications, appointment confirmations</td><td>Referral, Scheduling</td></tr>
+        <tr><td><strong>Power Automate</strong></td><td>Agent flows: emails, notifications, confirmations, OneDrive trigger for transcript</td><td>Scheduling, Documentation</td></tr>
+        <tr><td><strong>Dataverse</strong></td><td>All data: patients, triage records, appointments, encounters, audit logs</td><td>All agents</td></tr>
+        <tr><td><strong>Teams</strong></td><td>Clinician channel: pre-consult briefing, SOAP draft review, consultation recording</td><td>Documentation</td></tr>
+        <tr><td><strong>Outlook</strong></td><td>Calendar trigger (V3), patient notifications, appointment confirmations</td><td>Documentation, Scheduling</td></tr>
         <tr><td><strong>Entra ID</strong></td><td>Authentication for clinicians (Teams) and patients (chatbot)</td><td>All</td></tr>
       </tbody>
     </table>
@@ -487,7 +487,7 @@ tr:nth-child(even) { background: #f9fafb; }
           <td><strong>Patients</strong></td>
           <td>ID, name, DOB, conditions, medications, allergies</td>
           <td>Pre-loaded (synthetic)</td>
-          <td>Triage, Documentation, Referral</td>
+          <td>Triage, Documentation</td>
         </tr>
         <tr>
           <td><strong>Triage Records</strong></td>
@@ -503,14 +503,8 @@ tr:nth-child(even) { background: #f9fafb; }
         </tr>
         <tr>
           <td><strong>Encounters</strong></td>
-          <td>ID, patient, clinician, date, SOAP (S/O/A/P), entities, referral flag, status</td>
+          <td>ID, patient, clinician, date, SOAP (S/O/A/P), entities, transcript ref, status</td>
           <td>Documentation Agent</td>
-          <td>Referral Agent</td>
-        </tr>
-        <tr>
-          <td><strong>Referrals</strong></td>
-          <td>ID, patient, clinician, specialty, letter, status (draft/sent), dates</td>
-          <td>Referral Agent</td>
           <td>&mdash;</td>
         </tr>
         <tr>
@@ -527,7 +521,7 @@ tr:nth-child(even) { background: #f9fafb; }
       <ul>
         <li><strong>Triage &rarr; Encounter:</strong> Triage record pre-fills SOAP (S); linked via patient + triage ref</li>
         <li><strong>Triage &rarr; Appointment:</strong> Triage outcome triggers booking; linked via triage ref</li>
-        <li><strong>Encounter &rarr; Referral:</strong> Referral flag in encounter triggers Referral Agent; linked via encounter ID</li>
+        <li><strong>Encounter &rarr; Triage Record:</strong> Encounter links back to triage data for full patient journey</li>
         <li><strong>All &rarr; Audit Logs:</strong> Every agent action creates an audit record</li>
       </ul>
     </div>

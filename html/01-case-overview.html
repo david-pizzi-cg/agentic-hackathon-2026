@@ -460,14 +460,14 @@ tr:nth-child(even) { background: #f9fafb; }
           </div>
           <div class="card" style="margin-top:10px">
             <h3>Failure to Surface Early Warnings</h3>
-            <p>No proactive highlighting of urgent triage cues, inconsistent documentation, missing referral fields, or duplicated appointments.</p>
+            <p>No proactive highlighting of urgent triage cues, inconsistent documentation, or duplicated appointments.</p>
           </div>
         </div>
 
         <!-- Use Case Description -->
         <div>
           <h3>Use Case Description</h3>
-          <p style="margin:8px 0 12px; font-size:0.88rem; color:#444;">Four AI agents orchestrated through Microsoft Copilot Studio automate clinical administration, freeing clinicians from paperwork:</p>
+          <p style="margin:8px 0 12px; font-size:0.88rem; color:#444;">Three AI agents orchestrated through Microsoft Copilot Studio automate clinical administration, freeing clinicians from paperwork:</p>
           <div class="agent-card" style="margin-bottom:8px">
             <h4>Triage Agent <span class="badge agentic">Agentic</span></h4>
             <p>Patient chatbot: emergency scan before sign-in, symptom collection, history-aware urgency classification, care advice. Escalates urgent cases to live receptionist if no slot available.</p>
@@ -478,11 +478,7 @@ tr:nth-child(even) { background: #f9fafb; }
           </div>
           <div class="agent-card" style="margin-bottom:8px">
             <h4>Documentation Agent <span class="badge genai">Gen AI</span></h4>
-            <p>Pre-fills SOAP from triage, structures clinician notes in real-time, extracts entities, emails patient summary.</p>
-          </div>
-          <div class="agent-card" style="margin-bottom:8px">
-            <h4>Referral Agent <span class="badge agentic">Agentic</span></h4>
-            <p>Auto-drafts referral letters from SOAP, validates completeness, sends via Outlook, notifies patient.</p>
+            <p>Drafts SOAP notes from Teams consultation transcript, extracts clinical entities, saves to Dataverse, emails patient next steps.</p>
           </div>
         </div>
       </div>
@@ -504,7 +500,7 @@ tr:nth-child(even) { background: #f9fafb; }
         </div>
         <div class="kpi-box">
           <span class="value">&gt;95%</span>
-          <span class="label">Referral Completeness</span>
+          <span class="label">SOAP Completeness</span>
         </div>
         <div class="kpi-box">
           <span class="value">&gt;95%</span>
@@ -523,19 +519,19 @@ tr:nth-child(even) { background: #f9fafb; }
       <h3 style="margin-top:20px;">Business Impact</h3>
       <div class="card green" style="margin-top:8px;">
         <h3>Clinician Capacity</h3>
-        <p>~15 minutes recovered per hour &#x2014; automated note structuring, pre-filled SOAP, instant referral drafting</p>
+        <p>~15 minutes recovered per hour &#x2014; automated SOAP drafting from transcript, pre-filled triage data</p>
       </div>
       <div class="card green" style="margin-top:10px">
         <h3>Admin Relief</h3>
-        <p>Self-service triage and booking via chatbot reduces phone volume by 40%; no more manual referral tracking</p>
+        <p>Self-service triage and booking via chatbot reduces phone volume by 40%</p>
       </div>
       <div class="card green" style="margin-top:10px">
         <h3>Patient Experience</h3>
-        <p>24/7 triage chatbot, self-service booking, automatic appointment confirmations, referral notifications</p>
+        <p>24/7 triage chatbot, self-service booking, automatic appointment confirmations</p>
       </div>
       <div class="card green" style="margin-top:10px">
-        <h3>Referral Quality</h3>
-        <p>Auto-drafted letters from structured SOAP notes; completeness validated before sending; no more rejections</p>
+        <h3>Documentation Quality</h3>
+        <p>Structured SOAP notes drafted from consultation transcripts; completeness validated before saving</p>
       </div>
     </div>
 
@@ -582,11 +578,11 @@ tr:nth-child(even) { background: #f9fafb; }
       <div style="margin-top:8px;">
         <div class="stakeholder">
           <div class="icon clinician">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
-          <div><strong>Clinicians</strong> &#x2014; Copilot chat for consultations, note structuring, referral approval</div>
+          <div><strong>Clinicians</strong> &#x2014; Copilot chat for consultations, SOAP review and approval</div>
         </div>
         <div class="stakeholder">
           <div class="icon patient">&#x1F9D1;</div>
-          <div><strong>Patients</strong> &#x2014; Self-service triage, appointment booking, referral notifications via chatbot</div>
+          <div><strong>Patients</strong> &#x2014; Self-service triage, appointment booking via chatbot</div>
         </div>
         <div class="stakeholder">
           <div class="icon admin">&#x1F4CB;</div>

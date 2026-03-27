@@ -495,30 +495,24 @@ tr:nth-child(even) { background: #f9fafb; }
 
         <h3>KPIs Impacted</h3>
         <ul style="font-size:0.9rem; color:#444; padding-left:20px; margin-bottom:16px;">
-          <li><strong>-35%</strong> Clinician admin time per consultation (documentation + referral automation)</li>
+          <li><strong>-35%</strong> Clinician admin time per consultation (documentation automation)</li>
           <li><strong>-95%</strong> Documentation turnaround (minutes &rarr; seconds)</li>
-          <li><strong>+20-30%</strong> Guideline adherence (from ~70% to &gt;90%)</li>
-          <li><strong>&gt;95%</strong> Drug interaction detection rate</li>
-          <li><strong>&gt;85%</strong> Missed referral catch rate (new capability)</li>
-          <li><strong>-70%</strong> Patient referral query calls</li>
-          <li><strong>&gt;95%</strong> Triage accuracy (urgency classification)</li>
+          <li><strong>&gt;95%</strong> Triage accuracy (urgency classification via NHS 111 knowledge)</li>
           <li><strong>-40%</strong> Phone call volume reduction (self-service triage)</li>
+          <li><strong>&gt;90%</strong> SOAP note completeness (all sections validated)</li>
         </ul>
 
         <h3>Business Impact</h3>
         <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
-          Clinicians spend significant time on documentation and referral administration during and after consultations. AgentCare automates note-taking, clinical entity extraction, guideline checking, and referral drafting &#x2014; recovering <strong>~15 minutes per hour</strong> of clinician time, enabling 1-2 extra patient appointments per clinician per day.
-        </p>
-        <p style="font-size:0.9rem; color:#444; margin-bottom:12px;">
-          The clinical safety net (drug interactions, guideline gaps, missed referrals) makes <strong>evidence-based practice the default</strong>, reducing clinical risk and improving patient outcomes.
+          Clinicians spend significant time on documentation during and after consultations. AgentCare drafts SOAP notes from consultation transcripts, extracts clinical entities, and manages triage and scheduling &#x2014; recovering <strong>~15 minutes per hour</strong> of clinician time, enabling 1-2 extra patient appointments per clinician per day.
         </p>
 
         <div style="background:var(--cap-light); border-radius:8px; padding:16px; margin-top:12px; font-size:0.85rem;">
           <strong style="color:var(--cap-dark);">Illustrative scenario — 5-GP practice:</strong>
           <ul style="padding-left:16px; margin-top:8px; color:#444;">
-            <li>GP documentation &amp; referral time saved: ~&pound;80k/year (35% of &pound;228k admin cost)</li>
+            <li>GP documentation time saved: ~&pound;80k/year (35% of &pound;228k admin cost)</li>
             <li>Extra revenue: ~&pound;60-100k/year (1-2 extra appointments/GP/day)</li>
-            <li>Reduced adverse events from missed interactions/referrals, better audit compliance</li>
+            <li>Better audit compliance with structured SOAP notes and full audit trail</li>
           </ul>
         </div>
 
@@ -526,19 +520,19 @@ tr:nth-child(even) { background: #f9fafb; }
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #00B0F0;">
             <strong style="color:#003A5D; font-size:0.88rem;">Reducing cognitive load</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Automated note-taking, entity extraction, and guideline matching &#x2014; clinician focuses on the patient, not the screen</p>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">SOAP drafted from transcript, entity extraction &#x2014; clinician focuses on the patient, not the screen</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #0070AD;">
-            <strong style="color:#003A5D; font-size:0.88rem;">Clinical safety net</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Drug interaction alerts, NICE guideline matching, and missed referral detection &#x2014; systematic, not reliant on memory</p>
+            <strong style="color:#003A5D; font-size:0.88rem;">NHS-grounded triage</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Urgency classification using NHS 111 knowledge source &#x2014; consistent, evidence-based triage at scale</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #2E8B57;">
-            <strong style="color:#003A5D; font-size:0.88rem;">Referral accuracy</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Complete, structured referral letters from consultation notes &#x2014; fewer rejections, faster processing</p>
+            <strong style="color:#003A5D; font-size:0.88rem;">Documentation quality</strong>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Complete, structured SOAP notes from consultation transcripts &#x2014; validated before saving</p>
           </div>
           <div style="background:white; border-radius:8px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #F0AD4E;">
             <strong style="color:#003A5D; font-size:0.88rem;">Full audit trail</strong>
-            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Every AI recommendation, clinician decision, and referral action logged &#x2014; compliance by design</p>
+            <p style="font-size:0.82rem; color:#555; margin-top:4px;">Every AI recommendation, clinician decision, and SOAP approval logged &#x2014; compliance by design</p>
           </div>
         </div>
       </div>
@@ -550,18 +544,18 @@ tr:nth-child(even) { background: #f9fafb; }
         <!-- Row 1: Current Costs | Current Income -->
         <div class="grid-2" style="gap:16px; margin-bottom:16px;">
           <div class="cost-section">
-            <div class="cost-header current">Current Costs (Consultation &amp; Referral)</div>
+            <div class="cost-header current">Current Costs (Consultation &amp; Documentation)</div>
             <div class="cost-body">
               <div class="cost-row">
                 <span class="label">Running (R1): Clinician documentation time</span>
                 <span class="value">~&pound;160k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Running (R1): Admin staff (referral tracking)</span>
+                <span class="label">Running (R1): Admin staff (phone triage, scheduling)</span>
                 <span class="value">~&pound;40k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Maintenance (M1): Referral rework, incomplete notes</span>
+                <span class="label">Maintenance (M1): Incomplete notes, rework</span>
                 <span class="value">~&pound;12k/yr</span>
               </div>
               <div class="cost-total">
@@ -578,7 +572,7 @@ tr:nth-child(even) { background: #f9fafb; }
                 <span class="value">Constrained by documentation burden</span>
               </div>
               <div class="cost-row">
-                <span class="label">Hidden cost: Missed/rejected referrals</span>
+                <span class="label">Hidden cost: Incomplete documentation, missed follow-ups</span>
                 <span class="value">Unquantified risk</span>
               </div>
             </div>
@@ -599,7 +593,7 @@ tr:nth-child(even) { background: #f9fafb; }
                 <span class="value">~&pound;12k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Maintenance (M2): Agent tuning, guideline updates</span>
+                <span class="label">Maintenance (M2): Agent tuning, prompt updates</span>
                 <span class="value">~&pound;8k/yr</span>
               </div>
               <div class="cost-total">
@@ -620,7 +614,7 @@ tr:nth-child(even) { background: #f9fafb; }
                 <span class="value">~&pound;56k/yr</span>
               </div>
               <div class="cost-row">
-                <span class="label">Savings: Referral admin + rework reduction</span>
+                <span class="label">Savings: Admin phone volume + rework reduction</span>
                 <span class="value">~&pound;25-35k/yr</span>
               </div>
             </div>
@@ -630,7 +624,7 @@ tr:nth-child(even) { background: #f9fafb; }
         <!-- Row 3: Break Even -->
         <div class="grid-2" style="gap:16px; margin-bottom:12px;">
           <div class="breakeven-box">
-            <span class="be-label">Via Savings (documentation + referral)</span>
+            <span class="be-label">Via Savings (documentation + triage)</span>
             <span class="be-value">3-4 months</span>
             <span class="be-label">&pound;25k implementation / ~&pound;81-91k annual savings = payback in ~4 months</span>
           </div>
@@ -641,7 +635,7 @@ tr:nth-child(even) { background: #f9fafb; }
           </div>
         </div>
         <p style="font-size:0.85rem; color:#555; background:#f9fafb; padding:12px 16px; border-radius:6px;">
-          <strong>BREAK EVEN:</strong> Payback is driven by clinician time recovery on documentation and referral tasks. At a 5-GP practice, annual savings (~&pound;85k) plus extra revenue (~&pound;80k) far exceed ongoing costs (~&pound;20k/yr). Lower implementation cost (&pound;25k for 3 agents) accelerates payback vs full-scope deployment. Phase 2 (Triage + Scheduling) extends savings further.
+          <strong>BREAK EVEN:</strong> Payback is driven by clinician time recovery on documentation tasks and admin relief from self-service triage. At a 5-GP practice, annual savings (~&pound;85k) plus extra revenue (~&pound;80k) far exceed ongoing costs (~&pound;20k/yr). Implementation cost (&pound;25k for 3 agents) delivers payback within 4 months.
         </p>
       </div>
 
