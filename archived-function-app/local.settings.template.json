@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=<STORAGE_ACCOUNT_NAME>;AccountKey=<STORAGE_ACCOUNT_KEY>;EndpointSuffix=core.windows.net",
+    "DEPLOYMENT_STORAGE_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=<STORAGE_ACCOUNT_NAME>;AccountKey=<STORAGE_ACCOUNT_KEY>;EndpointSuffix=core.windows.net",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=<INSTRUMENTATION_KEY>;IngestionEndpoint=<INGESTION_ENDPOINT>;LiveEndpoint=<LIVE_ENDPOINT>;ApplicationId=<APPLICATION_ID>"
+  },
+  "ConnectionStrings": {},
+  "Host": {}
+}
